@@ -7,26 +7,28 @@
     <title>Meine Webseite</title>
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
+<script src="assets/js/script.js"></script>
 
 <body>
     <!-- Header-Bereich -->
-    <header style="display: flex; align-items: center; padding: 10px;">
-        <!-- Logo mit Link zur Startseite -->
-        <div>
+    <header>
+        <div class="logo">
             <a href="index.html">
-                <img src="assets/images/logo.png" alt="SkyHaven Logo" style="height: 50px;">
+                <img src="assets/images/logo.png" alt="SkyHaven Logo">
             </a>
         </div>
+        <div class="menu-toggle">☰</div> <!-- Hamburger-Icon -->
         <!-- Navigation -->
-        <nav style="margin-left: 20px;">
-            <ul style="display: flex; list-style: none; padding: 0; margin: 0;">
-                <li style="margin-right: 15px;"><a href="index.html">Startseite</a></li>
-                <li style="margin-right: 15px;"><a href="Dienstleistungen.html">Leistungen</a></li>
-                <li style="margin-right: 15px;"><a href="Übermich.html">Über mich</a></li>
+        <nav>
+            <ul>
+                <li><a href="index.html">Startseite</a></li>
+                <li><a href="Dienstleistungen.html">Leistungen</a></li>
+                <li><a href="Uebermich.html">Über mich</a></li>
                 <li><a href="Kontakt.html">Kontakt</a></li>
             </ul>
         </nav>
     </header>
+    
     <!-- Hero-Bereich -->
     <section id="hero" style="text-align: center; position: relative;">
         <img src="assets/images/Hero Bild.JPG" alt="Großes Panoramaaufnahme der Stadt Wilhelmshaven (Herobild)" style="width: 100%; height:auto;">
