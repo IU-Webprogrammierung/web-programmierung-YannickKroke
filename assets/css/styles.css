@@ -402,5 +402,34 @@ nav ul li a:hover {
 
 /* Hover-Effekt */
 .social-icons a:hover {
-    transform: scale(1.4);
+    transform: scale(1.2);
 }
+
+/* RESPONSIVE ANPASSUNGEN */
+/* Für Tablets: Icons kleiner machen */
+@media (max-width: 1024px) {
+    .social-icons {
+        left: 10px; /* Weniger Platz auf kleineren Geräten */
+    }
+
+    .social-icons a {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/* Für Smartphones: Icons weiter nach unten verschieben */
+@media (max-width: 768px) {
+    .social-icons {
+        top: auto;
+        bottom: 20px; /* Statt mittig jetzt unten fixiert */
+        left: 10px;
+        flex-direction: row; /* Icons horizontal anordnen */
+    }
+
+    .social-icons a {
+        width: 25px; /* Kleinere Icons für Smartphones */
+        height: 25px;
+    }
+}
+
