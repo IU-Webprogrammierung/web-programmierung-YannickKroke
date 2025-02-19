@@ -1,0 +1,32 @@
+/* Reset-Stile, um Standardwerte der Browser zu entfernen */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Grundlegende Stile */
+body {
+    font-family: Arial, sans-serif;  /* Einfache Systemschrift für den Start */
+    background-color: #f8f8f8; /* Helle neutrale Hintergrundfarbe */
+    color: #333; /* Dunkelgraue Schriftfarbe für gute Lesbarkeit */
+    line-height: 1.6;
+}
+
+/* Container für den Inhalt */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Standard-Überschriften */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 15px;
+}
