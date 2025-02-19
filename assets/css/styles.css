@@ -11,6 +11,8 @@ body {
   background-color: #f8f8f8; /* Helle neutrale Hintergrundfarbe */
   color: #333; /* Dunkelgraue Schriftfarbe für gute Lesbarkeit */
   line-height: 1.6;
+  padding: 0;
+    margin: 0;
 }
 
 /* Container für den Inhalt */
@@ -29,7 +31,7 @@ h4,
 h5,
 h6 {
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 p {
@@ -113,4 +115,259 @@ nav ul li a:hover {
   nav.active {
     display: flex;
   }
+}
+/* HERO-BEREICH */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 60vh; /* Höhe auf 60% des Viewports */
+    background: url("../images/hero-bild.jpg") no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+/* Overlay für bessere Lesbarkeit */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.052); /* Dunkler Overlay für besseren Kontrast */
+}
+
+/* Text im Hero-Bereich */
+.hero-content {
+    position: relative;
+    z-index: 1;
+    font-size: 2rem;
+    text-align: center;
+    padding: 20px;
+}
+
+
+/* Allgemeine Bild-Anpassungen */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* BILD-GALERIE & BEISPIELE */
+.bild-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 gleichgroße Spalten für Desktop */
+    gap: 20px;
+    margin: 20px auto;
+    max-width: 1200px; /* Maximale Breite */
+    padding: 20px;
+}
+
+/* Einheitliche Bildgröße */
+.bild-container img {
+    width: 100%;
+    height: 200px; /* Einheitliche Höhe */
+    object-fit: cover; /* Verhindert Verzerrungen */
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* RESPONSIVE DESIGN */
+/* Für Tablets: 2 Spalten */
+@media (max-width: 1024px) {
+    .bild-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Für Smartphones: 1 Spalte */
+@media (max-width: 768px) {
+    .bild-container {
+        grid-template-columns: 1fr;
+    }
+
+    .bild-container img {
+        height: auto; /* Volle Breite, aber Höhe bleibt proportional */
+    }
+}
+/* FOOTER */
+footer {
+    text-align: center; /* Zentriert den gesamten Inhalt */
+    padding: 20px;
+    background-color: #f8f8f8; /* Helle Hintergrundfarbe */
+    color: #333;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+/* ALLGEMEINE INHALTSBEREICHE */
+.section {
+    padding: 65px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* FLEXBOX-ANORDNUNG für Abschnitte mit Bild + Text */
+.flex-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+/* Standard-Bildgrößen in den Abschnitten */
+.flex-container img {
+    width: 40%;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Textbereich neben dem Bild */
+.flex-container .text {
+    width: 60%;
+}
+
+/* GRID-LAYOUT für Karten oder andere Bereiche */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Beispiel für einzelne Karten */
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* RESPONSIVE ANPASSUNGEN */
+@media (max-width: 1024px) {
+    .flex-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .flex-container img,
+    .flex-container .text {
+        width: 100%;
+    }
+}
+/* FLEXBOX FÜR KONTAKTBEREICH */
+.flex-container {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* BOX-STIL FÜR FORMULAR UND KONTAKTINFO */
+.contact-box {
+    width: 45%;
+    max-width: 500px;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+/* FORMULAR-STYLING */
+form label {
+    font-weight: bold;
+    display: block;
+    margin: 10px 0 5px;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    width: 100%;
+    background-color: #007acc;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #005fa3;
+}
+
+/* RESPONSIVE ANPASSUNGEN */
+@media (max-width: 768px) {
+    .flex-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .contact-box {
+        width: 90%;
+    }
+}
+/* Einheitliche Bildgröße für Karten */
+.card img {
+    width: 100%;
+    height: 500px; /* Einheitliche Höhe für alle Bilder */
+    object-fit: cover; /* Sorgt dafür, dass das Bild nicht verzerrt wird */
+    border-radius: 8px;
+}
+/* Hover-Effekt für Buttons */
+button {
+    background-color: #007acc;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #005fa3;
+}
+
+/* Hover-Effekt für Links */
+a {
+    color: #007acc;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #005fa3;
+    text-decoration: underline;
+}
+
+/* Animation für Karten */
+.card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Navigationselemente mit weichem Effekt */
+nav ul li a {
+    padding: 10px 15px;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    background-color: #f0f0f0;
+    border-radius: 5px;
 }

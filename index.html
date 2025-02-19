@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meine Webseite</title>
     <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/js/script.js"></script>
 </head>
-<script src="assets/js/script.js"></script>
 
 <body>
+
     <!-- Header-Bereich -->
     <header>
         <div class="logo">
@@ -17,8 +18,7 @@
                 <img src="assets/images/logo.png" alt="SkyHaven Logo">
             </a>
         </div>
-        <div class="menu-toggle">☰</div> <!-- Hamburger-Icon -->
-        <!-- Navigation -->
+        <div class="menu-toggle">☰</div> <!-- Hamburger-Menü -->
         <nav>
             <ul>
                 <li><a href="index.html">Startseite</a></li>
@@ -28,46 +28,51 @@
             </ul>
         </nav>
     </header>
-    
+
     <!-- Hero-Bereich -->
-    <section id="hero" style="text-align: center; position: relative;">
-        <img src="assets/images/Hero Bild.JPG" alt="Großes Panoramaaufnahme der Stadt Wilhelmshaven (Herobild)" style="width: 100%; height:auto;">
-        <h1
-            style="position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 3em;">
-            SkyHaven</h1>
-        <p
-            style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 1.5em;">
-            Ihr Drohnendienstleister im Norden</p>
-    </section>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>SkyHaven</h1>
+            <p>Der Drohnendienstleister im Norden</p>
+        </div>
     </section>
 
-    <!-- Beschreibungstext -->
-    <section id="beschreibung"
-        style="text-align: center; margin: 20px auto; padding: 10px; border: 1px solid #ccc; width: 80%; border-radius: 5px;">
-        <p>Willkommen bei SkyHaven – Ihrem Partner für professionelle Drohnendienstleistungen. Wir liefern hochwertige
-            Luftbildaufnahmen für Ihre Projekte, Immobilien und Veranstaltungen. Erleben Sie eine neue Perspektive!</p>
+    <!-- Beschreibung -->
+    <section class="section">
+        <div class="flex-container">
+            <div class="text">
+                <h2>Willkommen bei SkyHaven</h2>
+                <p>Ihr Partner für professionelle Drohnendienstleistungen. Wir liefern hochwertige Luftbildaufnahmen für Ihre Projekte, Immobilien und Veranstaltungen.</p>
+            </div>
+        </div>
     </section>
 
-    <!-- Beispiele-Bereich -->
-    <section id="beispiele" style="text-align: center; margin-top: 20px;">
-        <div style="display: inline-block; margin: 10px;">
-            <img src="assets/images/Beispiel1.jpg" alt="Beispielbild für Baustellendokumentation - Eingerüsteter Wasserturm" style="width: 30%; height: auto;">
-            <p>Baustellendokumentation</p>
-        </div>
-        <div style="display: inline-block; margin: 10px;">
-            <img src="assets/images/Beispiel2.jpeg" alt="Beispielbild für Immobilienfotografie - Großes Einfamilienhaus aus der Vogelperspektive" style="width: 40%; height: auto;">
-            <p>Hochwertige Bilder ihrer Immobilie</p>
-        </div>
-        <div style="display: inline-block; margin: 10px;">
-            <img src="assets/images/Beispiel3.jpeg" alt="Beispielbild für Veranstaltungsfotografie - Großes Konzert mit Menschen und Bühne aus der Vogelperspektive" style="width: 30%; height: auto;">
-            <p>Beeindruckende Veranstaltungsbilder</p>
+    <!-- Beispiel-Bereich mit Grid -->
+    <section class="section">
+        <h2>Unsere Leistungen</h2>
+        <div class="grid-container">
+            <div class="card">
+                <img src="assets/images/Beispiel1.jpg" alt="Baustellendokumentation">
+                <h3>Baustellendokumentation</h3>
+                <p>Präzise Luftaufnahmen für ihre Bauprojekte. So dokumentieren sie jederzeit den aktuellen Stand ihrer Projekte</p>
+            </div>
+            <div class="card">
+                <img src="assets/images/Beispiel2.jpeg" alt="Bild eines Einfamilienhauses aus der Luft">
+                <h3>Immobilienfotografie</h3>
+                <p>Eindrucksvolle Luftbildaufnahmen ihrer Immobilie und/oder ihres Grundstücks</p>
+            </div>
+            <div class="card">
+                <img src="assets/images/Beispiel3.jpeg" alt="Großes Konzert mit Menschen und Bühne aus der Luft">
+                <h3>Veranstaltungsfotografie</h3>
+                <p>Wir halten ihre Veranstaltungen wie Hochzeiten, Konzerte oder Firmenfeiern mit unvergleichbaren Luftaufnahmen fest.</p>
+            </div>
         </div>
     </section>
-    <!-- Footer-Bereich -->
-    <footer style="text-align: center; margin-top: 20px;">
-        <p>&copy; SkyHaven | <a href="Impressum.html">Impressum</a> | <a href="datenschutz.html">Datenschutz</a> | <a
-                href="Kontakt.html">Kontakt</a></p>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; SkyHaven | <a href="Impressum.html">Impressum</a> | <a href="datenschutz.html">Datenschutz</a> | <a href="Kontakt.html">Kontakt</a></p>
     </footer>
-</body>
 
+</body>
 </html>
