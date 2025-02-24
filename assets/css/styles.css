@@ -551,3 +551,94 @@ nav ul li a:hover {
 .cta-button {
     animation: cta-pulse 1.5s infinite ease-in-out;
 }
+/* Hier sind zusätzliche CSS-Stile für die Dienstleistungen-Seite */
+/* Du kannst diese in deine styles.css Datei einfügen */
+
+/* Showcase-Bild für die Hauptbilder in den Leistungen */
+.showcase-image {
+    margin: 30px 0;
+    width: 100%;
+  }
+  
+  .showcase-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .showcase-image img:hover {
+    transform: scale(1.01);
+  }
+  
+  /* Kleinere Bilder in der Galerie */
+  .gallery-image {
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s ease;
+  }
+  
+  .gallery-image:hover {
+    transform: translateY(-5px);
+  }
+  
+  .gallery-image img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .gallery-image img:hover {
+    transform: scale(1.05);
+  }
+  
+  /* CTA-Container für den Call-to-Action Bereich */
+  .cta-container {
+    text-align: center;
+    padding: 50px 20px;
+    margin: 50px auto;
+    max-width: 800px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08);
+  }
+  
+  .cta-container h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .cta-container p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #555;
+  }
+  
+  /* Anpassungen für die Leistungskarten */
+  .card-story {
+    margin-bottom: 60px;
+  }
+  
+  /* Responsive Anpassungen */
+  @media (max-width: 768px) {
+    .showcase-image img {
+      height: 300px;
+    }
+    
+    .gallery-image img {
+      height: 200px;
+    }
+    
+    .cta-container {
+      padding: 30px 15px;
+    }
+    
+    .cta-container h2 {
+      font-size: 1.6rem;
+    }
+  }
