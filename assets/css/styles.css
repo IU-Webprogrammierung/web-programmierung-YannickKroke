@@ -845,3 +845,245 @@ nav ul li a:hover {
   background: rgba(34, 42, 98, 0.8);
   border-left: 4px solid #a27dfc;
 }
+/* Animationen für die Website */
+
+/* Keyframes für das Einblenden von unten */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Keyframes für das Einblenden von links */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Keyframes für das Einblenden von rechts */
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Keyframes für Pulse-Effekt */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Animationsklassen für verschiedene Elemente */
+
+/* Für Hero-Content */
+.hero-content {
+  animation: fadeInUp 1.2s ease-out;
+}
+
+/* Für Überschriften */
+h1, h2, h3 {
+  animation: fadeInLeft 0.8s ease-out;
+}
+
+/* Für Cards */
+.card {
+  animation: fadeInUp 0.8s ease-out;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background 0.3s ease;
+}
+
+/* Gestaffelte Verzögerung für Grid-Elemente */
+.grid-container .card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.grid-container .card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.grid-container .card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.grid-container .card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.grid-container .card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+/* Für Buttons */
+button, .cta-button {
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover, .cta-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Für CTA-Button im Hero-Bereich */
+.hero-content .cta-button {
+  animation: pulse 2s infinite ease-in-out;
+  animation-delay: 1.5s;
+}
+
+/* Für Bilder */
+.showcase-image img, .gallery-image img {
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.showcase-image img:hover, .gallery-image img:hover {
+  transform: scale(1.03);
+  filter: brightness(1.1);
+}
+
+/* Für Menü-Links */
+nav ul li a {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #a27dfc;
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* Scroll-Reveal Animation für Sektionen */
+/* Diese Klassen werden via JavaScript hinzugefügt */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Für Logo */
+.logo img {
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.05);
+}
+
+/* Social Media Icons */
+.social-icons a {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2) rotate(5deg);
+  filter: brightness(1.2);
+}
+/* Verbesserte Navigation-Styles */
+
+/* Basis-Stil für die Navigation */
+nav {
+  background: rgba(10, 23, 54, 0.9);
+}
+
+/* Hamburger-Menü */
+.menu-toggle {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+/* Navigation - Links */
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li a {
+  display: block;
+  text-decoration: none;
+  color: #ffffff !important; /* Wichtig, um andere Stile zu überschreiben */
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+  padding: 10px 15px;
+  position: relative;
+}
+
+nav ul li a:hover {
+  color: #a27dfc !important; /* Lila bei Hover, wie der Rest des Designs */
+}
+
+/* Aktive Navigation auf mobilen Geräten */
+nav.active {
+  display: flex !important;
+  background: rgba(10, 23, 54, 0.95);
+}
+
+nav.active ul {
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+}
+
+nav.active ul li {
+  margin: 10px 0;
+}
+
+nav.active ul li a {
+  color: #ffffff !important;
+  font-size: 1.1rem;
+  padding: 12px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  nav {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    z-index: 1001;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
