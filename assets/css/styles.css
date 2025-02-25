@@ -642,3 +642,206 @@ nav ul li a:hover {
       font-size: 1.6rem;
     }
   }
+  /* Zusätzliche Styles für die verlinkten Cards */
+
+.card a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  
+  .card a:hover {
+    text-decoration: none;
+  }
+  
+  /* Sanfte Scroll-Animation für die IDs */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Padding für die Ankerpunkte, damit der Inhalt nicht unter der Navigation verschwindet */
+  #immobilien, #veranstaltungen, #baustellen {
+    scroll-margin-top: 80px; /* Anpassen je nach Höhe deiner Navigationsleiste */
+  }
+  /* Farbverlauf für den Seitenhintergrund ähnlich dem Screenshot */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #0a1736, #1a237e, #311b92);
+  background-attachment: fixed; /* Damit der Farbverlauf beim Scrollen fixiert bleibt */
+  color: #ffffff;
+  line-height: 1.6;
+  padding: 0;
+  margin: 0;
+}
+
+/* Anpassung für Cards mit stärkerem Kontrast */
+.card {
+  background: rgba(41, 50, 116, 0.8);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border: 1px solid rgba(102, 126, 234, 0.3);
+  color: #ffffff;
+  backdrop-filter: blur(5px);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);
+  background: rgba(54, 65, 140, 0.85);
+}
+
+/* Anpassung für die Card-Story */
+.card-story {
+  max-width: 900px;
+  margin: 0 auto 30px;
+  padding: 30px;
+  background: rgba(41, 50, 116, 0.8);
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  border: 1px solid rgba(102, 126, 234, 0.3);
+  color: #ffffff;
+  backdrop-filter: blur(5px);
+}
+
+/* Text in den Cards anpassen */
+.card h3, .card-story h2, h1, h2, h3 {
+  color: #a27dfc; /* Helles Lila wie im SkyHaven Text */
+}
+
+.card p, .card-story p {
+  color: #ffffff;
+}
+
+/* Hervorhebung des SkyHaven Logos */
+.hero-content h1 {
+  background: linear-gradient(to right, #a27dfc, #667eea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+/* CTA-Container mit angepasstem Verlauf */
+.cta-container {
+  text-align: center;
+  padding: 50px 20px;
+  margin: 50px auto;
+  max-width: 800px;
+  background: rgba(41, 50, 116, 0.8);
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(102, 126, 234, 0.3);
+  color: #ffffff;
+  backdrop-filter: blur(5px);
+}
+
+.cta-container h2 {
+  color: #a27dfc;
+}
+
+.cta-container p {
+  color: #ffffff;
+}
+
+/* Anpassung für Contact-Box */
+.contact-box {
+  width: 45%;
+  max-width: 500px;
+  background: rgba(41, 50, 116, 0.8);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  text-align: left;
+  border: 1px solid rgba(102, 126, 234, 0.3);
+  color: #ffffff;
+  backdrop-filter: blur(5px);
+}
+
+.contact-box label {
+  color: #ffffff;
+}
+
+/* Button-Stil wie im Screenshot */
+button, .cta-button {
+  background: linear-gradient(to right, #4568dc, #667eea);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+  font-weight: 500;
+}
+
+button:hover, .cta-button:hover {
+  background: linear-gradient(to right, #3f5bd5, #5a72e0);
+  transform: scale(1.05);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Links in den Cards anpassen */
+.card a, .card-story a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.card a:hover, .card-story a:hover {
+  text-decoration: none;
+}
+
+/* Footer-Anpassung */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(10, 23, 54, 0.9);
+  color: white;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+}
+
+footer a {
+  color: #a27dfc;
+}
+
+footer a:hover {
+  color: #b59dfd;
+  text-decoration: none;
+}
+
+/* Header-Anpassung */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: rgba(10, 23, 54, 0.9);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* Navigation-Links anpassen */
+nav ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+  color: #a27dfc;
+}
+
+/* Qualifikations-Box ähnlich wie im Screenshot */
+.card.qualification {
+  background: rgba(34, 42, 98, 0.8);
+  border-left: 4px solid #a27dfc;
+}
