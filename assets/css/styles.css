@@ -1,3 +1,6 @@
+/* Google Fonts einbinden */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap');
+
 /* Reset-Stile, um Standardwerte der Browser zu entfernen */
 * {
   margin: 0;
@@ -1286,4 +1289,56 @@ footer {
       width: 100% !important;
       box-sizing: border-box !important;
   }
+}
+
+/* Aktualisierte Schriftarten und Typografie */
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  font-weight: 300;
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+/* Überschriften */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+/* Logo-Text bearbeiten */
+.hero-content h1 {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 700;
+  font-size: 3.5rem;
+  letter-spacing: 1px;
+}
+
+/* Navigation verbessern */
+nav ul li a {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Texte in Cards */
+.card p, .card-story p {
+  font-family: 'Roboto', Arial, sans-serif;
+  font-weight: 300;
+  font-size: 1.05rem;
+  line-height: 1.8;
 }
