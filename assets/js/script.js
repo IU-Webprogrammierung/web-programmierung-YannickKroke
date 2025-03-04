@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", function() {
   
   // Funktion zum Überprüfen, ob ein Element im Viewport ist
   function checkReveal() {
-   
     const triggerBottom = window.innerHeight * 0.95;
     
     sections.forEach(section => {
@@ -30,20 +29,17 @@ document.addEventListener("DOMContentLoaded", function() {
   // Event-Listener für Scroll-Events
   window.addEventListener("scroll", checkReveal);
   
-  // Die Hamburger-Menü-Funktionalität wird beibehalten
+  // Die Hamburger-Menü-Funktionalität
   const menuToggle = document.querySelector(".menu-toggle");
   const nav = document.querySelector("nav");
   
   if (menuToggle && nav) {
-    // Bestehende Event-Listener entfernen
-    menuToggle.removeEventListener("click", toggleMenu);
-    
-    // Neue Funktion definieren
+    // HIER IST DIE ÄNDERUNG: Event-Listener nicht entfernen, sondern direkt hinzufügen
     function toggleMenu() {
       nav.classList.toggle("active");
     }
     
-    // Event-Listener neu hinzufügen
+    // Event-Listener hinzufügen
     menuToggle.addEventListener("click", toggleMenu);
   }
   
