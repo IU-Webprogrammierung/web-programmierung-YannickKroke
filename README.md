@@ -56,8 +56,8 @@ skyhaven/
 ├── datenschutz.html            # Datenschutzerklärung
 ├── assets/
 │   ├── components/             # Wiederverwendbare HTML-Komponenten
-│   │   ├── navbar.html         # Navigation und Social Media Icons
-│   │   └── footer.html         # Footer mit Links und Copyright
+│   │   ├── navbar.html         # Navigation 
+│   │   └── footer.html         # Footer mit Links, Copyright und Social Media Icons
 │   ├── css/
 │   │   └── styles.css          # Haupt-Stylesheet
 │   ├── js/
