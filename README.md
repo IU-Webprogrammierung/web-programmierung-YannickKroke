@@ -28,7 +28,6 @@ Die Website passt sich automatisch an verschiedene Bildschirmgrößen an:
 - **Smartphone**: Optimierte mobile Ansicht bei ≤ 768px Breite
   - 1-spaltiges Layout
   - Angepasste Bildgrößen und Abstände
-  - Horizontal angeordnete Social-Media-Icons am unteren Bildschirmrand
 
 ### Besondere Features
 - **Modularer Aufbau**: Navbar und Footer als wiederverwendbare Komponenten
