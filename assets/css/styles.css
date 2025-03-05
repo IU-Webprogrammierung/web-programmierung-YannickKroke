@@ -25,7 +25,12 @@ body {
 }
 
 /* TYPOGRAFIE */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: bold;
   margin-bottom: 20px;
   color: #a27dfc;
@@ -92,7 +97,7 @@ nav ul li a:hover {
 }
 
 nav ul li a::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 0;
   height: 2px;
@@ -184,7 +189,8 @@ nav ul li a:hover::after {
   text-align: center;
   border: 1px solid rgba(102, 126, 234, 0.3);
   backdrop-filter: blur(5px);
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background 0.3s ease;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out,
+    background 0.3s ease;
   animation: fadeInUp 0.8s ease-out;
 }
 
@@ -246,11 +252,21 @@ nav ul li a:hover::after {
   padding: 20px;
 }
 
-.grid-container .card:nth-child(1) { animation-delay: 0.1s; }
-.grid-container .card:nth-child(2) { animation-delay: 0.2s; }
-.grid-container .card:nth-child(3) { animation-delay: 0.3s; }
-.grid-container .card:nth-child(4) { animation-delay: 0.4s; }
-.grid-container .card:nth-child(5) { animation-delay: 0.5s; }
+.grid-container .card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.grid-container .card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.grid-container .card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.grid-container .card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.grid-container .card:nth-child(5) {
+  animation-delay: 0.5s;
+}
 
 /* BILDER & GALERIEN */
 img {
@@ -327,7 +343,8 @@ img {
 }
 
 /* BUTTONS */
-button, .cta-button {
+button,
+.cta-button {
   background: linear-gradient(to right, #4568dc, #667eea);
   color: white;
   border: none;
@@ -339,7 +356,8 @@ button, .cta-button {
   font-weight: 500;
 }
 
-button:hover, .cta-button:hover {
+button:hover,
+.cta-button:hover {
   background: linear-gradient(to right, #3f5bd5, #5a72e0);
   transform: scale(1.05);
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
@@ -401,7 +419,8 @@ form label {
   margin: 10px 0 5px;
 }
 
-form input, form textarea {
+form input,
+form textarea {
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
@@ -438,7 +457,9 @@ form button {
 }
 
 /* ANKERPUNKTE */
-#immobilien, #veranstaltungen, #baustellen {
+#immobilien,
+#veranstaltungen,
+#baustellen {
   scroll-margin-top: 80px;
 }
 
@@ -517,7 +538,7 @@ footer {
 }
 
 .footer-section h3::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   bottom: 0;
@@ -649,7 +670,7 @@ footer {
   .card img {
     height: 400px;
   }
-  
+
   .hero-content h1 {
     font-size: 2.5rem;
   }
@@ -714,11 +735,11 @@ footer {
   .showcase-image img {
     height: 300px;
   }
-  
+
   .card img {
     height: 350px;
   }
-  
+
   .footer-container {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -732,7 +753,8 @@ footer {
     align-items: center;
   }
 
-  .text, .profilbild img {
+  .text,
+  .profilbild img {
     width: 100%;
   }
 
@@ -771,31 +793,31 @@ footer {
   .cta-container h2 {
     font-size: 1.6rem;
   }
-  
+
   .card img {
     height: 300px;
   }
-  
+
   .footer-container {
     grid-template-columns: 1fr;
     gap: 30px;
   }
-  
+
   .newsletter-form {
     flex-direction: column;
     gap: 10px;
   }
-  
+
   .newsletter-form input,
   .newsletter-form button {
     width: 100%;
     border-radius: 4px;
   }
-  
+
   .hero-content h1 {
     font-size: 2rem;
   }
-  
+
   .hero-content p {
     font-size: 1.2rem;
   }
@@ -806,27 +828,27 @@ footer {
   .hero-content h1 {
     font-size: 1.8rem;
   }
-  
+
   .hero-content p {
     font-size: 1rem;
   }
-  
+
   h2 {
     font-size: 1.5rem;
   }
-  
+
   .card {
     padding: 15px;
   }
-  
+
   .card img {
     height: 200px;
   }
-  
+
   .footer-social {
     gap: 10px;
   }
-  
+
   .footer-social a {
     width: 30px;
     height: 30px;
