@@ -3,48 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Impressum</title>
+    <title>Impressum - SkyHaven</title>
     <link rel="stylesheet" href="assets/css/styles.css" />
+    <!-- jQuery hinzufügen -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Komponenten-Skript hinzufügen -->
+    <script src="assets/js/components.js"></script>
+    <!-- Originales Skript beibehalten für weitere Funktionalität -->
+    <script src="assets/js/script.js"></script>
   </head>
-  <script src="assets/js/script.js" defer></script
   <body>
-    
-</div>
-    <!-- Header-Bereich -->
-    <header>
-      <div class="logo">
-        <a href="index.html">
-          <img src="assets/images/logo.png" alt="SkyHaven Logo" />
-        </a>
-      </div>
-      <div class="menu-toggle">☰</div>
-      <!-- Hamburger-Icon -->
-      <!-- Navigation -->
-      <nav>
-        <ul>
-          <li><a href="index.html">Startseite</a></li>
-          <li><a href="Dienstleistungen.html">Leistungen</a></li>
-          <li><a href="Uebermich.html">Über mich</a></li>
-          <li><a href="Kontakt.html">Kontakt</a></li>
-        </ul>
-      </nav>
-    </header>
+    <!-- Navbar-Container -->
+    <div id="navbar-container"></div>
 
     <!-- Impressum-Bereich -->
-    <section id="impressum" style="margin: 20px auto; text-align: center">
+    <section id="impressum" class="section">
       <h1>Impressum</h1>
 
-      <div
-        style="
-          width: 80%;
-          max-width: 800px;
-          border: 1px solid black;
-          padding: 20px;
-          border-radius: 5px;
-          margin: 20px auto;
-          text-align: left;
-        "
-      >
+      <div class="card card-story">
         <h2>Angaben gemäß § 5 TMG</h2>
         <p>
           SkyHaven<br />
@@ -86,75 +62,7 @@
       </div>
     </section>
 
-    <!-- Erweiterter Footer mit mehrspaltigen Layout -->
-
-<footer>
-  <div class="footer-container">
-      <!-- Über SkyHaven Sektion -->
-      <div class="footer-section">
-          <h3>Über SkyHaven</h3>
-          <p>Professionelle Drohnenaufnahmen für Ihre Projekte. Mit modernster Technik und jahrelanger Erfahrung bieten wir einzigartige Perspektiven aus der Luft.</p>
-          <!-- Social Media Icons im Footer (korrigiert) -->
-          <div class="footer-social">
-              <a href="https://www.facebook.com" target="_blank">
-                  <i class="social-circle"></i>
-              </a>
-              <a href="https://www.instagram.com" target="_blank">
-                  <i class="social-circle"></i>
-              </a>
-              <a href="https://twitter.com" target="_blank">
-                  <i class="social-circle"></i>
-              </a>
-              <a href="https://youtube.com" target="_blank">
-                  <i class="social-circle"></i>
-              </a>
-          </div>
-      </div>
-
-      <!-- Schnelllinks Sektion -->
-      <div class="footer-section">
-          <h3>Schnelllinks</h3>
-          <ul class="footer-links">
-              <li><a href="index.html">Startseite</a></li>
-              <li><a href="Dienstleistungen.html">Unsere Leistungen</a></li>
-              <li><a href="Uebermich.html">Über mich</a></li>
-              <li><a href="Kontakt.html">Kontakt</a></li>
-              <li><a href="Impressum.html">Impressum</a></li>
-              <li><a href="datenschutz.html">Datenschutz</a></li>
-          </ul>
-      </div>
-
-      <!-- Dienstleistungen Sektion -->
-      <div class="footer-section">
-          <h3>Dienstleistungen</h3>
-          <ul class="footer-links">
-              <li><a href="Dienstleistungen.html#immobilien">Immobilienfotografie</a></li>
-              <li><a href="Dienstleistungen.html#veranstaltungen">Veranstaltungsaufnahmen</a></li>
-              <li><a href="Dienstleistungen.html#baustellen">Baustellendokumentation</a></li>
-              <li><a href="Kontakt.html">Individuelle Anfragen</a></li>
-          </ul>
-      </div>
-
-      <!-- Kontakt Sektion -->
-      <div class="footer-section">
-          <h3>Kontakt</h3>
-          <p>Musterstraße 123<br>22222 Musterstadt</p>
-          <p>+49 (0) 123 456789</p>
-          <p>info@skyhaven.de</p>
-          
-          <!-- Newsletter (korrigiert) -->
-          <h3>Newsletter</h3>
-          <div class="newsletter-form">
-              <input type="email" placeholder="Ihre E-Mail-Adresse">
-              <button type="submit">Anmelden</button>
-          </div>
-      </div>
-  </div>
-
-  <!-- Copyright-Bereich -->
-  <div class="copyright">
-      <p>&copy; 2025 SkyHaven. Alle Rechte vorbehalten.</p>
-  </div>
-</footer>
-</body>
+    <!-- Footer-Container -->
+    <div id="footer-container"></div>
+  </body>
 </html>
