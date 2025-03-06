@@ -1,3 +1,6 @@
+/* Google Fonts Import für moderne Schriftarten */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap');
+
 /* RESET & GRUNDLEGENDE STILE */
 * {
   margin: 0;
@@ -10,11 +13,14 @@ html {
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
   background: linear-gradient(135deg, #0a1736, #1a237e, #311b92);
   background-attachment: fixed;
   color: #ffffff;
   line-height: 1.6;
+  font-weight: 400;
+  font-size: clamp(1rem, calc(0.85rem + 0.4vw), 1.1rem);
+  letter-spacing: 0.01em;
 }
 
 .container {
@@ -31,25 +37,61 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: bold;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 600;
   margin-bottom: 20px;
   color: #a27dfc;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
   animation: fadeInLeft 0.8s ease-out;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin-bottom: 1.2rem;
+}
+
+h3 {
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  font-weight: 500;
 }
 
 p {
   margin-bottom: 15px;
+  font-size: clamp(1rem, calc(0.85rem + 0.4vw), 1.1rem);
 }
 
 a {
   color: #a27dfc;
   text-decoration: none;
-  transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out, transform 0.3s ease;
+  position: relative;
 }
 
 a:hover {
   color: #b59dfd;
   text-decoration: none;
+}
+
+a:not(.cta-button, .social-icons a)::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background: #b59dfd;
+  transition: width 0.3s ease;
+}
+
+a:not(.cta-button, .social-icons a):hover::after {
+  width: 100%;
 }
 
 /* HEADER & NAVIGATION */
@@ -85,11 +127,15 @@ nav ul li {
 }
 
 nav ul li a {
+  font-family: 'Montserrat', sans-serif;
   display: block;
   color: #ffffff !important;
-  font-weight: bold;
+  font-weight: 500;
   padding: 10px 15px;
   position: relative;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
 }
 
 nav ul li a:hover {
@@ -109,6 +155,17 @@ nav ul li a::after {
 
 nav ul li a:hover::after {
   width: 100%;
+}
+
+nav ul li a.active {
+  color: #a27dfc !important;
+  font-weight: 600;
+}
+
+nav ul li a.active::after {
+  width: 100%;
+  background-color: #a27dfc;
+  height: 2px;
 }
 
 .menu-toggle {
@@ -151,11 +208,24 @@ nav ul li a:hover::after {
 }
 
 .hero-content h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
   background: linear-gradient(to right, #a27dfc, #667eea);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
+  background-clip: text;
+  color: transparent;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  margin-bottom: 0.8rem;
+  letter-spacing: 0.05em;
+  text-shadow: 0 2px 10px rgba(102, 126, 234, 0.2);
+}
+
+.hero-content p {
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  font-weight: 300;
+  letter-spacing: 0.03em;
+  opacity: 0.95;
 }
 
 /* SECTION LAYOUTS */
@@ -202,10 +272,17 @@ nav ul li a:hover::after {
 
 .card h3 {
   color: #a27dfc;
+  position: relative;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
 .card p {
   color: #ffffff;
+  font-weight: 300;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
 }
 
 .card img {
@@ -241,6 +318,32 @@ nav ul li a:hover::after {
   border: 1px solid rgba(102, 126, 234, 0.3);
   color: #ffffff;
   backdrop-filter: blur(5px);
+}
+
+.card-story h2 {
+  font-size: clamp(1.8rem, 3vw, 2.2rem);
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.card-story h2::after {
+  content: '';
+  position: absolute;
+  width: 40%;
+  height: 3px;
+  bottom: -10px;
+  left: 30%;
+  background: linear-gradient(to right, #a27dfc, #667eea);
+  border-radius: 10px;
+}
+
+.card-story p {
+  font-size: clamp(1rem, calc(0.9rem + 0.3vw), 1.1rem);
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 1.2rem;
+  font-weight: 300;
 }
 
 /* GRID LAYOUTS */
@@ -338,13 +441,23 @@ img {
   height: 220px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid #007acc;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 3px solid #a27dfc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Spezifische Animation für das Profilbild */
+.profilbild {
+  animation: fadeInLeft 1.2s ease-out;
 }
 
 /* BUTTONS */
 button,
 .cta-button {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.9rem;
   background: linear-gradient(to right, #4568dc, #667eea);
   color: white;
   border: none;
@@ -353,7 +466,6 @@ button,
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
-  font-weight: 500;
 }
 
 button:hover,
@@ -414,9 +526,10 @@ button:hover,
 }
 
 form label {
-  font-weight: bold;
+  font-weight: 500;
   display: block;
   margin: 10px 0 5px;
+  letter-spacing: 0.02em;
 }
 
 form input,
@@ -426,6 +539,8 @@ form textarea {
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.95rem;
 }
 
 form button {
@@ -454,6 +569,8 @@ form button {
   color: #ffffff;
   font-size: 1.2rem;
   margin-bottom: 30px;
+  font-weight: 300;
+  letter-spacing: 0.02em;
 }
 
 /* ANKERPUNKTE */
@@ -519,6 +636,10 @@ footer {
   box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.2);
   border-top: 1px solid rgba(102, 126, 234, 0.3);
   text-align: left;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
 }
 
 .footer-container {
@@ -530,11 +651,13 @@ footer {
 }
 
 .footer-section h3 {
+  font-family: 'Montserrat', sans-serif;
   color: #a27dfc;
   margin-bottom: 20px;
   font-size: 1.2rem;
   position: relative;
   padding-bottom: 10px;
+  font-weight: 600;
 }
 
 .footer-section h3::after {
@@ -552,6 +675,7 @@ footer {
   line-height: 1.6;
   margin-bottom: 15px;
   font-size: 0.95rem;
+  font-weight: 300;
 }
 
 .footer-links {
@@ -569,6 +693,7 @@ footer {
   transition: color 0.3s ease, transform 0.3s ease;
   display: inline-block;
   position: relative;
+  font-weight: 300;
 }
 
 .footer-links a:hover {
@@ -623,6 +748,8 @@ footer {
 .newsletter h3 {
   color: #a27dfc;
   margin-bottom: 15px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
 }
 
 .newsletter-form {
@@ -638,10 +765,13 @@ footer {
   background: rgba(255, 255, 255, 0.1);
   color: white;
   border-radius: 4px 0 0 4px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.95rem;
 }
 
 .newsletter-form input::placeholder {
   color: #b8b8b8;
+  font-weight: 300;
 }
 
 .newsletter-form button {
@@ -652,6 +782,9 @@ footer {
   border-radius: 0 4px 4px 0;
   cursor: pointer;
   transition: all 0.3s ease;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.05em;
 }
 
 .newsletter-form button:hover {
@@ -663,6 +796,7 @@ footer {
   color: #b8b8b8;
   font-size: 0.9rem;
   padding-top: 20px;
+  font-weight: 300;
 }
 
 /* RESPONSIVE DESIGN - für alle Geräte */
@@ -672,7 +806,7 @@ footer {
   }
 
   .hero-content h1 {
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 5vw, 2.5rem);
   }
 }
 
@@ -742,6 +876,11 @@ footer {
 
   .footer-container {
     grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .card-story h2::after {
+    width: 30%;
+    left: 35%;
   }
 }
 
@@ -815,11 +954,16 @@ footer {
   }
 
   .hero-content h1 {
-    font-size: 2rem;
+    font-size: clamp(1.8rem, 8vw, 2.2rem);
   }
 
   .hero-content p {
     font-size: 1.2rem;
+  }
+  
+  .card-story h2::after {
+    width: 50px;
+    left: calc(50% - 25px);
   }
 }
 
@@ -854,6 +998,7 @@ footer {
     height: 30px;
   }
 }
+
 @keyframes slideDown {
   0% {
     transform: translateY(-100%);
@@ -868,4 +1013,72 @@ footer {
 /* Klasse, die auf das Bild angewendet wird */
 .animated-photo {
   animation: slideDown 1s ease-out forwards;
+}
+/* Verbesserte Karten mit vollständig sichtbarem Text */
+.card {
+  display: flex;
+  flex-direction: column;
+  height: auto; /* Automatische Höhe statt fester Höhe */
+  min-height: 500px; /* Minimale Höhe für Konsistenz */
+  padding: 0 0 20px 0;
+  background: rgba(41, 50, 116, 0.8);
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.card a {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-decoration: none;
+}
+
+.card img {
+  width: 100%;
+  height: 380px; /* Behalte die größeren Bilder bei */
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+  margin-bottom: 0; /* Reduzierter Abstand */
+}
+
+.card h3 {
+  padding: 20px 20px 5px;
+  font-size: clamp(1.3rem, 2vw, 1.6rem);
+  color: #a27dfc;
+}
+
+.card p {
+  padding: 10px 20px 20px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #ffffff;
+  /* Entferne Höhenbegrenzungen, damit der Text vollständig angezeigt wird */
+  max-height: none;
+  overflow: visible;
+}
+
+/* Für bessere Abstände und Konsistenz */
+.section .grid-container {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 0;
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 1024px) {
+  .card img {
+    height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .card img {
+    height: 320px;
+  }
+}
+/* Alternative Lösung, falls CSS-Selektoren nicht funktionieren */
+.card:nth-child(1) h3 {
+  font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+  line-height: 1.2;
+  padding-bottom: 0;
 }
