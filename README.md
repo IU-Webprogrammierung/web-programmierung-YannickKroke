@@ -18,6 +18,40 @@ SkyHaven ist eine Präsentationswebsite für einen Drohnendienstleister, die hoc
 - **CSS3**: Fortschrittliche Styling-Funktionen mit Animationen und Responsive Design
 - **JavaScript/jQuery**: Dynamische Komponenten und interaktive Elemente
 - **Komponentenbasierte Architektur**: Wiederverwendbare Elemente für konsistentes Design
+SkyHaven - Drohnendienstleister Website
+Eine moderne, responsive Website für einen Drohnendienstleister mit elegantem Design und benutzerfreundlicher Navigation.
+Show Image
+Projektübersicht
+SkyHaven ist eine Präsentationswebsite für einen Drohnendienstleister, die hochwertige Luftbildaufnahmen für verschiedene Anwendungsbereiche anbietet:
+
+Immobilienfotografie aus der Luft
+Veranstaltungsdokumentation
+Baustellendokumentation
+
+Technische Details
+Verwendete Technologien
+
+HTML5: Moderne Semantische Struktur
+CSS3: Fortschrittliche Styling-Funktionen mit Animationen und Responsive Design
+JavaScript/jQuery: Dynamische Komponenten und interaktive Elemente
+Komponentenbasierte Architektur: Wiederverwendbare Elemente für konsistentes Design
+
+Typografie
+Die Website nutzt ein modernes, hochwertiges Typografie-System:
+
+Primäre Schriftart: Montserrat (Sans-serif) für Überschriften
+Sekundäre Schriftart: Open Sans für Fließtext
+Fallback: System Font Stack für bessere Performance
+Responsive Typografie: Verwendung von clamp() für flüssige Schriftgrößen
+Variable Schriftstärken:
+
+Leicht (300) für sekundären Text
+Normal (400) für Standard-Fließtext
+Medium (500) für wichtigere Elemente
+Semi-Bold (600) für Überschriften
+Bold (700) für Haupt-Headlines
+
+
 
 ### Responsive Breakpoints
 Die Website passt sich automatisch an verschiedene Bildschirmgrößen an:
