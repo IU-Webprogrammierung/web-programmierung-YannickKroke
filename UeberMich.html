@@ -1,72 +1,109 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Über mich - SkyHaven</title>
-  <link rel="stylesheet" href="assets/css/styles.css">
-  <!-- jQuery hinzufügen -->
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <!-- Komponenten-Skript hinzufügen -->
-  <script src="assets/js/components.js"></script>
-  <!-- Originales Skript beibehalten für weitere Funktionalität -->
-  <script src="assets/js/script.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Über mich - SkyHaven</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <!-- jQuery hinzufügen -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Komponenten-Skript hinzufügen -->
+    <script src="assets/js/components.js"></script>
+    <!-- Originales Skript beibehalten für weitere Funktionalität -->
+    <script src="assets/js/script.js"></script>
 
-  <!-- Inline-Skript für Profilbild-Animation -->
-  <script>
-    $(document).ready(function() {
-      // Stelle sicher, dass das Profilbild sofort animiert wird
-      $(".profilbild").css({
-        "animation": "fadeInLeft 1.2s ease-out",
-        "opacity": "1"
+    <!-- Inline-Skript für Profilbild-Animation -->
+    <script>
+      $(document).ready(function () {
+        // Stelle sicher, dass das Profilbild sofort animiert wird
+        $(".profilbild").css({
+          animation: "fadeInLeft 1.2s ease-out",
+          opacity: "1",
+        });
       });
-    });
-  </script>
-</head>
+    </script>
+  </head>
 
-<body>
-  <!-- Navbar-Container -->
-  <div id="navbar-container"></div>
+  <body>
+    <!-- Navbar-Container -->
+    <div id="navbar-container"></div>
 
-  <!-- Hauptinhalt -->
-  <section class="section flex-container">
+    <!-- Hauptinhalt -->
+    <section class="section flex-container">
       <div class="profilbild">
-          <img src="assets/images/Übermich1.jpeg" alt="Profilbild Yannick">
+        <img src="assets/images/Übermich1.jpeg" alt="Profilbild Yannick" />
       </div>
       <div class="text">
-          <h2>Hallo, ich bin Yannick</h2>
-          <p>Mit einer Leidenschaft für Drohnentechnologie und Fotografie biete ich Ihnen hochwertige Dienstleistungen aus der Luft.</p>
+        <h2>Hallo, ich bin Yannick</h2>
+        <p>
+          Mit einer Leidenschaft für Drohnentechnologie und Fotografie biete ich
+          Ihnen hochwertige Dienstleistungen aus der Luft.
+        </p>
       </div>
-  </section>
+    </section>
 
- <!-- Meine Geschichte als Card mit Call-to-Action -->
-<section class="section">
-  <div class="card card-story">
-      <h2>Meine Geschichte mit der Drohnenfotografie</h2>
-      <p>Schon früh hat mich die Kombination aus Technik und Kreativität fasziniert. Ich erinnere mich noch gut an meine erste Drohne – ein einfaches Modell mit begrenzter Reichweite. Doch bereits die ersten Aufnahmen aus der Luft haben mich begeistert. Ich konnte die Welt aus einer neuen Perspektive sehen, Details entdecken, die sonst verborgen bleiben.</p>
-      <p>Mit der Zeit habe ich meine Fähigkeiten verbessert, mich mit modernster Drohnentechnologie auseinandergesetzt und begonnen, professionelle Aufnahmen für verschiedene Bereiche anzufertigen. Ob für <strong>Immobilien</strong>, <strong>Veranstaltungen</strong> oder <strong>Baudokumentationen</strong> – meine Drohnenfotografie hat sich stetig weiterentwickelt.</p>
-      <p>Heute biete ich Ihnen hochwertige Luftbildaufnahmen, die Ihre Projekte, Events oder Immobilien aus einer einzigartigen Perspektive zeigen. Lassen Sie uns gemeinsam Ihre Vision aus der Luft verwirklichen!</p>
+    <!-- Meine Geschichte als Card mit Call-to-Action -->
+    <section class="section">
+      <div class="card card-story">
+        <h2>Meine Geschichte mit der Drohnenfotografie</h2>
+        <p>
+          Schon früh hat mich die Kombination aus Technik und Kreativität
+          fasziniert. Ich erinnere mich noch gut an meine erste Drohne – ein
+          einfaches Modell mit begrenzter Reichweite. Doch bereits die ersten
+          Aufnahmen aus der Luft haben mich begeistert. Ich konnte die Welt aus
+          einer neuen Perspektive sehen, Details entdecken, die sonst verborgen
+          bleiben.
+        </p>
+        <p>
+          Mit der Zeit habe ich meine Fähigkeiten verbessert, mich mit
+          modernster Drohnentechnologie auseinandergesetzt und begonnen,
+          professionelle Aufnahmen für verschiedene Bereiche anzufertigen. Ob
+          für <strong>Immobilien</strong>, <strong>Veranstaltungen</strong> oder
+          <strong>Baudokumentationen</strong> – meine Drohnenfotografie hat sich
+          stetig weiterentwickelt.
+        </p>
+        <p>
+          Heute biete ich Ihnen hochwertige Luftbildaufnahmen, die Ihre
+          Projekte, Events oder Immobilien aus einer einzigartigen Perspektive
+          zeigen. Lassen Sie uns gemeinsam Ihre Vision aus der Luft
+          verwirklichen!
+        </p>
 
-      <!-- Call-to-Action Button -->
-      <a href="Kontakt.html" class="cta-button">Jetzt Kontakt aufnehmen</a>
-  </div>
-</section>
+        <!-- Call-to-Action Button -->
+        <a href="Kontakt.html" class="cta-button">Jetzt Kontakt aufnehmen</a>
+      </div>
+    </section>
 
-
-
-  <!-- Qualifikationen & Ausrüstung -->
-  <section class="section grid-container">
+    <!-- Qualifikationen & Ausrüstung -->
+    <section class="section grid-container">
       <div class="card qualification">
-          <h3>Qualifikationen</h3>
-          <p>Ich verfüge über den offiziellen EU-Kompetenznachweis (A1/A3) sowie die professionelle Fernpilotenlizenz (A2), die mir erlauben, Drohnenflüge in verschiedenen Umgebungen rechtssicher durchzuführen. Diese Zertifizierungen bestätigen meine umfassende Kenntnis der aktuellen Luftfahrtvorschriften und garantieren Ihnen, dass alle Aufnahmen unter Einhaltung höchster Sicherheitsstandards und im Einklang mit den europäischen Drohnenverordnungen erstellt werden.</p>
+        <h3>Qualifikationen</h3>
+        <p>
+          Ich verfüge über den offiziellen EU-Kompetenznachweis (A1/A3) sowie
+          die professionelle Fernpilotenlizenz (A2), die mir erlauben,
+          Drohnenflüge in verschiedenen Umgebungen rechtssicher durchzuführen.
+          Diese Zertifizierungen bestätigen meine umfassende Kenntnis der
+          aktuellen Luftfahrtvorschriften und garantieren Ihnen, dass alle
+          Aufnahmen unter Einhaltung höchster Sicherheitsstandards und im
+          Einklang mit den europäischen Drohnenverordnungen erstellt werden.
+        </p>
       </div>
       <div class="card qualification">
-          <h3>Meine Ausrüstung</h3>
-          <p>Ich arbeite ausschließlich mit modernster DJI-Technologie, dem Marktführer für professionelle Luftbildaufnahmen. Mein Equipment umfasst hochwertige Drohnen der DJI Mavic und Phantom Serien, die mit präzisen Gimbal-Stabilisierungssystemen und 4K-Kameras ausgestattet sind. Diese Premium-Technik ermöglicht gestochen scharfe Bilder und ruhige Videoaufnahmen selbst bei anspruchsvollen Wetterbedingungen. Regelmäßige Firmware-Updates und sorgfältige Wartung garantieren zuverlässige und sichere Einsätze für Ihr Projekt.</p>
+        <h3>Meine Ausrüstung</h3>
+        <p>
+          Ich arbeite ausschließlich mit modernster DJI-Technologie, dem
+          Marktführer für professionelle Luftbildaufnahmen. Mein Equipment
+          umfasst hochwertige Drohnen der DJI Mavic und Phantom Serien, die mit
+          präzisen Gimbal-Stabilisierungssystemen und 4K-Kameras ausgestattet
+          sind. Diese Premium-Technik ermöglicht gestochen scharfe Bilder und
+          ruhige Videoaufnahmen selbst bei anspruchsvollen Wetterbedingungen.
+          Regelmäßige Firmware-Updates und sorgfältige Wartung garantieren
+          zuverlässige und sichere Einsätze für Ihr Projekt.
+        </p>
       </div>
-  </section>
+    </section>
 
-  <!-- Footer-Container -->
-  <div id="footer-container"></div>
-</body>
+    <!-- Footer-Container -->
+    <div id="footer-container"></div>
+  </body>
 </html>
