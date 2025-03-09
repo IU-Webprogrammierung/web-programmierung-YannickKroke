@@ -55,13 +55,11 @@ Bold (700) für Haupt-Headlines
 
 ### Responsive Breakpoints
 Die Website passt sich automatisch an verschiedene Bildschirmgrößen an:
-- **Desktop**: Vollständige Ansicht bei > 1024px Breite
-- **Tablet**: Angepasstes Layout bei ≤ 1024px Breite
-  - Hamburger-Menü statt horizontaler Navigation
-  - 2-spaltiges Grid statt 3-spaltigem Grid
-- **Smartphone**: Optimierte mobile Ansicht bei ≤ 768px Breite
-  - 1-spaltiges Layout
-  - Angepasste Bildgrößen und Abstände
+-	Große Bildschirme (bis 1200px) 
+-	Tablets (bis 1024px) 
+-	Smartphones (bis 768px) 
+-	Sehr kleine Geräte (bis 359px)
+
 
 ### Besondere Features
 - **Modularer Aufbau**: Navbar und Footer als wiederverwendbare Komponenten
