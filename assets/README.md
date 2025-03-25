@@ -1,1 +1,0 @@
-Dieser Ordner enthält alle statischen Ressourcen
