@@ -24,4 +24,92 @@
   .btn-primary {
     @apply bg-primary text-white hover:bg-primary/90;
   }
+
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-all duration-300;
+  }
+
+  .card-hover {
+    @apply hover:shadow-xl hover:-translate-y-1;
+  }
+
+  .section {
+    @apply py-16;
+  }
+
+  .section-title {
+    @apply text-3xl font-bold text-center mb-12;
+  }
+
+  .nav-link {
+    @apply text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-accent transition-colors;
+  }
+
+  .nav-link-active {
+    @apply text-primary dark:text-accent font-semibold;
+  }
+}
+
+/* Navbar Animationen */
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+nav {
+  animation: slideDown 0.3s ease-out;
+}
+
+/* Mobile Menu Animation */
+#mobile-menu {
+  transition: all 0.3s ease-in-out;
+}
+
+#mobile-menu.hidden {
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+}
+
+#mobile-menu:not(.hidden) {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Scroll Reveal Animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease-in-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Print Styles */
+@media print {
+  body {
+    @apply bg-white text-black;
+  }
+
+  nav, 
+  footer,
+  .no-print {
+    display: none !important;
+  }
+
+  .container {
+    @apply max-w-none px-0;
+  }
+
+  a {
+    text-decoration: none;
+  }
 } 

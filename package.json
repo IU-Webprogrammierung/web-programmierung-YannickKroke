@@ -4,11 +4,13 @@
   "description": "Drohnendienstleister im Norden",
   "scripts": {
     "dev": "npx tailwindcss -i ./assets/css/input.css -o ./assets/css/styles.css --watch",
-    "build": "npx tailwindcss -i ./assets/css/input.css -o ./assets/css/styles.css --minify"
+    "build": "npx tailwindcss -i ./assets/css/input.css -o ./assets/css/styles.css --minify",
+    "start": "npm run dev"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.1",
     "autoprefixer": "^10.4.17",
-    "postcss": "^8.4.35"
+    "postcss": "^8.4.35",
+    "jquery": "^3.7.1"
   }
 } 
