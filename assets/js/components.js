@@ -151,13 +151,28 @@ function initializeComponents() {
     });
   }
 
+  // Dark Mode Toggle Funktion
+  function toggleDarkMode() {
+    document.documentElement.classList.toggle('dark');
+    localStorage.setItem('darkMode', document.documentElement.classList.contains('dark'));
+  }
+
+  // Dark Mode Toggle für Desktop
+  const darkModeToggle = document.getElementById('dark-mode-toggle');
+  if (darkModeToggle) {
+    darkModeToggle.addEventListener('click', toggleDarkMode);
+  }
+
   // Dark Mode Toggle für mobile Ansicht
   const darkModeToggleMobile = document.getElementById('dark-mode-toggle-mobile');
   if (darkModeToggleMobile) {
-    darkModeToggleMobile.addEventListener('click', () => {
-      document.documentElement.classList.toggle('dark');
-      localStorage.setItem('darkMode', document.documentElement.classList.contains('dark'));
-    });
+    darkModeToggleMobile.addEventListener('click', toggleDarkMode);
+  }
+
+  // Dark Mode aus localStorage wiederherstellen
+  const darkMode = localStorage.getItem('darkMode');
+  if (darkMode === 'true') {
+    document.documentElement.classList.add('dark');
   }
 
   // Aktuelle Seite in der Navigation hervorheben
