@@ -70,3 +70,49 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+// Back to Top Button Funktionalität
+const backToTopButton = document.getElementById('back-to-top');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    backToTopButton.classList.remove('opacity-0', 'invisible');
+  } else {
+    backToTopButton.classList.add('opacity-0', 'invisible');
+  }
+});
+
+backToTopButton.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
+
+// Dark Mode Funktionalität
+const darkModeToggle = document.getElementById('dark-mode-toggle');
+const html = document.documentElement;
+
+// Prüfe gespeicherte Dark Mode Einstellung
+if (localStorage.getItem('darkMode') === 'true') {
+  html.classList.add('dark');
+}
+
+// Dark Mode Toggle Event Listener
+darkModeToggle?.addEventListener('click', () => {
+  html.classList.toggle('dark');
+  localStorage.setItem('darkMode', html.classList.contains('dark'));
+});
+
+// Smooth Scroll für alle internen Links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+  });
+});
