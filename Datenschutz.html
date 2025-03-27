@@ -1,81 +1,103 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Datenschutz - SkyHaven</title>
+    <!-- Tailwind CSS -->
     <link rel="stylesheet" href="assets/css/styles.css" />
-    <!-- jQuery hinzufügen -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <!-- Komponenten-Skript hinzufügen -->
-    <script src="assets/js/components.js"></script>
-    <!-- Originales Skript beibehalten für weitere Funktionalität -->
-    <script src="assets/js/script.js"></script>
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <style>
+      .page-gradient {
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+        background-attachment: fixed;
+      }
+    </style>
   </head>
-
-  <body>
+  <body class="min-h-screen page-gradient dark:page-gradient text-primary dark:text-white transition-colors duration-200">
     <!-- Navbar-Container -->
-    <div id="navbar-container"></div>
+    <div id="navbar-container" class="relative z-50"></div>
 
-    <!-- Datenschutz-Erklärung -->
-    <section class="section">
-      <h1>Datenschutzerklärung</h1>
-      <div class="card card-story">
-        <p>
-          Wir freuen uns über Ihr Interesse an unserer Website. Der Schutz Ihrer
-          Privatsphäre ist für uns sehr wichtig. Nachstehend informieren wir Sie
-          ausführlich über den Umgang mit Ihren Daten.
-        </p>
+    <!-- Datenschutz Einführung -->
+    <section class="relative pt-32 pb-16 px-4">
+      <div class="container mx-auto">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6 text-primary dark:text-white">Datenschutzerklärung</h1>
+        </div>
+      </div>
+    </section>
 
-        <h3>1. Verantwortliche Stelle</h3>
-        <p>Verantwortlich für die Datenverarbeitung auf dieser Website ist:</p>
-        <p>
-          SkyHaven<br />
-          Musterstraße 123<br />
-          12345 Musterstadt<br />
-          E-Mail: info@skyhaven.de<br />
-          Telefon: 01234 567890
-        </p>
+    <section class="py-8 px-4">
+      <div class="container mx-auto">
+        <div class="bg-white/80 dark:bg-white/10 backdrop-blur-sm rounded-lg shadow-lg p-8 mb-8">
+          <h2 class="text-2xl font-bold mb-4 text-primary dark:text-white">1. Datenschutz auf einen Blick</h2>
+          <div class="text-gray-700 dark:text-white/90 space-y-3">
+            <h3 class="text-xl font-semibold mb-2 text-primary dark:text-white">Allgemeine Hinweise</h3>
+            <p>Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie unsere Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können. Ausführliche Informationen zum Thema Datenschutz entnehmen Sie unserer unter diesem Text aufgeführten Datenschutzerklärung.</p>
+            
+            <h3 class="text-xl font-semibold mb-2 text-primary dark:text-white mt-6">Datenerfassung auf unserer Website</h3>
+            <p><strong>Wer ist verantwortlich für die Datenerfassung auf dieser Website?</strong></p>
+            <p>Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten können Sie dem Impressum dieser Website entnehmen.</p>
+            
+            <p><strong>Wie erfassen wir Ihre Daten?</strong></p>
+            <p>Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann es sich z.B. um Daten handeln, die Sie in ein Kontaktformular eingeben.</p>
+            <p>Andere Daten werden automatisch beim Besuch der Website durch unsere IT-Systeme erfasst. Das sind vor allem technische Daten (z.B. Internetbrowser, Betriebssystem oder Uhrzeit des Seitenaufrufs). Die Erfassung dieser Daten erfolgt automatisch, sobald Sie unsere Website betreten.</p>
+            
+            <p><strong>Wofür nutzen wir Ihre Daten?</strong></p>
+            <p>Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu gewährleisten. Andere Daten können zur Analyse Ihres Nutzerverhaltens verwendet werden.</p>
+            
+            <p><strong>Welche Rechte haben Sie bezüglich Ihrer Daten?</strong></p>
+            <p>Sie haben jederzeit das Recht unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten. Sie haben außerdem ein Recht, die Berichtigung, Sperrung oder Löschung dieser Daten zu verlangen. Hierzu sowie zu weiteren Fragen zum Thema Datenschutz können Sie sich jederzeit unter der im Impressum angegebenen Adresse an uns wenden. Des Weiteren steht Ihnen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu.</p>
+          </div>
+        </div>
 
-        <h3>2. Erhebung und Speicherung personenbezogener Daten</h3>
-        <p>
-          Beim Besuch unserer Website speichern unsere Webserver standardmäßig
-          temporär die Verbindungsdaten des anfragenden Rechners, die Seiten,
-          die Sie bei uns besuchen, das Datum und die Dauer des Besuchs, die
-          Erkennungsdaten des verwendeten Browser- und Betriebssystem-Typs sowie
-          die Website, von der aus Sie uns besuchen. Weitere personenbezogene
-          Daten werden nur erfasst, wenn Sie diese freiwillig angeben, z. B. im
-          Rahmen einer Anfrage über unser Kontaktformular.
-        </p>
+        <div class="bg-white/80 dark:bg-white/10 backdrop-blur-sm rounded-lg shadow-lg p-8 mb-8">
+          <h2 class="text-2xl font-bold mb-4 text-primary dark:text-white">2. Allgemeine Hinweise und Pflichtinformationen</h2>
+          <div class="text-gray-700 dark:text-white/90 space-y-3">
+            <h3 class="text-xl font-semibold mb-2 text-primary dark:text-white">Datenschutz</h3>
+            <p>Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.</p>
+            <p>Wenn Sie diese Website benutzen, werden verschiedene personenbezogene Daten erhoben. Personenbezogene Daten sind Daten, mit denen Sie persönlich identifiziert werden können. Die vorliegende Datenschutzerklärung erläutert, welche Daten wir erheben und wofür wir sie nutzen. Sie erläutert auch, wie und zu welchem Zweck das geschieht.</p>
+            <p>Wir weisen darauf hin, dass die Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.</p>
+            
+            <h3 class="text-xl font-semibold mb-2 text-primary dark:text-white mt-6">Hinweis zur verantwortlichen Stelle</h3>
+            <p>Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:</p>
+            <p>Max Mustermann<br>
+            SkyHaven<br>
+            Musterstraße 123<br>
+            12345 Musterstadt</p>
+            <p>Telefon: +49 123 456789<br>
+            E-Mail: kontakt@skyhaven.de</p>
+            <p>Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z.B. Namen, E-Mail-Adressen o. Ä.) entscheidet.</p>
+          </div>
+        </div>
 
-        <h3>3. Verwendung von Cookies</h3>
-        <p>
-          Unsere Website verwendet Cookies, um die Nutzung bestimmter Funktionen
-          zu ermöglichen. Cookies sind kleine Textdateien, die auf Ihrem
-          Endgerät gespeichert werden. Sie können Ihren Browser so einstellen,
-          dass Sie über das Setzen von Cookies informiert werden und einzeln
-          über deren Annahme entscheiden oder die Annahme von Cookies für
-          bestimmte Fälle oder generell ausschließen.
-        </p>
-
-        <h3>4. Ihre Rechte</h3>
-        <p>
-          Sie haben das Recht, jederzeit Auskunft über die bei uns gespeicherten
-          Daten zu verlangen. Darüber hinaus haben Sie das Recht auf
-          Berichtigung, Löschung, Einschränkung der Verarbeitung sowie auf
-          Datenübertragbarkeit Ihrer personenbezogenen Daten.
-        </p>
-
-        <h3>5. Änderungen der Datenschutzerklärung</h3>
-        <p>
-          Wir behalten uns das Recht vor, diese Datenschutzerklärung bei Bedarf
-          anzupassen, um sie an geänderte gesetzliche Anforderungen oder an
-          Änderungen unserer Leistungen anzupassen.
-        </p>
+        <div class="bg-white/80 dark:bg-white/10 backdrop-blur-sm rounded-lg shadow-lg p-8">
+          <h2 class="text-2xl font-bold mb-4 text-primary dark:text-white">3. Datenerfassung auf unserer Website</h2>
+          <div class="text-gray-700 dark:text-white/90 space-y-3">
+            <h3 class="text-xl font-semibold mb-2 text-primary dark:text-white">Cookies</h3>
+            <p>Die Internetseiten verwenden teilweise so genannte Cookies. Cookies richten auf Ihrem Rechner keinen Schaden an und enthalten keine Viren. Cookies dienen dazu, unser Angebot nutzerfreundlicher, effektiver und sicherer zu machen. Cookies sind kleine Textdateien, die auf Ihrem Rechner abgelegt werden und die Ihr Browser speichert.</p>
+            <p>Die meisten der von uns verwendeten Cookies sind so genannte "Session-Cookies". Sie werden nach Ende Ihres Besuchs automatisch gelöscht. Andere Cookies bleiben auf Ihrem Endgerät gespeichert bis Sie diese löschen. Diese Cookies ermöglichen es uns, Ihren Browser beim nächsten Besuch wiederzuerkennen.</p>
+            <p>Sie können Ihren Browser so einstellen, dass Sie über das Setzen von Cookies informiert werden und Cookies nur im Einzelfall erlauben, die Annahme von Cookies für bestimmte Fälle oder generell ausschließen sowie das automatische Löschen der Cookies beim Schließen des Browser aktivieren. Bei der Deaktivierung von Cookies kann die Funktionalität dieser Website eingeschränkt sein.</p>
+            
+            <h3 class="text-xl font-semibold mb-2 text-primary dark:text-white mt-6">Kontaktformular</h3>
+            <p>Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p>
+            <p>Die Verarbeitung der in das Kontaktformular eingegebenen Daten erfolgt somit ausschließlich auf Grundlage Ihrer Einwilligung. Sie können diese Einwilligung jederzeit widerrufen. Dazu reicht eine formlose Mitteilung per E-Mail an uns. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Datenverarbeitungsvorgänge bleibt vom Widerruf unberührt.</p>
+            <p>Die von Ihnen im Kontaktformular eingegebenen Daten verbleiben bei uns, bis Sie uns zur Löschung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck für die Datenspeicherung entfällt (z.B. nach abgeschlossener Bearbeitung Ihrer Anfrage). Zwingende gesetzliche Bestimmungen – insbesondere Aufbewahrungsfristen – bleiben unberührt.</p>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- Footer-Container -->
     <div id="footer-container"></div>
+
+    <!-- Skripte am Ende des Body-Tags -->
+    <script src="assets/js/components.js"></script>
+    <script src="assets/js/script.js"></script>
   </body>
 </html>

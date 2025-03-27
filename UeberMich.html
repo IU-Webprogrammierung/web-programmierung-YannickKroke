@@ -1,109 +1,150 @@
 <!DOCTYPE html>
-<html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Über mich - SkyHaven</title>
-  <link rel="stylesheet" href="assets/css/styles.css">
-  <!-- jQuery hinzufügen -->
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <!-- Komponenten-Skript hinzufügen -->
-  <script src="assets/js/components.js"></script>
-  <!-- Originales Skript beibehalten für weitere Funktionalität -->
-  <script src="assets/js/script.js"></script>
-
-    <!-- Inline-Skript für Profilbild-Animation -->
-    <script>
-      $(document).ready(function () {
-        // Stelle sicher, dass das Profilbild sofort animiert wird
-        $(".profilbild").css({
-          animation: "fadeInLeft 1.2s ease-out",
-          opacity: "1",
-        });
-      });
-    </script>
+<html lang="de" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Über mich - SkyHaven</title>
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <style>
+      .page-gradient {
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+        background-attachment: fixed;
+      }
+    </style>
   </head>
-
-  <body>
+  <body class="min-h-screen page-gradient dark:page-gradient text-primary dark:text-white transition-colors duration-200">
     <!-- Navbar-Container -->
-    <div id="navbar-container"></div>
+    <div id="navbar-container" class="relative z-50"></div>
+
+    <!-- Über mich Einführung -->
+    <section class="relative pt-32 pb-16 px-4">
+      <div class="container mx-auto">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6 text-primary dark:text-white">Über mich</h1>
+          <p class="text-lg text-gray-700 dark:text-white/90">
+            Mit einer Leidenschaft für Drohnentechnologie und Fotografie biete ich
+            Ihnen hochwertige Dienstleistungen aus der Luft.
+          </p>
+        </div>
+      </div>
+    </section>
 
     <!-- Hauptinhalt -->
-    <section class="section flex-container">
-      <div class="profilbild">
-        <img src="assets/images/Übermich1.jpeg" alt="Profilbild Yannick" />
-      </div>
-      <div class="text">
-        <h2>Hallo, ich bin Yannick</h2>
-        <p>
-          Mit einer Leidenschaft für Drohnentechnologie und Fotografie biete ich
-          Ihnen hochwertige Dienstleistungen aus der Luft.
-        </p>
-      </div>
-    </section>
+    <section class="py-16 px-4">
+      <div class="container mx-auto">
+        <div class="bg-white/80 dark:bg-white/10 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden mb-16">
+          <div class="md:flex">
+            <div class="md:w-1/3">
+              <img 
+                src="assets/images/Übermich1.jpeg" 
+                alt="Profilbild Yannick" 
+                class="w-full h-auto object-cover md:h-full"
+              />
+            </div>
+            <div class="p-8 md:w-2/3">
+              <h2 class="text-3xl font-bold mb-4 text-primary dark:text-white">Hallo, ich bin Yannick</h2>
+              <p class="text-gray-700 dark:text-white/90 mb-4">
+                Schon früh hat mich die Kombination aus Technik und Kreativität
+                fasziniert. Ich erinnere mich noch gut an meine erste Drohne – ein
+                einfaches Modell mit begrenzter Reichweite. Doch bereits die ersten
+                Aufnahmen aus der Luft haben mich begeistert. Ich konnte die Welt aus
+                einer neuen Perspektive sehen, Details entdecken, die sonst verborgen
+                bleiben.
+              </p>
+              <p class="text-gray-700 dark:text-white/90 mb-4">
+                Mit der Zeit habe ich meine Fähigkeiten verbessert, mich mit
+                modernster Drohnentechnologie auseinandergesetzt und begonnen,
+                professionelle Aufnahmen für verschiedene Bereiche anzufertigen. Ob
+                für <strong>Immobilien</strong>, <strong>Veranstaltungen</strong> oder
+                <strong>Baudokumentationen</strong> – meine Drohnenfotografie hat sich
+                stetig weiterentwickelt.
+              </p>
+              <p class="text-gray-700 dark:text-white/90 mb-4">
+                Heute biete ich Ihnen hochwertige Luftbildaufnahmen, die Ihre
+                Projekte, Events oder Immobilien aus einer einzigartigen Perspektive
+                zeigen. Lassen Sie uns gemeinsam Ihre Vision aus der Luft
+                verwirklichen!
+              </p>
+            </div>
+          </div>
+        </div>
 
-    <!-- Meine Geschichte als Card mit Call-to-Action -->
-    <section class="section">
-      <div class="card card-story">
-        <h2>Meine Geschichte mit der Drohnenfotografie</h2>
-        <p>
-          Schon früh hat mich die Kombination aus Technik und Kreativität
-          fasziniert. Ich erinnere mich noch gut an meine erste Drohne – ein
-          einfaches Modell mit begrenzter Reichweite. Doch bereits die ersten
-          Aufnahmen aus der Luft haben mich begeistert. Ich konnte die Welt aus
-          einer neuen Perspektive sehen, Details entdecken, die sonst verborgen
-          bleiben.
-        </p>
-        <p>
-          Mit der Zeit habe ich meine Fähigkeiten verbessert, mich mit
-          modernster Drohnentechnologie auseinandergesetzt und begonnen,
-          professionelle Aufnahmen für verschiedene Bereiche anzufertigen. Ob
-          für <strong>Immobilien</strong>, <strong>Veranstaltungen</strong> oder
-          <strong>Baudokumentationen</strong> – meine Drohnenfotografie hat sich
-          stetig weiterentwickelt.
-        </p>
-        <p>
-          Heute biete ich Ihnen hochwertige Luftbildaufnahmen, die Ihre
-          Projekte, Events oder Immobilien aus einer einzigartigen Perspektive
-          zeigen. Lassen Sie uns gemeinsam Ihre Vision aus der Luft
-          verwirklichen!
-        </p>
+        <!-- Qualifikationen & Ausrüstung -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+          <div class="bg-white/80 dark:bg-white/10 backdrop-blur-sm rounded-lg shadow-lg p-8">
+            <h3 class="text-2xl font-bold mb-4 text-primary dark:text-white">Qualifikationen</h3>
+            <p class="text-gray-700 dark:text-white/90">
+              Ich verfüge über den offiziellen EU-Kompetenznachweis (A1/A3) sowie
+              die professionelle Fernpilotenlizenz (A2), die mir erlauben,
+              Drohnenflüge in verschiedenen Umgebungen rechtssicher durchzuführen.
+              Diese Zertifizierungen bestätigen meine umfassende Kenntnis der
+              aktuellen Luftfahrtvorschriften und garantieren Ihnen, dass alle
+              Aufnahmen unter Einhaltung höchster Sicherheitsstandards und im
+              Einklang mit den europäischen Drohnenverordnungen erstellt werden.
+            </p>
+            <div class="flex flex-wrap gap-4 mt-6">
+              <div class="flex items-center">
+                <i class="fas fa-certificate text-accent mr-2"></i>
+                <span class="text-gray-700 dark:text-white/90">EU-Kompetenznachweis (A1/A3)</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-id-card text-accent mr-2"></i>
+                <span class="text-gray-700 dark:text-white/90">Fernpilotenlizenz (A2)</span>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white/80 dark:bg-white/10 backdrop-blur-sm rounded-lg shadow-lg p-8">
+            <h3 class="text-2xl font-bold mb-4 text-primary dark:text-white">Meine Ausrüstung</h3>
+            <p class="text-gray-700 dark:text-white/90">
+              Ich arbeite ausschließlich mit modernster DJI-Technologie, dem
+              Marktführer für professionelle Luftbildaufnahmen. Mein Equipment
+              umfasst hochwertige Drohnen der DJI Mavic und Phantom Serien, die mit
+              präzisen Gimbal-Stabilisierungssystemen und 4K-Kameras ausgestattet
+              sind. Diese Premium-Technik ermöglicht gestochen scharfe Bilder und
+              ruhige Videoaufnahmen selbst bei anspruchsvollen Wetterbedingungen.
+              Regelmäßige Firmware-Updates und sorgfältige Wartung garantieren
+              zuverlässige und sichere Einsätze für Ihr Projekt.
+            </p>
+            <div class="flex flex-wrap gap-4 mt-6">
+              <div class="flex items-center">
+                <i class="fas fa-drone text-accent mr-2"></i>
+                <span class="text-gray-700 dark:text-white/90">DJI Mavic Series</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-camera text-accent mr-2"></i>
+                <span class="text-gray-700 dark:text-white/90">4K Kameras</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-video text-accent mr-2"></i>
+                <span class="text-gray-700 dark:text-white/90">Gimbal-Stabilisierung</span>
+              </div>
+            </div>
+          </div>
+        </div>
 
-        <!-- Call-to-Action Button -->
-        <a href="Kontakt.html" class="cta-button">Jetzt Kontakt aufnehmen</a>
-      </div>
-    </section>
-
-    <!-- Qualifikationen & Ausrüstung -->
-    <section class="section grid-container">
-      <div class="card qualification">
-        <h3>Qualifikationen</h3>
-        <p>
-          Ich verfüge über den offiziellen EU-Kompetenznachweis (A1/A3) sowie
-          die professionelle Fernpilotenlizenz (A2), die mir erlauben,
-          Drohnenflüge in verschiedenen Umgebungen rechtssicher durchzuführen.
-          Diese Zertifizierungen bestätigen meine umfassende Kenntnis der
-          aktuellen Luftfahrtvorschriften und garantieren Ihnen, dass alle
-          Aufnahmen unter Einhaltung höchster Sicherheitsstandards und im
-          Einklang mit den europäischen Drohnenverordnungen erstellt werden.
-        </p>
-      </div>
-      <div class="card qualification">
-        <h3>Meine Ausrüstung</h3>
-        <p>
-          Ich arbeite ausschließlich mit modernster DJI-Technologie, dem
-          Marktführer für professionelle Luftbildaufnahmen. Mein Equipment
-          umfasst hochwertige Drohnen der DJI Mavic und Phantom Serien, die mit
-          präzisen Gimbal-Stabilisierungssystemen und 4K-Kameras ausgestattet
-          sind. Diese Premium-Technik ermöglicht gestochen scharfe Bilder und
-          ruhige Videoaufnahmen selbst bei anspruchsvollen Wetterbedingungen.
-          Regelmäßige Firmware-Updates und sorgfältige Wartung garantieren
-          zuverlässige und sichere Einsätze für Ihr Projekt.
-        </p>
+        <!-- Call-to-Action -->
+        <div class="bg-primary/80 dark:bg-white/10 backdrop-blur-sm rounded-lg shadow-lg p-8 text-center text-white">
+          <h2 class="text-3xl font-bold mb-4">Bereit für zusammenzuarbeiten?</h2>
+          <p class="text-white/90 mb-8">
+            Kontaktieren Sie mich, um Ihr Projekt zu besprechen und ein individuelles Angebot zu erhalten.
+          </p>
+          <a href="Kontakt.html" class="inline-block px-6 py-3 bg-accent text-white rounded-lg hover:bg-accent/90 transition-colors">Kontakt aufnehmen</a>
+        </div>
       </div>
     </section>
 
     <!-- Footer-Container -->
     <div id="footer-container"></div>
+
+    <!-- Skripte am Ende des Body-Tags -->
+    <script src="assets/js/components.js"></script>
+    <script src="assets/js/script.js"></script>
   </body>
-</html>
+</html> 
