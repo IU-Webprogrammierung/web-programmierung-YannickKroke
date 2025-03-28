@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Alle Elemente auswählen, die animiert werden sollen
   const sections = document.querySelectorAll(
-    ".section, .card, .card-story, .showcase-image, .gallery-image"
+    ".section, .card, .card-story, .showcase-image, .gallery-image, .fade-in, .slide-in-left, .slide-in-right, .scale-in, img"
   );
 
   // Klasse 'reveal' zu allen Elementen hinzufügen
@@ -19,8 +19,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (sectionTop < triggerBottom) {
         section.classList.add("active");
-      } else {
-        section.classList.remove("active");
+        section.classList.add("visible");
+        // Entferne die reveal-Klasse, wenn das Element sichtbar ist
+        section.classList.remove("reveal");
       }
     });
   }
@@ -102,6 +103,16 @@ if (localStorage.getItem('darkMode') === 'true') {
 darkModeToggle?.addEventListener('click', () => {
   html.classList.toggle('dark');
   localStorage.setItem('darkMode', html.classList.contains('dark'));
+});
+
+// Parallax Effekt für Hero-Bereich
+window.addEventListener('scroll', () => {
+  const parallaxElements = document.querySelectorAll('.parallax-bg');
+  parallaxElements.forEach(element => {
+    const speed = element.dataset.speed || 0.5;
+    const yPos = -(window.pageYOffset * speed);
+    element.style.transform = `translateY(${yPos}px)`;
+  });
 });
 
 // Smooth Scroll für alle internen Links

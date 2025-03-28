@@ -24,9 +24,10 @@
     <div id="navbar-container" class="relative z-50"></div>
 
     <!-- Über mich Einführung -->
-    <section class="relative pt-32 pb-16 px-4">
+    <section class="relative pt-32 pb-16 px-4 parallax-section">
+      <div class="absolute inset-0 bg-black/10 dark:bg-black/30 parallax-bg" data-speed="0.5"></div>
       <div class="container mx-auto">
-        <div class="max-w-4xl mx-auto text-center">
+        <div class="max-w-4xl mx-auto text-center fade-in">
           <h1 class="text-4xl md:text-5xl font-bold mb-6 text-primary dark:text-white">Über mich</h1>
           <p class="text-lg text-gray-700 dark:text-white/90">
             Mit einer Leidenschaft für Drohnentechnologie und Fotografie biete ich
@@ -36,101 +37,65 @@
       </div>
     </section>
 
-    <!-- Hauptinhalt -->
-    <section class="py-16 px-4">
-      <div class="container mx-auto">
-        <div class="bg-white/80 dark:bg-white/10 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden mb-16">
-          <div class="md:flex">
-            <div class="md:w-1/3">
-              <img 
-                src="assets/images/Übermich1.jpeg" 
-                alt="Profilbild Yannick" 
-                class="w-full h-auto object-cover md:h-full"
-              />
+    <!-- Profil und Qualifikationen -->
+    <section class="py-16">
+      <div class="container">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Profilbild -->
+          <div class="slide-in-left">
+            <img
+              src="assets/images/Übermich1.jpeg"
+              alt="Profilbild"
+              class="w-full h-auto rounded-lg shadow-lg"
+            />
+          </div>
+
+          <!-- Qualifikationen -->
+          <div class="space-y-6 slide-in-right">
+            <div class="bg-white/80 dark:bg-white/10 backdrop-blur-sm rounded-lg shadow-lg p-6">
+              <h2 class="text-2xl font-bold mb-4 text-primary dark:text-white">Qualifikationen</h2>
+              <ul class="space-y-3 text-gray-700 dark:text-white/90">
+                <li class="flex items-center">
+                  <i class="fas fa-check-circle text-accent mr-2"></i>
+                  Zertifizierter Drohnenpilot
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check-circle text-accent mr-2"></i>
+                  Professioneller Fotograf
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check-circle text-accent mr-2"></i>
+                  Jahrelange Erfahrung
+                </li>
+              </ul>
             </div>
-            <div class="p-8 md:w-2/3">
-              <h2 class="text-3xl font-bold mb-4 text-primary dark:text-white">Hallo, ich bin Yannick</h2>
-              <p class="text-gray-700 dark:text-white/90 mb-4">
-                Schon früh hat mich die Kombination aus Technik und Kreativität
-                fasziniert. Ich erinnere mich noch gut an meine erste Drohne – ein
-                einfaches Modell mit begrenzter Reichweite. Doch bereits die ersten
-                Aufnahmen aus der Luft haben mich begeistert. Ich konnte die Welt aus
-                einer neuen Perspektive sehen, Details entdecken, die sonst verborgen
-                bleiben.
-              </p>
-              <p class="text-gray-700 dark:text-white/90 mb-4">
-                Mit der Zeit habe ich meine Fähigkeiten verbessert, mich mit
-                modernster Drohnentechnologie auseinandergesetzt und begonnen,
-                professionelle Aufnahmen für verschiedene Bereiche anzufertigen. Ob
-                für <strong>Immobilien</strong>, <strong>Veranstaltungen</strong> oder
-                <strong>Baudokumentationen</strong> – meine Drohnenfotografie hat sich
-                stetig weiterentwickelt.
-              </p>
-              <p class="text-gray-700 dark:text-white/90 mb-4">
-                Heute biete ich Ihnen hochwertige Luftbildaufnahmen, die Ihre
-                Projekte, Events oder Immobilien aus einer einzigartigen Perspektive
-                zeigen. Lassen Sie uns gemeinsam Ihre Vision aus der Luft
-                verwirklichen!
-              </p>
+
+            <div class="bg-white/80 dark:bg-white/10 backdrop-blur-sm rounded-lg shadow-lg p-6">
+              <h2 class="text-2xl font-bold mb-4 text-primary dark:text-white">Ausrüstung</h2>
+              <ul class="space-y-3 text-gray-700 dark:text-white/90">
+                <li class="flex items-center">
+                  <i class="fas fa-camera text-accent mr-2"></i>
+                  Hochwertige Drohnen
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-camera text-accent mr-2"></i>
+                  Professionelle Kameras
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-camera text-accent mr-2"></i>
+                  Modernste Technik
+                </li>
+              </ul>
             </div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- Qualifikationen & Ausrüstung -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          <div class="bg-white/80 dark:bg-white/10 backdrop-blur-sm rounded-lg shadow-lg p-8">
-            <h3 class="text-2xl font-bold mb-4 text-primary dark:text-white">Qualifikationen</h3>
-            <p class="text-gray-700 dark:text-white/90">
-              Ich verfüge über den offiziellen EU-Kompetenznachweis (A1/A3) sowie
-              die professionelle Fernpilotenlizenz (A2), die mir erlauben,
-              Drohnenflüge in verschiedenen Umgebungen rechtssicher durchzuführen.
-              Diese Zertifizierungen bestätigen meine umfassende Kenntnis der
-              aktuellen Luftfahrtvorschriften und garantieren Ihnen, dass alle
-              Aufnahmen unter Einhaltung höchster Sicherheitsstandards und im
-              Einklang mit den europäischen Drohnenverordnungen erstellt werden.
-            </p>
-            <div class="flex flex-wrap gap-4 mt-6">
-              <div class="flex items-center">
-                <i class="fas fa-certificate text-accent mr-2"></i>
-                <span class="text-gray-700 dark:text-white/90">EU-Kompetenznachweis (A1/A3)</span>
-              </div>
-              <div class="flex items-center">
-                <i class="fas fa-id-card text-accent mr-2"></i>
-                <span class="text-gray-700 dark:text-white/90">Fernpilotenlizenz (A2)</span>
-              </div>
-            </div>
-          </div>
-          <div class="bg-white/80 dark:bg-white/10 backdrop-blur-sm rounded-lg shadow-lg p-8">
-            <h3 class="text-2xl font-bold mb-4 text-primary dark:text-white">Meine Ausrüstung</h3>
-            <p class="text-gray-700 dark:text-white/90">
-              Ich arbeite ausschließlich mit modernster DJI-Technologie, dem
-              Marktführer für professionelle Luftbildaufnahmen. Mein Equipment
-              umfasst hochwertige Drohnen der DJI Mavic und Phantom Serien, die mit
-              präzisen Gimbal-Stabilisierungssystemen und 4K-Kameras ausgestattet
-              sind. Diese Premium-Technik ermöglicht gestochen scharfe Bilder und
-              ruhige Videoaufnahmen selbst bei anspruchsvollen Wetterbedingungen.
-              Regelmäßige Firmware-Updates und sorgfältige Wartung garantieren
-              zuverlässige und sichere Einsätze für Ihr Projekt.
-            </p>
-            <div class="flex flex-wrap gap-4 mt-6">
-              <div class="flex items-center">
-                <i class="fas fa-drone text-accent mr-2"></i>
-                <span class="text-gray-700 dark:text-white/90">DJI Mavic Series</span>
-              </div>
-              <div class="flex items-center">
-                <i class="fas fa-camera text-accent mr-2"></i>
-                <span class="text-gray-700 dark:text-white/90">4K Kameras</span>
-              </div>
-              <div class="flex items-center">
-                <i class="fas fa-video text-accent mr-2"></i>
-                <span class="text-gray-700 dark:text-white/90">Gimbal-Stabilisierung</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Call-to-Action -->
-        <div class="bg-primary/80 dark:bg-white/10 backdrop-blur-sm rounded-lg shadow-lg p-8 text-center text-white">
+    <!-- Call-to-Action -->
+    <section class="py-16">
+      <div class="container">
+        <div class="bg-primary/80 dark:bg-white/10 backdrop-blur-sm rounded-lg shadow-lg p-8 text-center text-white scale-in">
           <h2 class="text-3xl font-bold mb-4">Bereit für zusammenzuarbeiten?</h2>
           <p class="text-white/90 mb-8">
             Kontaktieren Sie mich, um Ihr Projekt zu besprechen und ein individuelles Angebot zu erhalten.

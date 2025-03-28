@@ -24,11 +24,11 @@
   }
   
   .btn {
-    @apply px-4 py-2 rounded-md font-medium transition-colors duration-200;
+    @apply px-4 py-2 rounded-md font-medium transition-all duration-300 transform hover:scale-105;
   }
   
   .btn-primary {
-    @apply bg-primary text-white hover:bg-primary/90;
+    @apply bg-primary text-white hover:bg-primary/90 hover:shadow-lg;
   }
 
   .card {
@@ -48,11 +48,75 @@
   }
 
   .nav-link {
-    @apply text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-accent transition-colors;
+    @apply text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-accent transition-all duration-300 relative;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-primary dark:bg-accent transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
   }
 
   .nav-link-active {
     @apply text-primary dark:text-accent font-semibold;
+  }
+
+  .nav-link-active::after {
+    @apply w-full;
+  }
+
+  .parallax-section {
+    @apply relative overflow-hidden;
+  }
+
+  .parallax-bg {
+    @apply absolute inset-0 bg-cover bg-center bg-fixed;
+  }
+
+  .fade-in {
+    @apply opacity-0 transform translate-y-4 transition-all duration-700;
+  }
+
+  .fade-in.visible {
+    @apply opacity-100 translate-y-0;
+  }
+
+  .slide-in-left {
+    @apply opacity-0 transform -translate-x-8 transition-all duration-700;
+  }
+
+  .slide-in-left.visible {
+    @apply opacity-100 translate-x-0;
+  }
+
+  .slide-in-right {
+    @apply opacity-0 transform translate-x-8 transition-all duration-700;
+  }
+
+  .slide-in-right.visible {
+    @apply opacity-100 translate-x-0;
+  }
+
+  .scale-in {
+    @apply opacity-0 transform scale-95 transition-all duration-700;
+  }
+
+  .scale-in.visible {
+    @apply opacity-100 scale-100;
+  }
+
+  /* Bild-spezifische Styles */
+  img {
+    @apply max-w-full h-auto;
+  }
+
+  .slide-in-left img,
+  .slide-in-right img,
+  .fade-in img {
+    @apply transition-all duration-700;
   }
 }
 
@@ -97,6 +161,15 @@ nav {
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Back to Top Button Animation */
+#back-to-top {
+  transition: all 0.3s ease-in-out;
+}
+
+#back-to-top:hover {
+  transform: translateY(-3px);
 }
 
 /* Print Styles */

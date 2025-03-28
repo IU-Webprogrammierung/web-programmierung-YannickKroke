@@ -24,54 +24,74 @@
     <div id="navbar-container" class="relative z-50"></div>
 
     <!-- Impressum Inhalt -->
-    <section class="relative pt-32 pb-16 px-4">
+    <section class="relative pt-32 pb-16 px-4 parallax-section">
+      <div class="absolute inset-0 bg-black/10 dark:bg-black/30 parallax-bg" data-speed="0.5"></div>
       <div class="container mx-auto">
-        <div class="max-w-4xl mx-auto text-center">
+        <div class="max-w-4xl mx-auto text-center fade-in">
           <h1 class="text-4xl md:text-5xl font-bold mb-6 text-primary dark:text-white">Impressum</h1>
         </div>
       </div>
     </section>
 
-    <section class="py-8 px-4">
-      <div class="container mx-auto">
-        <div class="bg-white/80 dark:bg-white/10 backdrop-blur-sm rounded-lg shadow-lg p-8 mb-8">
-          <h2 class="text-2xl font-bold mb-4 text-primary dark:text-white">Angaben gemäß § 5 TMG</h2>
-          <div class="text-gray-700 dark:text-white/90 space-y-3">
-            <p>Max Mustermann<br />
-            SkyHaven - Professionelle Drohnenaufnahmen<br />
-            Musterstraße 123<br />
-            12345 Musterstadt</p>
+    <!-- Impressum Details -->
+    <section class="py-16">
+      <div class="container">
+        <div class="max-w-4xl mx-auto space-y-8">
+          <!-- Angaben gemäß § 5 TMG -->
+          <div class="bg-white/80 dark:bg-white/10 backdrop-blur-sm rounded-lg shadow-lg p-8 slide-in-left">
+            <h2 class="text-2xl font-bold mb-4 text-primary dark:text-white">Angaben gemäß § 5 TMG</h2>
+            <div class="text-gray-700 dark:text-white/90 space-y-3">
+              <p>SkyHaven</p>
+              <p>Musterstraße 123</p>
+              <p>22222 Musterstadt</p>
+            </div>
           </div>
-        </div>
 
-        <div class="bg-white/80 dark:bg-white/10 backdrop-blur-sm rounded-lg shadow-lg p-8 mb-8">
-          <h2 class="text-2xl font-bold mb-4 text-primary dark:text-white">Kontakt</h2>
-          <div class="text-gray-700 dark:text-white/90 space-y-3">
-            <p>Telefon: +49 123 456789<br />
-            E-Mail: max.mustermann@skyhaven.de</p>
+          <!-- Kontakt -->
+          <div class="bg-white/80 dark:bg-white/10 backdrop-blur-sm rounded-lg shadow-lg p-8 slide-in-right">
+            <h2 class="text-2xl font-bold mb-4 text-primary dark:text-white">Kontakt</h2>
+            <div class="text-gray-700 dark:text-white/90 space-y-3">
+              <p>Telefon: +49 (0) 123 456789</p>
+              <p>E-Mail: info@skyhaven.de</p>
+              <p>Umsatzsteuer-ID: DE123456789</p>
+            </div>
           </div>
-        </div>
 
-        <div class="bg-white/80 dark:bg-white/10 backdrop-blur-sm rounded-lg shadow-lg p-8 mb-8">
-          <h2 class="text-2xl font-bold mb-4 text-primary dark:text-white">Umsatzsteuer</h2>
-          <div class="text-gray-700 dark:text-white/90 space-y-3">
-            <p>Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br />
-            DE123456789</p>
+          <!-- Verantwortlich für den Inhalt -->
+          <div class="bg-white/80 dark:bg-white/10 backdrop-blur-sm rounded-lg shadow-lg p-8 slide-in-left">
+            <h2 class="text-2xl font-bold mb-4 text-primary dark:text-white">Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
+            <div class="text-gray-700 dark:text-white/90 space-y-3">
+              <p>Yannick Kroke</p>
+              <p>Musterstraße 123</p>
+              <p>22222 Musterstadt</p>
+            </div>
           </div>
-        </div>
 
-        <div class="bg-white/80 dark:bg-white/10 backdrop-blur-sm rounded-lg shadow-lg p-8 mb-8">
-          <h2 class="text-2xl font-bold mb-4 text-primary dark:text-white">EU-Streitschlichtung</h2>
-          <div class="text-gray-700 dark:text-white/90 space-y-3">
-            <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr/" class="text-accent hover:underline">https://ec.europa.eu/consumers/odr/</a><br />
-            Unsere E-Mail-Adresse finden Sie oben im Impressum.</p>
+          <!-- Haftungsausschluss -->
+          <div class="bg-white/80 dark:bg-white/10 backdrop-blur-sm rounded-lg shadow-lg p-8 slide-in-right">
+            <h2 class="text-2xl font-bold mb-4 text-primary dark:text-white">Haftungsausschluss</h2>
+            <div class="text-gray-700 dark:text-white/90 space-y-3">
+              <p>Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.</p>
+              <p>Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
+              <p>Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.</p>
+            </div>
           </div>
-        </div>
 
-        <div class="bg-white/80 dark:bg-white/10 backdrop-blur-sm rounded-lg shadow-lg p-8">
-          <h2 class="text-2xl font-bold mb-4 text-primary dark:text-white">Verbraucherstreitbeilegung/Universalschlichtungsstelle</h2>
-          <div class="text-gray-700 dark:text-white/90 space-y-3">
-            <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+          <!-- Urheberrecht -->
+          <div class="bg-white/80 dark:bg-white/10 backdrop-blur-sm rounded-lg shadow-lg p-8 slide-in-left">
+            <h2 class="text-2xl font-bold mb-4 text-primary dark:text-white">Urheberrecht</h2>
+            <div class="text-gray-700 dark:text-white/90 space-y-3">
+              <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.</p>
+              <p>Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.</p>
+            </div>
+          </div>
+
+          <!-- Verbraucherstreitbeilegung -->
+          <div class="bg-white/80 dark:bg-white/10 backdrop-blur-sm rounded-lg shadow-lg p-8 slide-in-right">
+            <h2 class="text-2xl font-bold mb-4 text-primary dark:text-white">Verbraucherstreitbeilegung/Universalschlichtungsstelle</h2>
+            <div class="text-gray-700 dark:text-white/90 space-y-3">
+              <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+            </div>
           </div>
         </div>
       </div>
