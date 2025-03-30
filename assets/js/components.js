@@ -297,11 +297,60 @@ function initializeStatistics() {
   stats.forEach(stat => observer.observe(stat));
 }
 
+// Parallax Scroll Effect
+function initParallaxEffect() {
+  const parallaxImages = document.querySelectorAll('.parallax-image');
+  let ticking = false;
+  let lastScrollY = window.scrollY;
+
+  function updateParallax() {
+    parallaxImages.forEach(image => {
+      const container = image.closest('.parallax-container');
+      const containerRect = container.getBoundingClientRect();
+      const containerMiddle = containerRect.top + containerRect.height / 2;
+      const windowMiddle = window.innerHeight / 2;
+      const difference = containerMiddle - windowMiddle;
+      const speed = parseFloat(image.getAttribute('data-parallax')) || 0.2;
+      
+      // Nur aktualisieren, wenn der Container im Viewport ist
+      if (containerRect.top < window.innerHeight && containerRect.bottom > 0) {
+        const movement = difference * speed;
+        image.style.transform = `translateY(calc(-50% + ${movement}px))`;
+      }
+    });
+    ticking = false;
+  }
+
+  function onScroll() {
+    lastScrollY = window.scrollY;
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        updateParallax();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }
+
+  // Initial update
+  updateParallax();
+
+  // Event Listener für Scroll
+  window.addEventListener('scroll', onScroll, { passive: true });
+  
+  // Event Listener für Resize
+  window.addEventListener('resize', updateParallax, { passive: true });
+}
+
 // Initialisiere die Komponenten, sobald das DOM geladen ist
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initializeComponents);
+  document.addEventListener('DOMContentLoaded', () => {
+    initializeComponents();
+    initParallaxEffect();
+  });
 } else {
   initializeComponents();
+  initParallaxEffect();
 }
 
 // Add statistics to index.html
@@ -319,4 +368,4 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
   }
-});
+  });

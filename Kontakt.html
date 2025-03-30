@@ -47,6 +47,113 @@
       .map-container:hover .map-overlay {
         background: rgba(0, 0, 0, 0);
       }
+      .form-progress {
+        position: relative;
+        height: 4px;
+        background-color: rgba(203, 213, 225, 0.3);
+        border-radius: 2px;
+        margin-bottom: 2rem;
+        overflow: hidden;
+      }
+
+      .form-progress-bar {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        background-color: #2563eb;
+        transition: width 0.3s ease;
+        border-radius: 2px;
+      }
+
+      .form-step {
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        background-color: rgba(203, 213, 225, 0.3);
+        border-radius: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        transition: background-color 0.3s ease;
+      }
+
+      .form-step.active {
+        background-color: #2563eb;
+      }
+
+      .form-step.completed {
+        background-color: #2563eb;
+      }
+
+      .floating-label {
+        position: relative;
+        margin-bottom: 1.5rem;
+      }
+
+      .floating-label input,
+      .floating-label textarea {
+        width: 100%;
+        padding: 1rem;
+        border: 2px solid rgba(203, 213, 225, 0.4);
+        border-radius: 0.5rem;
+        outline: none;
+        transition: all 0.3s ease;
+        background-color: rgba(255, 255, 255, 0.9);
+        color: #1e293b;
+      }
+
+      .dark .floating-label input,
+      .dark .floating-label textarea {
+        background-color: rgba(30, 41, 59, 0.5);
+        border-color: rgba(71, 85, 105, 0.4);
+        color: #f1f5f9;
+      }
+
+      .floating-label label {
+        position: absolute;
+        left: 1rem;
+        top: 1rem;
+        padding: 0 0.25rem;
+        color: #64748b;
+        pointer-events: none;
+        transition: all 0.3s ease;
+        background-color: transparent;
+      }
+
+      .floating-label input:focus,
+      .floating-label textarea:focus,
+      .floating-label input:not(:placeholder-shown),
+      .floating-label textarea:not(:placeholder-shown) {
+        border-color: #2563eb;
+        background-color: white;
+      }
+
+      .dark .floating-label input:focus,
+      .dark .floating-label textarea:focus,
+      .dark .floating-label input:not(:placeholder-shown),
+      .dark .floating-label textarea:not(:placeholder-shown) {
+        border-color: #60a5fa;
+        background-color: rgba(30, 41, 59, 0.8);
+      }
+
+      .floating-label input:focus ~ label,
+      .floating-label textarea:focus ~ label,
+      .floating-label input:not(:placeholder-shown) ~ label,
+      .floating-label textarea:not(:placeholder-shown) ~ label {
+        top: -0.75rem;
+        left: 0.8rem;
+        font-size: 0.875rem;
+        color: #2563eb;
+        background-color: white;
+      }
+
+      .dark .floating-label input:focus ~ label,
+      .dark .floating-label textarea:focus ~ label,
+      .dark .floating-label input:not(:placeholder-shown) ~ label,
+      .dark .floating-label textarea:not(:placeholder-shown) ~ label {
+        background-color: rgb(15, 23, 42);
+        color: #60a5fa;
+      }
     </style>
   </head>
   <body class="min-h-screen bg-gradient-to-br from-sky-100 to-blue-200 dark:from-slate-900 dark:to-blue-900 text-slate-800 dark:text-slate-100 transition-colors duration-200">
@@ -57,13 +164,13 @@
     <div class="h-24 bg-gradient-to-b from-white/80 via-white/50 to-transparent dark:from-slate-900 dark:via-slate-900/50 dark:to-transparent absolute top-0 left-0 right-0 z-10 backdrop-blur-sm"></div>
 
     <!-- Hero Section -->
-    <section class="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-slate-900 -mt-24">
+    <section class="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-gradient-to-b from-slate-900 to-blue-900 -mt-24">
       <div class="absolute inset-0 z-0">
-        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/50 to-slate-900"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-900 to-blue-900"></div>
         <img
           src="assets/images/contact-hero.jpg"
           alt=""
-          class="w-full h-full object-cover opacity-30"
+          class="w-full h-full object-cover opacity-10"
         />
       </div>
       
@@ -72,20 +179,10 @@
           <h1 class="text-5xl md:text-7xl font-bold mb-8 text-slate-900 dark:text-white fade-in">
             Kontakt
           </h1>
-          <p class="text-xl md:text-3xl text-slate-800 dark:text-slate-200 mb-12 max-w-3xl mx-auto fade-in-delay leading-relaxed">
+          <p class="text-xl md:text-3xl text-slate-700 dark:text-slate-200 mb-12 max-w-3xl mx-auto fade-in-delay leading-relaxed">
             Haben Sie Fragen oder möchten Sie ein individuelles Angebot? 
             Ich freue mich darauf, von Ihnen zu hören.
           </p>
-          <div class="flex flex-wrap gap-6 justify-center items-center fade-in-delay-2">
-            <a href="#kontakt" class="inline-flex items-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-all duration-300 text-lg group">
-              <i class="fas fa-envelope mr-3 group-hover:scale-110 transition-transform"></i>
-              Kontaktieren Sie mich
-            </a>
-            <a href="tel:+491234567890" class="inline-flex items-center px-8 py-4 bg-white/10 hover:bg-white/20 text-white rounded-lg transition-all duration-300 backdrop-blur-sm text-lg group">
-              <i class="fas fa-phone mr-3 group-hover:scale-110 transition-transform"></i>
-              +49 (0) 123 456789
-            </a>
-          </div>
         </div>
       </div>
     </section>
@@ -94,43 +191,44 @@
     <section id="kontakt" class="py-24 px-4 bg-gradient-to-b from-slate-900 to-slate-800">
       <div class="container mx-auto">
         <div class="max-w-4xl mx-auto text-center mb-16 fade-in">
-          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-blue-600 dark:text-blue-300">Wie können wir Ihnen helfen?</h2>
-          <p class="text-lg text-slate-700 dark:text-slate-200">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">Wie können wir Ihnen helfen?</h2>
+          <p class="text-lg text-slate-300">
             Haben Sie Fragen oder möchten Sie ein individuelles Angebot? Schreiben
             Sie uns eine Nachricht - wir melden uns zeitnah bei Ihnen!
           </p>
         </div>
 
+        <!-- Kontakt Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           <!-- Kontaktinformationen -->
           <div class="space-y-6 slide-in-left">
             <div class="bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm rounded-xl shadow-lg p-8 border border-slate-200 dark:border-slate-600">
-              <h2 class="text-2xl font-bold mb-6 text-blue-600 dark:text-blue-300">Kontaktinformationen</h2>
-              <div class="space-y-6 text-slate-700 dark:text-slate-200">
-                <div class="flex items-center group">
-                  <div class="w-12 h-12 flex items-center justify-center bg-blue-100 dark:bg-blue-900/50 rounded-lg mr-4 group-hover:bg-blue-200 dark:group-hover:bg-blue-900 transition-colors duration-200">
-                    <i class="fas fa-map-marker-alt text-blue-600 dark:text-blue-300 text-xl"></i>
+              <h2 class="text-2xl font-bold mb-6 text-slate-900 dark:text-white">Kontaktinformationen</h2>
+              <div class="space-y-6 text-slate-700 dark:text-slate-300">
+                <div class="flex items-start">
+                  <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-blue-100 dark:bg-blue-900/50 rounded-lg group-hover:bg-blue-200 dark:group-hover:bg-blue-900 transition-colors duration-200">
+                    <i class="fas fa-map-marker-alt text-blue-600 dark:text-blue-400 text-xl"></i>
                   </div>
-                  <span>Rüstersieler Straße 1, 26386 Wilhelmshaven</span>
+                  <span class="ml-8">Rüstersieler Straße 1, 26386 Wilhelmshaven</span>
                 </div>
-                <div class="flex items-center group">
-                  <div class="w-12 h-12 flex items-center justify-center bg-blue-100 dark:bg-blue-900/50 rounded-lg mr-4 group-hover:bg-blue-200 dark:group-hover:bg-blue-900 transition-colors duration-200">
-                    <i class="fas fa-phone text-blue-600 dark:text-blue-300 text-xl"></i>
+                <div class="flex items-start">
+                  <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-blue-100 dark:bg-blue-900/50 rounded-lg group-hover:bg-blue-200 dark:group-hover:bg-blue-900 transition-colors duration-200">
+                    <i class="fas fa-phone text-blue-600 dark:text-blue-400 text-xl"></i>
                   </div>
-                  <span>+49 (0) 123 456789</span>
+                  <span class="ml-8">+49 (0) 123 456789</span>
                 </div>
-                <div class="flex items-center group">
-                  <div class="w-12 h-12 flex items-center justify-center bg-blue-100 dark:bg-blue-900/50 rounded-lg mr-4 group-hover:bg-blue-200 dark:group-hover:bg-blue-900 transition-colors duration-200">
-                    <i class="fas fa-envelope text-blue-600 dark:text-blue-300 text-xl"></i>
+                <div class="flex items-start">
+                  <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-blue-100 dark:bg-blue-900/50 rounded-lg group-hover:bg-blue-200 dark:group-hover:bg-blue-900 transition-colors duration-200">
+                    <i class="fas fa-envelope text-blue-600 dark:text-blue-400 text-xl"></i>
                   </div>
-                  <span>info@skyhaven.de</span>
+                  <span class="ml-8">info@skyhaven.de</span>
                 </div>
               </div>
             </div>
 
             <div class="bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm rounded-xl shadow-lg p-8 border border-slate-200 dark:border-slate-600">
-              <h2 class="text-2xl font-bold mb-6 text-blue-600 dark:text-blue-300">Öffnungszeiten</h2>
-              <div class="space-y-4 text-slate-700 dark:text-slate-200">
+              <h2 class="text-2xl font-bold mb-6 text-slate-900 dark:text-white">Öffnungszeiten</h2>
+              <div class="space-y-4 text-slate-700 dark:text-slate-300">
                 <div class="flex justify-between items-center py-2 border-b border-slate-200 dark:border-slate-700">
                   <span>Montag - Freitag</span>
                   <span class="font-medium">9:00 - 18:00</span>
@@ -149,51 +247,81 @@
 
           <!-- Kontaktformular -->
           <div class="bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm rounded-xl shadow-lg p-8 border border-slate-200 dark:border-slate-600 slide-in-right">
-            <h2 class="text-2xl font-bold mb-6 text-blue-600 dark:text-blue-300">Kontaktformular</h2>
-            <form class="space-y-6">
-              <div>
-                <label for="name" class="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-2">Name</label>
+            <h2 class="text-2xl font-bold mb-6 text-slate-900 dark:text-white">Kontaktformular</h2>
+            <form id="contactForm" class="space-y-6">
+              <div class="form-progress mb-8">
+                <div class="form-progress-bar" id="formProgress"></div>
+                <div class="form-step" style="left: 0%"></div>
+                <div class="form-step" style="left: 33%"></div>
+                <div class="form-step" style="left: 66%"></div>
+                <div class="form-step" style="left: 100%"></div>
+              </div>
+
+              <div class="floating-label">
                 <input
                   type="text"
                   id="name"
                   name="name"
-                  class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700/50 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                  placeholder=" "
+                  class="w-full bg-white/50 dark:bg-slate-800/50 text-slate-900 dark:text-slate-100"
                   required
                 />
+                <label for="name">Name</label>
               </div>
-              <div>
-                <label for="email" class="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-2">E-Mail</label>
+
+              <div class="floating-label">
                 <input
                   type="email"
                   id="email"
                   name="email"
-                  class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700/50 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                  placeholder=" "
+                  class="w-full bg-white/50 dark:bg-slate-800/50 text-slate-900 dark:text-slate-100"
                   required
                 />
+                <label for="email">E-Mail</label>
               </div>
-              <div>
-                <label for="message" class="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-2">Nachricht</label>
+
+              <div class="floating-label">
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder=" "
+                  class="w-full bg-white/50 dark:bg-slate-800/50 text-slate-900 dark:text-slate-100"
+                />
+                <label for="phone">Telefon (optional)</label>
+              </div>
+
+              <div class="floating-label">
                 <textarea
                   id="message"
                   name="message"
-                  rows="4"
-                  class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700/50 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                  rows="5"
+                  placeholder=" "
+                  class="w-full bg-white/50 dark:bg-slate-800/50 text-slate-900 dark:text-slate-100"
                   required
                 ></textarea>
+                <label for="message">Ihre Nachricht</label>
               </div>
-              <button
-                type="submit"
-                class="w-full px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-200 font-medium flex items-center justify-center"
-              >
-                <i class="fas fa-paper-plane mr-2"></i>
-                Nachricht senden
-              </button>
+
+              <div class="flex justify-end">
+                <button
+                  type="submit"
+                  class="bg-blue-600 hover:bg-blue-700 text-black px-8 py-3 rounded-lg text-lg font-semibold transition-all hover:transform hover:scale-105"
+                >
+                  Nachricht senden
+                </button>
+              </div>
             </form>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- Karten-Sektion -->
-        <div class="mt-16 max-w-6xl mx-auto">
+    <!-- Karten-Bereich -->
+    <section class="py-24 px-4 bg-gradient-to-b from-slate-800 to-slate-900">
+      <div class="container mx-auto">
+        <div class="max-w-6xl mx-auto">
           <div class="bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm rounded-xl shadow-lg p-8 border border-slate-200 dark:border-slate-700">
             <h2 class="text-2xl font-bold mb-6 text-blue-600 dark:text-blue-300">Unser Standort</h2>
             <div class="map-container">
@@ -220,8 +348,8 @@
       </div>
     </section>
 
-    <!-- Footer-Container -->
-    <div id="footer-container"></div>
+    <!-- Footer Container -->
+    <div id="footer-container" class="mt-16"></div>
 
     <!-- Back to Top Button -->
     <button id="back-to-top" class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-blue-700 z-50">
@@ -296,6 +424,48 @@
           if (!document.documentElement.classList.contains('dark')) {
             updateMapStyle();
           }
+        });
+
+        const form = document.getElementById('contactForm');
+        const progressBar = document.getElementById('formProgress');
+        const formSteps = document.querySelectorAll('.form-step');
+        const requiredFields = form.querySelectorAll('[required]');
+        const totalFields = requiredFields.length;
+
+        function updateProgress() {
+          let filledFields = 0;
+          requiredFields.forEach(field => {
+            if (field.value.trim() !== '') {
+              filledFields++;
+            }
+          });
+
+          const progress = (filledFields / totalFields) * 100;
+          progressBar.style.width = `${progress}%`;
+
+          // Update step indicators
+          formSteps.forEach((step, index) => {
+            const stepProgress = (index / (formSteps.length - 1)) * 100;
+            if (progress >= stepProgress) {
+              step.classList.add('active');
+            } else {
+              step.classList.remove('active');
+            }
+          });
+        }
+
+        // Add input event listeners to all form fields
+        form.querySelectorAll('input, textarea').forEach(field => {
+          field.addEventListener('input', updateProgress);
+        });
+
+        // Form submission
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          // Hier können Sie die Formularverarbeitung implementieren
+          alert('Vielen Dank für Ihre Nachricht! Wir werden uns schnellstmöglich bei Ihnen melden.');
+          form.reset();
+          updateProgress();
         });
       });
     </script>
