@@ -12,85 +12,96 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
-    <style>
-      .page-gradient {
-        background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
-        background-attachment: fixed;
-      }
-    </style>
   </head>
-  <body class="min-h-screen page-gradient dark:page-gradient text-primary dark:text-white transition-colors duration-200">
+  <body class="min-h-screen bg-gradient-to-br from-sky-100 to-blue-200 dark:from-slate-900 dark:to-blue-900 text-slate-800 dark:text-slate-100 transition-colors duration-200">
     <!-- Navbar-Container -->
     <div id="navbar-container" class="relative z-50"></div>
 
-    <!-- Impressum Inhalt -->
-    <section class="relative pt-32 pb-16 px-4 parallax-section">
-      <div class="absolute inset-0 bg-black/10 dark:bg-black/30 parallax-bg" data-speed="0.5"></div>
+    <!-- Impressum-Bereich -->
+    <section class="relative pt-32 pb-16 px-4">
       <div class="container mx-auto">
         <div class="max-w-4xl mx-auto text-center fade-in">
-          <h1 class="text-4xl md:text-5xl font-bold mb-6 text-primary dark:text-white">Impressum</h1>
+          <h1 class="text-4xl md:text-5xl font-bold mb-6 text-blue-600 dark:text-blue-300">Impressum</h1>
+          <p class="text-lg text-slate-700 dark:text-slate-200">
+            Rechtliche Informationen und Kontaktdaten
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- Impressum Details -->
+    <!-- Impressum-Inhalt -->
     <section class="py-16">
-      <div class="container">
-        <div class="max-w-4xl mx-auto space-y-8">
-          <!-- Angaben gemäß § 5 TMG -->
-          <div class="bg-white/80 dark:bg-white/10 backdrop-blur-sm rounded-lg shadow-lg p-8 slide-in-left">
-            <h2 class="text-2xl font-bold mb-4 text-primary dark:text-white">Angaben gemäß § 5 TMG</h2>
-            <div class="text-gray-700 dark:text-white/90 space-y-3">
-              <p>SkyHaven</p>
-              <p>Musterstraße 123</p>
-              <p>22222 Musterstadt</p>
-            </div>
-          </div>
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto">
+          <div class="bg-white/90 dark:bg-slate-800/95 backdrop-blur-sm rounded-xl shadow-lg p-8 border border-slate-200 dark:border-slate-600">
+            <div class="space-y-8">
+              <!-- Angaben gemäß § 5 TMG -->
+              <div>
+                <h2 class="text-2xl font-bold mb-4 text-blue-600 dark:text-blue-300">Angaben gemäß § 5 TMG</h2>
+                <p class="text-slate-700 dark:text-slate-200">
+                  SkyHaven GmbH<br>
+                  Musterstraße 123<br>
+                  22222 Musterstadt
+                </p>
+              </div>
 
-          <!-- Kontakt -->
-          <div class="bg-white/80 dark:bg-white/10 backdrop-blur-sm rounded-lg shadow-lg p-8 slide-in-right">
-            <h2 class="text-2xl font-bold mb-4 text-primary dark:text-white">Kontakt</h2>
-            <div class="text-gray-700 dark:text-white/90 space-y-3">
-              <p>Telefon: +49 (0) 123 456789</p>
-              <p>E-Mail: info@skyhaven.de</p>
-              <p>Umsatzsteuer-ID: DE123456789</p>
-            </div>
-          </div>
+              <!-- Kontakt -->
+              <div>
+                <h2 class="text-2xl font-bold mb-4 text-blue-600 dark:text-blue-300">Kontakt</h2>
+                <p class="text-slate-700 dark:text-slate-200">
+                  Telefon: +49 (0) 123 456789<br>
+                  E-Mail: info@skyhaven.de
+                </p>
+                <p class="mt-4 text-slate-700 dark:text-slate-200">
+                  Vertreten durch:<br>
+                  Max Mustermann (Geschäftsführer)
+                </p>
+              </div>
 
-          <!-- Verantwortlich für den Inhalt -->
-          <div class="bg-white/80 dark:bg-white/10 backdrop-blur-sm rounded-lg shadow-lg p-8 slide-in-left">
-            <h2 class="text-2xl font-bold mb-4 text-primary dark:text-white">Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
-            <div class="text-gray-700 dark:text-white/90 space-y-3">
-              <p>Yannick Kroke</p>
-              <p>Musterstraße 123</p>
-              <p>22222 Musterstadt</p>
-            </div>
-          </div>
+              <!-- Registereintrag -->
+              <div>
+                <h2 class="text-2xl font-bold mb-4 text-blue-600 dark:text-blue-300">Registereintrag</h2>
+                <p class="text-slate-700 dark:text-slate-200">
+                  Eintragung im Handelsregister<br>
+                  Registergericht: Amtsgericht Musterstadt<br>
+                  Registernummer: HRB 12345
+                </p>
+              </div>
 
-          <!-- Haftungsausschluss -->
-          <div class="bg-white/80 dark:bg-white/10 backdrop-blur-sm rounded-lg shadow-lg p-8 slide-in-right">
-            <h2 class="text-2xl font-bold mb-4 text-primary dark:text-white">Haftungsausschluss</h2>
-            <div class="text-gray-700 dark:text-white/90 space-y-3">
-              <p>Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.</p>
-              <p>Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
-              <p>Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.</p>
-            </div>
-          </div>
+              <!-- Umsatzsteuer-ID -->
+              <div>
+                <h2 class="text-2xl font-bold mb-4 text-blue-600 dark:text-blue-300">Umsatzsteuer-ID</h2>
+                <p class="text-slate-700 dark:text-slate-200">
+                  Umsatzsteuer-Identifikationsnummer gemäß §27 a Umsatzsteuergesetz:<br>
+                  DE 123 456 789
+                </p>
+              </div>
 
-          <!-- Urheberrecht -->
-          <div class="bg-white/80 dark:bg-white/10 backdrop-blur-sm rounded-lg shadow-lg p-8 slide-in-left">
-            <h2 class="text-2xl font-bold mb-4 text-primary dark:text-white">Urheberrecht</h2>
-            <div class="text-gray-700 dark:text-white/90 space-y-3">
-              <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.</p>
-              <p>Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.</p>
-            </div>
-          </div>
+              <!-- Verantwortlich für den Inhalt -->
+              <div>
+                <h2 class="text-2xl font-bold mb-4 text-blue-600 dark:text-blue-300">Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
+                <p class="text-slate-700 dark:text-slate-200">
+                  Max Mustermann<br>
+                  SkyHaven GmbH<br>
+                  Musterstraße 123<br>
+                  22222 Musterstadt
+                </p>
+              </div>
 
-          <!-- Verbraucherstreitbeilegung -->
-          <div class="bg-white/80 dark:bg-white/10 backdrop-blur-sm rounded-lg shadow-lg p-8 slide-in-right">
-            <h2 class="text-2xl font-bold mb-4 text-primary dark:text-white">Verbraucherstreitbeilegung/Universalschlichtungsstelle</h2>
-            <div class="text-gray-700 dark:text-white/90 space-y-3">
-              <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+              <!-- Haftungsausschluss -->
+              <div>
+                <h2 class="text-2xl font-bold mb-4 text-blue-600 dark:text-blue-300">Haftungsausschluss</h2>
+                <div class="space-y-4 text-slate-700 dark:text-slate-200">
+                  <p>
+                    <strong>Haftung für Inhalte</strong><br>
+                    Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.
+                  </p>
+                  <p>
+                    <strong>Haftung für Links</strong><br>
+                    Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -101,7 +112,7 @@
     <div id="footer-container"></div>
 
     <!-- Back to Top Button -->
-    <button id="back-to-top" class="fixed bottom-8 right-8 bg-primary text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-primary/90 z-50">
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-blue-700 z-50">
       <i class="fas fa-arrow-up"></i>
     </button>
 
