@@ -211,9 +211,112 @@ function initializeComponents() {
   initScrollReveal();
 }
 
+// Animated Statistics Component
+function createStatisticsComponent() {
+  const stats = `
+    <section class="py-16 bg-gradient-to-br from-white/80 to-sky-100/50 dark:from-slate-900/80 dark:to-blue-900/50 backdrop-blur-sm">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Successful Flights -->
+          <div class="stat-card bg-white/70 dark:bg-slate-800/70 p-6 rounded-xl shadow-lg border border-slate-200/50 dark:border-slate-700/50 backdrop-blur-sm transform hover:scale-105 transition-transform duration-300">
+            <div class="flex flex-col items-center text-center">
+              <i class="fas fa-plane text-3xl mb-3 text-blue-600 dark:text-blue-400"></i>
+              <span class="text-3xl lg:text-4xl font-bold mb-2 text-slate-800 dark:text-slate-100" data-target="500" data-duration="2000">0</span>
+              <h3 class="text-sm lg:text-base font-semibold text-slate-600 dark:text-slate-300">Erfolgreiche Flüge</h3>
+            </div>
+          </div>
+          
+          <!-- Photos Taken -->
+          <div class="stat-card bg-white/70 dark:bg-slate-800/70 p-6 rounded-xl shadow-lg border border-slate-200/50 dark:border-slate-700/50 backdrop-blur-sm transform hover:scale-105 transition-transform duration-300">
+            <div class="flex flex-col items-center text-center">
+              <i class="fas fa-camera text-3xl mb-3 text-blue-600 dark:text-blue-400"></i>
+              <span class="text-3xl lg:text-4xl font-bold mb-2 text-slate-800 dark:text-slate-100" data-target="10000" data-duration="2500">0</span>
+              <h3 class="text-sm lg:text-base font-semibold text-slate-600 dark:text-slate-300">Aufgenommene Fotos</h3>
+            </div>
+          </div>
+          
+          <!-- Happy Customers -->
+          <div class="stat-card bg-white/70 dark:bg-slate-800/70 p-6 rounded-xl shadow-lg border border-slate-200/50 dark:border-slate-700/50 backdrop-blur-sm transform hover:scale-105 transition-transform duration-300">
+            <div class="flex flex-col items-center text-center">
+              <i class="fas fa-smile text-3xl mb-3 text-blue-600 dark:text-blue-400"></i>
+              <span class="text-3xl lg:text-4xl font-bold mb-2 text-slate-800 dark:text-slate-100" data-target="250" data-duration="1800">0</span>
+              <h3 class="text-sm lg:text-base font-semibold text-slate-600 dark:text-slate-300">Zufriedene Kunden</h3>
+            </div>
+          </div>
+          
+          <!-- Years Experience -->
+          <div class="stat-card bg-white/70 dark:bg-slate-800/70 p-6 rounded-xl shadow-lg border border-slate-200/50 dark:border-slate-700/50 backdrop-blur-sm transform hover:scale-105 transition-transform duration-300">
+            <div class="flex flex-col items-center text-center">
+              <i class="fas fa-star text-3xl mb-3 text-blue-600 dark:text-blue-400"></i>
+              <span class="text-3xl lg:text-4xl font-bold mb-2 text-slate-800 dark:text-slate-100" data-target="5" data-duration="1500">0</span>
+              <h3 class="text-sm lg:text-base font-semibold text-slate-600 dark:text-slate-300">Jahre Erfahrung</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  `;
+
+  return stats;
+}
+
+// Animation function for statistics
+function initializeStatistics() {
+  const stats = document.querySelectorAll('.stat-card span[data-target]');
+  
+  const animateStats = (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+        const target = parseInt(entry.target.getAttribute('data-target'));
+        const duration = parseInt(entry.target.getAttribute('data-duration'));
+        const increment = target / (duration / 16); // 60 FPS
+        let current = 0;
+        
+        entry.target.classList.add('animated');
+        
+        const updateCounter = () => {
+          current += increment;
+          if (current < target) {
+            entry.target.textContent = Math.floor(current);
+            requestAnimationFrame(updateCounter);
+          } else {
+            entry.target.textContent = target;
+          }
+        };
+        
+        updateCounter();
+        observer.unobserve(entry.target);
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(animateStats, {
+    threshold: 0.5
+  });
+
+  stats.forEach(stat => observer.observe(stat));
+}
+
 // Initialisiere die Komponenten, sobald das DOM geladen ist
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initializeComponents);
 } else {
   initializeComponents();
 }
+
+// Add statistics to index.html
+document.addEventListener('DOMContentLoaded', function() {
+  // ... existing event listeners ...
+
+  // Add statistics section if we're on the index page
+  if (window.location.pathname === '/' || window.location.pathname.includes('index')) {
+    const mainContent = document.querySelector('main');
+    if (mainContent) {
+      const heroSection = mainContent.querySelector('section');
+      if (heroSection) {
+        heroSection.insertAdjacentHTML('afterend', createStatisticsComponent());
+        initializeStatistics();
+      }
+    }
+  }
+});

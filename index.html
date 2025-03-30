@@ -36,134 +36,137 @@
     </style>
   </head>
 
-  <body class="min-h-screen bg-background-light dark:bg-background-dark text-gray-800 dark:text-gray-100 transition-colors duration-200">
-    <!-- Navbar-Container -->
-    <div id="navbar-container" class="relative z-50"></div>
+  <body class="min-h-screen bg-gradient-to-br from-sky-100 to-blue-200 dark:from-slate-900 dark:to-blue-900 text-slate-800 dark:text-slate-100 transition-colors duration-200">
+    <!-- Navbar Container -->
+    <div id="navbar-container"></div>
 
-    <!-- Hero-Bereich -->
-    <section class="relative min-h-screen hero-image">
-      <div class="absolute inset-0 hero-gradient backdrop-blur-[2px]"></div>
-      <div class="absolute inset-0 bg-gradient-to-b from-transparent to-background-light/90 dark:to-background-dark/90"></div>
-      
-      <div class="relative h-screen flex items-center justify-center px-4">
-        <div class="text-center space-y-8 max-w-4xl mx-auto">
-          <h1 class="text-6xl md:text-8xl font-bold text-primary dark:text-white fade-in">
-            SkyHaven
-          </h1>
-          <p class="text-2xl md:text-3xl text-gray-800 dark:text-gray-100 fade-in">
-            Der Drohnendienstleister im Norden
-          </p>
-          <div class="flex justify-center space-x-4 pt-8 fade-in">
-            <a href="Dienstleistungen.html" class="button-primary px-8 py-3 rounded-lg text-lg font-semibold hover:transform hover:scale-105 transition-all">
-              Unsere Leistungen
-            </a>
-            <a href="Kontakt.html" class="button-accent px-8 py-3 rounded-lg text-lg font-semibold hover:transform hover:scale-105 transition-all">
-              Kontakt
-            </a>
+    <!-- Main Content -->
+    <main>
+      <!-- Hero Section -->
+      <section class="relative min-h-screen hero-image">
+        <div class="absolute inset-0 hero-gradient backdrop-blur-[2px]"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-sky-100/90 dark:to-slate-900/90"></div>
+        
+        <div class="relative h-screen flex items-center justify-center px-4">
+          <div class="text-center space-y-8 max-w-4xl mx-auto">
+            <h1 class="text-6xl md:text-8xl font-bold text-white">
+              SkyHaven
+            </h1>
+            <p class="text-2xl md:text-3xl text-white">
+              Der Drohnendienstleister im Norden
+            </p>
+            <div class="flex justify-center space-x-4 pt-8">
+              <a href="Dienstleistungen.html" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:transform hover:scale-105 transition-all">
+                Unsere Leistungen
+              </a>
+              <a href="Kontakt.html" class="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:transform hover:scale-105 transition-all">
+                Kontakt
+              </a>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Scroll-Down Indikator -->
-      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <i class="fas fa-chevron-down text-3xl text-primary dark:text-white opacity-75"></i>
-      </div>
-    </section>
-
-    <!-- Beschreibung -->
-    <section class="py-24 bg-surface-light/80 dark:bg-surface-dark/80 backdrop-blur-sm">
-      <div class="container mx-auto px-4">
-        <div class="max-w-3xl mx-auto text-center space-y-6 slide-in-left">
-          <h2 class="text-4xl font-bold text-primary dark:text-white">Willkommen bei SkyHaven</h2>
-          <p class="text-xl text-gray-700 dark:text-gray-300 leading-relaxed">
-            Ihr Partner für professionelle Drohnendienstleistungen. Wir liefern
-            hochwertige Luftbildaufnahmen für Ihre Projekte, Immobilien und
-            Veranstaltungen.
-          </p>
+        <!-- Scroll-Down Indikator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <i class="fas fa-chevron-down text-3xl text-white opacity-75"></i>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Leistungen -->
-    <section class="py-24 bg-background-light dark:bg-background-dark">
-      <div class="container mx-auto px-4">
-        <h2 class="text-4xl font-bold text-center mb-16 text-primary dark:text-white slide-in-right">
-          Unsere Leistungen
-        </h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Erste Karte -->
-          <div class="group scale-in">
-            <a href="Dienstleistungen.html#baustellen" class="block">
-              <div class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-lg overflow-hidden transition-all duration-300 group-hover:shadow-2xl group-hover:-translate-y-2">
-                <div class="relative">
-                  <img
-                    src="assets/images/Beispiel1.jpg"
-                    alt="Baustellendokumentation"
-                    class="w-full h-56 object-cover"
-                  />
-                  <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                </div>
-                <div class="p-8">
-                  <h3 class="text-2xl font-semibold mb-4 text-primary dark:text-white">Baustellendokumentation</h3>
-                  <p class="text-gray-700 dark:text-gray-300">
-                    Präzise Luftaufnahmen für ihre Bauprojekte. So dokumentieren sie
-                    jederzeit den aktuellen Stand ihrer Projekte
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <!-- Zweite Karte -->
-          <div class="group scale-in">
-            <a href="Dienstleistungen.html#immobilien" class="block">
-              <div class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-lg overflow-hidden transition-all duration-300 group-hover:shadow-2xl group-hover:-translate-y-2">
-                <div class="relative">
-                  <img
-                    src="assets/images/Beispiel2.jpeg"
-                    alt="Bild eines Einfamilienhauses aus der Luft"
-                    class="w-full h-56 object-cover"
-                  />
-                  <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                </div>
-                <div class="p-8">
-                  <h3 class="text-2xl font-semibold mb-4 text-primary dark:text-white">Immobilienfotografie</h3>
-                  <p class="text-gray-700 dark:text-gray-300">
-                    Eindrucksvolle Luftbildaufnahmen ihrer Immobilie und/oder ihres
-                    Grundstücks
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <!-- Dritte Karte -->
-          <div class="group scale-in">
-            <a href="Dienstleistungen.html#veranstaltungen" class="block">
-              <div class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-lg overflow-hidden transition-all duration-300 group-hover:shadow-2xl group-hover:-translate-y-2">
-                <div class="relative">
-                  <img
-                    src="assets/images/Beispiel3.jpeg"
-                    alt="Großes Konzert mit Menschen und Bühne aus der Luft"
-                    class="w-full h-56 object-cover"
-                  />
-                  <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                </div>
-                <div class="p-8">
-                  <h3 class="text-2xl font-semibold mb-4 text-primary dark:text-white">Veranstaltungsfotografie</h3>
-                  <p class="text-gray-700 dark:text-gray-300">
-                    Wir halten ihre Veranstaltungen wie Hochzeiten, Konzerte oder
-                    Firmenfeiern mit unvergleichbaren Luftaufnahmen fest.
-                  </p>
-                </div>
-              </div>
-            </a>
+      <!-- Beschreibung -->
+      <section class="py-24 bg-surface-light/80 dark:bg-surface-dark/80 backdrop-blur-sm">
+        <div class="container mx-auto px-4">
+          <div class="max-w-3xl mx-auto text-center space-y-6 slide-in-left">
+            <h2 class="text-4xl font-bold text-primary dark:text-white">Willkommen bei SkyHaven</h2>
+            <p class="text-xl text-gray-700 dark:text-gray-300 leading-relaxed">
+              Ihr Partner für professionelle Drohnendienstleistungen. Wir liefern
+              hochwertige Luftbildaufnahmen für Ihre Projekte, Immobilien und
+              Veranstaltungen.
+            </p>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Footer-Container -->
+      <!-- Leistungen -->
+      <section class="py-24 bg-background-light dark:bg-background-dark">
+        <div class="container mx-auto px-4">
+          <h2 class="text-4xl font-bold text-center mb-16 text-primary dark:text-white slide-in-right">
+            Unsere Leistungen
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Erste Karte -->
+            <div class="group scale-in">
+              <a href="Dienstleistungen.html#baustellen" class="block">
+                <div class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-lg overflow-hidden transition-all duration-300 group-hover:shadow-2xl group-hover:-translate-y-2">
+                  <div class="relative">
+                    <img
+                      src="assets/images/Beispiel1.jpg"
+                      alt="Baustellendokumentation"
+                      class="w-full h-56 object-cover"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  </div>
+                  <div class="p-8">
+                    <h3 class="text-2xl font-semibold mb-4 text-primary dark:text-white">Baustellendokumentation</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                      Präzise Luftaufnahmen für ihre Bauprojekte. So dokumentieren sie
+                      jederzeit den aktuellen Stand ihrer Projekte
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- Zweite Karte -->
+            <div class="group scale-in">
+              <a href="Dienstleistungen.html#immobilien" class="block">
+                <div class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-lg overflow-hidden transition-all duration-300 group-hover:shadow-2xl group-hover:-translate-y-2">
+                  <div class="relative">
+                    <img
+                      src="assets/images/Beispiel2.jpeg"
+                      alt="Bild eines Einfamilienhauses aus der Luft"
+                      class="w-full h-56 object-cover"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  </div>
+                  <div class="p-8">
+                    <h3 class="text-2xl font-semibold mb-4 text-primary dark:text-white">Immobilienfotografie</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                      Eindrucksvolle Luftbildaufnahmen ihrer Immobilie und/oder ihres
+                      Grundstücks
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- Dritte Karte -->
+            <div class="group scale-in">
+              <a href="Dienstleistungen.html#veranstaltungen" class="block">
+                <div class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-lg overflow-hidden transition-all duration-300 group-hover:shadow-2xl group-hover:-translate-y-2">
+                  <div class="relative">
+                    <img
+                      src="assets/images/Beispiel3.jpeg"
+                      alt="Großes Konzert mit Menschen und Bühne aus der Luft"
+                      class="w-full h-56 object-cover"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  </div>
+                  <div class="p-8">
+                    <h3 class="text-2xl font-semibold mb-4 text-primary dark:text-white">Veranstaltungsfotografie</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                      Wir halten ihre Veranstaltungen wie Hochzeiten, Konzerte oder
+                      Firmenfeiern mit unvergleichbaren Luftaufnahmen fest.
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer Container -->
     <div id="footer-container"></div>
 
     <!-- Back to Top Button -->
