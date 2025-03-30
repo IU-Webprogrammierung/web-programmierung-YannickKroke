@@ -11,7 +11,43 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <style>
+      .map-container {
+        position: relative;
+        overflow: hidden;
+        border-radius: 0.5rem;
+      }
+      .map-container::after {
+        content: '';
+        display: block;
+        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+      }
+      #map {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+      }
+      .map-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.1);
+        z-index: 2;
+        pointer-events: none;
+        transition: background 0.3s ease;
+      }
+      .map-container:hover .map-overlay {
+        background: rgba(0, 0, 0, 0);
+      }
+    </style>
   </head>
   <body class="min-h-screen bg-gradient-to-br from-sky-100 to-blue-200 dark:from-slate-900 dark:to-blue-900 text-slate-800 dark:text-slate-100 transition-colors duration-200">
     <!-- Navbar-Container -->
@@ -26,7 +62,7 @@
         <div class="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/50 to-slate-900"></div>
         <img
           src="assets/images/contact-hero.jpg"
-          alt="Kontakt Hero Image"
+          alt=""
           class="w-full h-full object-cover opacity-30"
         />
       </div>
@@ -75,7 +111,7 @@
                   <div class="w-12 h-12 flex items-center justify-center bg-blue-100 dark:bg-blue-900/50 rounded-lg mr-4 group-hover:bg-blue-200 dark:group-hover:bg-blue-900 transition-colors duration-200">
                     <i class="fas fa-map-marker-alt text-blue-600 dark:text-blue-300 text-xl"></i>
                   </div>
-                  <span>Musterstraße 123, 22222 Musterstadt</span>
+                  <span>Rüstersieler Straße 1, 26386 Wilhelmshaven</span>
                 </div>
                 <div class="flex items-center group">
                   <div class="w-12 h-12 flex items-center justify-center bg-blue-100 dark:bg-blue-900/50 rounded-lg mr-4 group-hover:bg-blue-200 dark:group-hover:bg-blue-900 transition-colors duration-200">
@@ -155,6 +191,32 @@
             </form>
           </div>
         </div>
+
+        <!-- Karten-Sektion -->
+        <div class="mt-16 max-w-6xl mx-auto">
+          <div class="bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm rounded-xl shadow-lg p-8 border border-slate-200 dark:border-slate-700">
+            <h2 class="text-2xl font-bold mb-6 text-blue-600 dark:text-blue-300">Unser Standort</h2>
+            <div class="map-container">
+              <div id="map"></div>
+              <div class="map-overlay"></div>
+            </div>
+            <div class="mt-6 flex items-center justify-between flex-wrap gap-4">
+              <div class="flex items-center text-slate-700 dark:text-slate-200">
+                <i class="fas fa-map-marker-alt text-blue-600 dark:text-blue-400 mr-3"></i>
+                <span>Rüstersieler Straße 1, 26386 Wilhelmshaven</span>
+              </div>
+              <a 
+                href="https://www.google.com/maps/dir//Rüstersieler+Straße+1,+26386+Wilhelmshaven" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-200"
+              >
+                <i class="fas fa-directions mr-2"></i>
+                Route planen
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -169,5 +231,73 @@
     <!-- Skripte am Ende des Body-Tags -->
     <script src="assets/js/components.js"></script>
     <script src="assets/js/script.js"></script>
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        let map;
+        let currentTileLayer;
+
+        function updateMapStyle() {
+          const isDarkMode = document.documentElement.classList.contains('dark');
+          
+          if (currentTileLayer) {
+            map.removeLayer(currentTileLayer);
+          }
+          
+          currentTileLayer = isDarkMode
+            ? L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+              })
+            : L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+              });
+          
+          currentTileLayer.addTo(map);
+        }
+
+        // Karte initialisieren
+        map = L.map('map').setView([53.5195, 8.1075], 13); // Koordinaten für Wilhelmshaven
+
+        // Custom Marker-Icon
+        const customIcon = L.divIcon({
+          html: '<i class="fas fa-drone text-2xl text-blue-600"></i>',
+          className: 'custom-div-icon',
+          iconSize: [30, 30],
+          iconAnchor: [15, 15]
+        });
+
+        // Marker hinzufügen
+        const marker = L.marker([53.5195, 8.1075], { icon: customIcon }).addTo(map);
+
+        // Popup für den Marker
+        marker.bindPopup(`
+          <div class="text-center">
+            <strong class="block mb-2">SkyHaven</strong>
+            <p class="text-sm">Rüstersieler Straße 1<br>26386 Wilhelmshaven</p>
+            <p class="text-sm mt-2">Tel: +49 (0) 123 456789</p>
+          </div>
+        `);
+
+        // Initial Map Style setzen
+        updateMapStyle();
+
+        // Dark Mode Toggle Event Listener
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        if (darkModeToggle) {
+          darkModeToggle.addEventListener('click', () => {
+            // Warte kurz, bis die DOM-Änderung durchgeführt wurde
+            setTimeout(updateMapStyle, 50);
+          });
+        }
+
+        // Zusätzlicher Event Listener für System Dark Mode Änderungen
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+          if (!document.documentElement.classList.contains('dark')) {
+            updateMapStyle();
+          }
+        });
+      });
+    </script>
   </body>
 </html>
