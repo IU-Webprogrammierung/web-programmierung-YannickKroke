@@ -1,3 +1,4 @@
+![SkyHaven Logo](assets/images/logo.png)
 # SkyHaven - Professionelle Drohnenaufnahmen
 
 Eine moderne Website für professionelle Drohnenaufnahmen, entwickelt mit HTML, Tailwind CSS und JavaScript.
