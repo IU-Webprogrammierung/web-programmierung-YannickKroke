@@ -11,6 +11,11 @@ module.exports = {
         primary: '#1a365d',
         secondary: '#2d3748',
         accent: '#4299e1',
+        'surface-light': '#ffffff',
+        'surface-dark': '#0f172a', // Angepasst an slate-900
+        'primary-dark': '#1e3a8a', // Dunkleres Blau für Dark Mode
+        'background-light': '#f8fafc', // sky-50
+        'background-dark': '#020617', // slate-950
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],

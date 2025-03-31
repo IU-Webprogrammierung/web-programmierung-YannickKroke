@@ -13,14 +13,6 @@
     />
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
     <style>
-      .hero-gradient {
-        background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(14, 165, 233, 0.1) 100%);
-      }
-      
-      .dark .hero-gradient {
-        background: linear-gradient(135deg, rgba(30, 64, 175, 0.2) 0%, rgba(3, 105, 161, 0.2) 100%);
-      }
-
       .hero-image {
         background-image: url('assets/images/hero-bg.JPG');
         background-size: cover;
@@ -54,7 +46,7 @@
     </style>
   </head>
 
-  <body class="min-h-screen bg-gradient-to-br from-sky-100 to-blue-200 dark:from-slate-900 dark:to-blue-900 text-slate-800 dark:text-slate-100 transition-colors duration-200">
+  <body class="min-h-screen bg-gradient-to-br from-sky-50 to-blue-100 dark:from-slate-900 dark:to-blue-950 text-slate-800 dark:text-slate-100 transition-colors duration-200">
     <!-- Navbar Container -->
     <div id="navbar-container"></div>
 
@@ -62,8 +54,8 @@
     <main>
       <!-- Hero Section -->
       <section class="relative min-h-screen hero-image">
-        <div class="absolute inset-0 hero-gradient backdrop-blur-[2px]"></div>
-        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-sky-100/90 dark:to-slate-900/90"></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-sky-50/30 to-blue-100/30 dark:from-slate-900/50 dark:to-blue-950/50 backdrop-blur-[1px]"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-sky-50 dark:to-slate-900"></div>
         
         <div class="relative h-screen flex items-center justify-center px-4">
           <div class="text-center space-y-8 max-w-4xl mx-auto">
@@ -91,7 +83,7 @@
       </section>
 
       <!-- Beschreibung -->
-      <section class="py-24 bg-surface-light/80 dark:bg-surface-dark/80 backdrop-blur-sm">
+      <section class="py-24 bg-white/40 dark:bg-slate-900/40 backdrop-blur-sm">
         <div class="container mx-auto px-4">
           <div class="max-w-3xl mx-auto text-center space-y-6 slide-in-left">
             <h2 class="text-4xl font-bold text-primary dark:text-white">Willkommen bei SkyHaven</h2>
@@ -104,8 +96,51 @@
         </div>
       </section>
 
+      <!-- Statistiken -->
+      <section class="py-24 bg-gradient-to-br from-sky-50 to-blue-100 dark:from-slate-900 dark:to-blue-950">
+        <div class="container mx-auto px-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Erfolgreiche Flüge -->
+            <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 text-center space-y-4">
+              <div class="text-blue-400 text-4xl">
+                <i class="fas fa-plane"></i>
+              </div>
+              <div class="text-5xl font-bold text-slate-900 dark:text-white">500</div>
+              <div class="text-lg text-slate-700 dark:text-slate-200">Erfolgreiche Flüge</div>
+            </div>
+
+            <!-- Aufgenommene Fotos -->
+            <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 text-center space-y-4">
+              <div class="text-blue-400 text-4xl">
+                <i class="fas fa-camera"></i>
+              </div>
+              <div class="text-5xl font-bold text-slate-900 dark:text-white">10000</div>
+              <div class="text-lg text-slate-700 dark:text-slate-200">Aufgenommene Fotos</div>
+            </div>
+
+            <!-- Zufriedene Kunden -->
+            <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 text-center space-y-4">
+              <div class="text-blue-400 text-4xl">
+                <i class="fas fa-smile"></i>
+              </div>
+              <div class="text-5xl font-bold text-slate-900 dark:text-white">250</div>
+              <div class="text-lg text-slate-700 dark:text-slate-200">Zufriedene Kunden</div>
+            </div>
+
+            <!-- Jahre Erfahrung -->
+            <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 text-center space-y-4">
+              <div class="text-blue-400 text-4xl">
+                <i class="fas fa-star"></i>
+              </div>
+              <div class="text-5xl font-bold text-slate-900 dark:text-white">5</div>
+              <div class="text-lg text-slate-700 dark:text-slate-200">Jahre Erfahrung</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- Leistungen -->
-      <section class="py-24 bg-background-light dark:bg-background-dark">
+      <section class="py-24 bg-white/60 dark:bg-slate-900/60 backdrop-blur-sm">
         <div class="container mx-auto px-4">
           <h2 class="text-4xl font-bold text-center mb-16 text-primary dark:text-white slide-in-right">
             Unsere Leistungen

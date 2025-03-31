@@ -15,6 +15,14 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
     <style>
+      .hero-gradient {
+        background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(14, 165, 233, 0.1) 100%);
+      }
+      
+      .dark .hero-gradient {
+        background: linear-gradient(135deg, rgba(30, 64, 175, 0.2) 0%, rgba(3, 105, 161, 0.2) 100%);
+      }
+
       .map-container {
         position: relative;
         overflow: hidden;
@@ -156,7 +164,7 @@
       }
     </style>
   </head>
-  <body class="min-h-screen bg-gradient-to-br from-sky-100 to-blue-200 dark:from-slate-900 dark:to-blue-900 text-slate-800 dark:text-slate-100 transition-colors duration-200">
+  <body class="min-h-screen bg-gradient-to-br from-sky-50 to-blue-100 dark:from-slate-900 dark:to-blue-950 text-slate-800 dark:text-slate-100 transition-colors duration-200">
     <!-- Navbar-Container -->
     <div id="navbar-container" class="relative z-50"></div>
 
@@ -164,22 +172,13 @@
     <div class="h-24 bg-gradient-to-b from-white/80 via-white/50 to-transparent dark:from-slate-900 dark:via-slate-900/50 dark:to-transparent absolute top-0 left-0 right-0 z-10 backdrop-blur-sm"></div>
 
     <!-- Hero Section -->
-    <section class="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-gradient-to-b from-slate-900 to-blue-900 -mt-24">
-      <div class="absolute inset-0 z-0">
-        <div class="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-900 to-blue-900"></div>
-        <img
-          src="assets/images/contact-hero.jpg"
-          alt=""
-          class="w-full h-full object-cover opacity-10"
-        />
-      </div>
-      
-      <div class="container mx-auto px-4 relative z-10 pt-32">
-        <div class="max-w-4xl mx-auto text-center">
-          <h1 class="text-5xl md:text-7xl font-bold mb-8 text-slate-900 dark:text-white fade-in">
+    <section class="relative pt-32 pb-16 px-4 bg-gradient-to-br from-sky-50/30 to-blue-100/30 dark:from-slate-900/50 dark:to-blue-950/50 backdrop-blur-sm">
+      <div class="container mx-auto">
+        <div class="max-w-4xl mx-auto text-center space-y-6">
+          <h1 class="text-5xl md:text-6xl font-bold text-primary dark:text-white fade-in">
             Kontakt
           </h1>
-          <p class="text-xl md:text-3xl text-slate-700 dark:text-slate-200 mb-12 max-w-3xl mx-auto fade-in-delay leading-relaxed">
+          <p class="text-xl text-gray-700 dark:text-gray-300 leading-relaxed fade-in">
             Haben Sie Fragen oder möchten Sie ein individuelles Angebot? 
             Ich freue mich darauf, von Ihnen zu hören.
           </p>
@@ -188,11 +187,11 @@
     </section>
 
     <!-- Kontakt-Bereich -->
-    <section id="kontakt" class="py-24 px-4 bg-gradient-to-b from-slate-900 to-slate-800">
+    <section id="kontakt" class="py-24 px-4 bg-gradient-to-br from-sky-50 to-blue-100 dark:from-slate-900 dark:to-blue-950">
       <div class="container mx-auto">
         <div class="max-w-4xl mx-auto text-center mb-16 fade-in">
-          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">Wie können wir Ihnen helfen?</h2>
-          <p class="text-lg text-slate-300">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-slate-900 dark:text-white">Wie können wir Ihnen helfen?</h2>
+          <p class="text-lg text-slate-700 dark:text-slate-200">
             Haben Sie Fragen oder möchten Sie ein individuelles Angebot? Schreiben
             Sie uns eine Nachricht - wir melden uns zeitnah bei Ihnen!
           </p>
@@ -307,7 +306,7 @@
               <div class="flex justify-end">
                 <button
                   type="submit"
-                  class="bg-blue-600 hover:bg-blue-700 text-black px-8 py-3 rounded-lg text-lg font-semibold transition-all hover:transform hover:scale-105"
+                  class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-all hover:transform hover:scale-105"
                 >
                   Nachricht senden
                 </button>
@@ -319,7 +318,7 @@
     </section>
 
     <!-- Karten-Bereich -->
-    <section class="py-24 px-4 bg-gradient-to-b from-slate-800 to-slate-900">
+    <section class="py-24 px-4 bg-gradient-to-br from-sky-50 to-blue-100 dark:from-slate-900 dark:to-blue-950">
       <div class="container mx-auto">
         <div class="max-w-6xl mx-auto">
           <div class="bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm rounded-xl shadow-lg p-8 border border-slate-200 dark:border-slate-700">

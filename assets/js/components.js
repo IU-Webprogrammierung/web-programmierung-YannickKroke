@@ -355,17 +355,6 @@ if (document.readyState === 'loading') {
 
 // Add statistics to index.html
 document.addEventListener('DOMContentLoaded', function() {
-  // ... existing event listeners ...
-
-  // Add statistics section if we're on the index page
-  if (window.location.pathname === '/' || window.location.pathname.includes('index')) {
-    const mainContent = document.querySelector('main');
-    if (mainContent) {
-      const heroSection = mainContent.querySelector('section');
-      if (heroSection) {
-        heroSection.insertAdjacentHTML('afterend', createStatisticsComponent());
-        initializeStatistics();
-      }
-    }
-  }
-  });
+  // Initialisiere die Statistik-Animation für die vorhandene Sektion
+  initializeStatistics();
+});
