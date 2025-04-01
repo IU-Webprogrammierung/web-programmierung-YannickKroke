@@ -16,25 +16,6 @@
   body {
     @apply bg-white text-gray-900 dark:bg-gray-900 dark:text-white;
   }
-
-  /* Verbesserte Fokus-Styles für bessere Accessibility */
-  *:focus-visible {
-    @apply outline-none ring-2 ring-blue-500 ring-offset-2 dark:ring-offset-gray-900;
-  }
-
-  /* Verbesserte Hover-States für bessere Sichtbarkeit */
-  a:hover, button:hover {
-    @apply text-accent dark:text-accent-dark;
-  }
-
-  /* Verbesserte Kontraste für Text */
-  .text-primary {
-    @apply text-gray-900 dark:text-white;
-  }
-
-  .text-secondary {
-    @apply text-gray-700 dark:text-gray-200;
-  }
 }
 
 @layer components {
@@ -43,7 +24,7 @@
   }
   
   .btn {
-    @apply px-4 py-2 rounded-md font-medium transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900;
+    @apply px-4 py-2 rounded-md font-medium transition-all duration-300 transform hover:scale-105;
   }
   
   .btn-primary {
@@ -67,7 +48,7 @@
   }
 
   .nav-link {
-    @apply text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-accent transition-all duration-300 relative focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900;
+    @apply text-gray-800 dark:text-gray-100 hover:text-primary dark:hover:text-accent transition-all duration-300 relative;
   }
 
   .nav-link::after {
@@ -85,21 +66,6 @@
 
   .nav-link-active::after {
     @apply w-full;
-  }
-
-  /* Verbesserte Accessibility für interaktive Elemente */
-  .interactive-element {
-    @apply focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900;
-  }
-
-  /* Verbesserte Sichtbarkeit für wichtige Informationen */
-  .important-text {
-    @apply text-primary dark:text-white font-semibold;
-  }
-
-  /* Verbesserte Lesbarkeit für lange Texte */
-  .readable-text {
-    @apply text-gray-700 dark:text-gray-200 leading-relaxed;
   }
 
   .parallax-section {
@@ -152,18 +118,25 @@
   .fade-in img {
     @apply transition-all duration-700;
   }
-}
 
-/* Screen Reader Only Text */
-.sr-only {
-  @apply absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0;
-}
+  /* Newsletter-Formular Styles */
+  .newsletter-input {
+    @apply w-full px-4 py-2 rounded-lg bg-white/20 text-white placeholder-gray-200 focus:outline-none focus:ring-2 focus:ring-accent;
+  }
 
-/* Verbesserte Kontraste für Dark Mode */
-.dark {
-  --primary-color: #ffffff;
-  --secondary-color: #e5e7eb;
-  --accent-color: #60a5fa;
+  .newsletter-button {
+    @apply w-full px-4 py-2 bg-[#1a365d] text-white rounded-lg hover:bg-[#0f172a] transition-colors font-medium shadow-md hover:shadow-lg;
+  }
+
+  /* Footer Links */
+  .footer-link {
+    @apply text-gray-200 hover:text-white transition-colors;
+  }
+
+  /* Social Media Icons */
+  .social-icon {
+    @apply text-gray-200 hover:text-white transition-colors;
+  }
 }
 
 /* Navbar Animationen */

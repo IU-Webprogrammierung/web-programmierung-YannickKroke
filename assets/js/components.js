@@ -4,12 +4,12 @@ function initializeComponents() {
   const navbarContainer = document.getElementById('navbar-container');
   if (navbarContainer) {
     navbarContainer.innerHTML = `
-      <header class="fixed top-0 left-0 right-0 w-full bg-white/90 dark:bg-gray-900/30 backdrop-blur-sm shadow-md z-[100] transition-colors duration-200">
+      <header class="fixed top-0 left-0 right-0 w-full bg-white/90 dark:bg-gray-900/30 backdrop-blur-sm shadow-md z-[100] transition-colors duration-200" role="banner">
         <div class="container mx-auto px-4">
           <div class="flex justify-between items-center h-16">
             <!-- Logo -->
             <div class="flex items-center">
-              <a href="index.html" class="flex items-center">
+              <a href="index.html" class="flex items-center" aria-label="Zur Startseite">
                 <img src="assets/images/logo.png" alt="SkyHaven Logo" class="h-8 w-auto" />
               </a>
             </div>
@@ -20,31 +20,29 @@ function initializeComponents() {
               <a href="Dienstleistungen.html" class="nav-link text-primary dark:text-white hover:text-accent dark:hover:text-accent">Leistungen</a>
               <a href="Uebermich.html" class="nav-link text-primary dark:text-white hover:text-accent dark:hover:text-accent">Über mich</a>
               <a href="Kontakt.html" class="nav-link text-primary dark:text-white hover:text-accent dark:hover:text-accent">Kontakt</a>
-              <button id="dark-mode-toggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900" aria-label="Dark Mode umschalten" aria-pressed="false">
+              <button id="dark-mode-toggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label="Dark Mode umschalten" aria-pressed="false">
                 <i class="fas fa-moon text-primary dark:hidden" aria-hidden="true"></i>
                 <i class="fas fa-sun hidden dark:block text-white" aria-hidden="true"></i>
-                <span class="sr-only">Dark Mode umschalten</span>
               </button>
             </nav>
 
             <!-- Mobile Menu Button -->
-            <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
+            <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
               <i class="fas fa-bars text-primary dark:text-white" aria-hidden="true"></i>
-              <span class="sr-only">Menü öffnen</span>
             </button>
           </div>
 
           <!-- Mobile Navigation -->
           <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-900/50 backdrop-blur-sm shadow-lg absolute left-0 right-0 top-16" role="navigation" aria-label="Mobile Navigation">
             <div class="px-2 pt-2 pb-3 space-y-1">
-              <a href="index.html" class="block px-3 py-2 nav-link text-primary dark:text-white hover:text-accent dark:hover:text-accent focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900" aria-current="page">Startseite</a>
-              <a href="Dienstleistungen.html" class="block px-3 py-2 nav-link text-primary dark:text-white hover:text-accent dark:hover:text-accent focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900">Leistungen</a>
-              <a href="Uebermich.html" class="block px-3 py-2 nav-link text-primary dark:text-white hover:text-accent dark:hover:text-accent focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900">Über mich</a>
-              <a href="Kontakt.html" class="block px-3 py-2 nav-link text-primary dark:text-white hover:text-accent dark:hover:text-accent focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900">Kontakt</a>
-              <button id="dark-mode-toggle-mobile" class="w-full text-left px-3 py-2 nav-link text-primary dark:text-white hover:text-accent dark:hover:text-accent focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900" aria-label="Dark Mode umschalten" aria-pressed="false">
+              <a href="index.html" class="block px-3 py-2 nav-link text-primary dark:text-white hover:text-accent dark:hover:text-accent" aria-current="page">Startseite</a>
+              <a href="Dienstleistungen.html" class="block px-3 py-2 nav-link text-primary dark:text-white hover:text-accent dark:hover:text-accent">Leistungen</a>
+              <a href="Uebermich.html" class="block px-3 py-2 nav-link text-primary dark:text-white hover:text-accent dark:hover:text-accent">Über mich</a>
+              <a href="Kontakt.html" class="block px-3 py-2 nav-link text-primary dark:text-white hover:text-accent dark:hover:text-accent">Kontakt</a>
+              <button id="dark-mode-toggle-mobile" class="w-full text-left px-3 py-2 nav-link text-primary dark:text-white hover:text-accent dark:hover:text-accent" aria-label="Dark Mode umschalten" aria-pressed="false">
                 <i class="fas fa-moon dark:hidden" aria-hidden="true"></i>
                 <i class="fas fa-sun hidden dark:block" aria-hidden="true"></i>
-                <span class="sr-only">Dark Mode umschalten</span>
+                Dark Mode
               </button>
             </div>
           </div>
@@ -116,19 +114,26 @@ function initializeComponents() {
               </div>
 
               <h3 class="text-xl font-bold pt-4">Newsletter</h3>
-              <form class="space-y-2">
-                <input 
-                  type="email" 
-                  placeholder="Ihre E-Mail-Adresse"
-                  class="w-full px-4 py-2 rounded-lg bg-white/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-accent"
-                  required
-                >
-                <button 
-                  type="submit"
-                  class="w-full px-4 py-2 bg-accent text-white rounded-lg hover:bg-accent/90 transition-colors"
-                >
-                  Anmelden
-                </button>
+              <form class="space-y-2" aria-label="Newsletter-Anmeldung">
+                <div class="relative">
+                  <label for="newsletter-email" class="sr-only">Ihre E-Mail-Adresse für den Newsletter</label>
+                  <input 
+                    type="email" 
+                    id="newsletter-email"
+                    name="newsletter-email"
+                    placeholder="Ihre E-Mail-Adresse"
+                    class="w-full px-4 py-2 rounded-lg bg-white/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-accent"
+                    required
+                    aria-required="true"
+                  >
+                  <button 
+                    type="submit"
+                    class="w-full px-4 py-2 bg-[#1a365d] hover:bg-[#0f172a] text-white rounded-lg transition-colors font-medium shadow-md hover:shadow-lg"
+                    aria-label="Newsletter abonnieren"
+                  >
+                    Anmelden
+                  </button>
+                </div>
               </form>
             </div>
           </div>
@@ -142,18 +147,41 @@ function initializeComponents() {
     `;
   }
 
-  // Mobile Menu Toggle
+  // Mobile Menu Toggle mit Accessibility
   const mobileMenuButton = document.getElementById('mobile-menu-button');
   const mobileMenu = document.getElementById('mobile-menu');
   
   if (mobileMenuButton && mobileMenu) {
     mobileMenuButton.addEventListener('click', () => {
+      const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+      mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
       mobileMenu.classList.toggle('hidden');
+      
+      // Fokus-Management
+      if (!isExpanded) {
+        // Wenn das Menü geöffnet wird, fokussiere den ersten Link
+        const firstLink = mobileMenu.querySelector('a');
+        if (firstLink) {
+          firstLink.focus();
+        }
+      } else {
+        // Wenn das Menü geschlossen wird, fokussiere zurück zum Button
+        mobileMenuButton.focus();
+      }
+    });
+
+    // Schließe das Menü bei Escape-Taste
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+        mobileMenuButton.click();
+      }
     });
   }
 
-  // Dark Mode Toggle Funktion
-  function toggleDarkMode() {
+  // Dark Mode Toggle mit Accessibility
+  function toggleDarkMode(button) {
+    const isPressed = button.getAttribute('aria-pressed') === 'true';
+    button.setAttribute('aria-pressed', !isPressed);
     document.documentElement.classList.toggle('dark');
     localStorage.setItem('darkMode', document.documentElement.classList.contains('dark'));
   }
@@ -161,19 +189,23 @@ function initializeComponents() {
   // Dark Mode Toggle für Desktop
   const darkModeToggle = document.getElementById('dark-mode-toggle');
   if (darkModeToggle) {
-    darkModeToggle.addEventListener('click', toggleDarkMode);
+    darkModeToggle.addEventListener('click', () => toggleDarkMode(darkModeToggle));
   }
 
   // Dark Mode Toggle für mobile Ansicht
   const darkModeToggleMobile = document.getElementById('dark-mode-toggle-mobile');
   if (darkModeToggleMobile) {
-    darkModeToggleMobile.addEventListener('click', toggleDarkMode);
+    darkModeToggleMobile.addEventListener('click', () => toggleDarkMode(darkModeToggleMobile));
   }
 
   // Dark Mode aus localStorage wiederherstellen
   const darkMode = localStorage.getItem('darkMode');
   if (darkMode === 'true') {
     document.documentElement.classList.add('dark');
+    // Aktualisiere die aria-pressed Attribute
+    [darkModeToggle, darkModeToggleMobile].forEach(button => {
+      if (button) button.setAttribute('aria-pressed', 'true');
+    });
   }
 
   // Aktuelle Seite in der Navigation hervorheben
@@ -181,8 +213,30 @@ function initializeComponents() {
   document.querySelectorAll('.nav-link').forEach(link => {
     if (link.getAttribute('href') === currentPath.split('/').pop()) {
       link.classList.add('nav-link-active');
+      link.setAttribute('aria-current', 'page');
     }
   });
+
+  // Back to Top Button mit Accessibility
+  const backToTopButton = document.getElementById('back-to-top');
+  if (backToTopButton) {
+    backToTopButton.setAttribute('aria-label', 'Zurück nach oben');
+    
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTopButton.classList.remove('opacity-0', 'invisible');
+      } else {
+        backToTopButton.classList.add('opacity-0', 'invisible');
+      }
+    });
+
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
 
   // Scroll-Reveal-Funktion
   function initScrollReveal() {
