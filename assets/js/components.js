@@ -15,34 +15,36 @@ function initializeComponents() {
             </div>
 
             <!-- Desktop Navigation -->
-            <nav class="hidden md:flex items-center space-x-8">
-              <a href="index.html" class="nav-link text-primary dark:text-white hover:text-accent dark:hover:text-accent">Startseite</a>
+            <nav class="hidden md:flex items-center space-x-8" role="navigation" aria-label="Hauptnavigation">
+              <a href="index.html" class="nav-link text-primary dark:text-white hover:text-accent dark:hover:text-accent" aria-current="page">Startseite</a>
               <a href="Dienstleistungen.html" class="nav-link text-primary dark:text-white hover:text-accent dark:hover:text-accent">Leistungen</a>
               <a href="Uebermich.html" class="nav-link text-primary dark:text-white hover:text-accent dark:hover:text-accent">Über mich</a>
               <a href="Kontakt.html" class="nav-link text-primary dark:text-white hover:text-accent dark:hover:text-accent">Kontakt</a>
-              <button id="dark-mode-toggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label="Dark Mode umschalten">
-                <i class="fas fa-moon text-primary dark:hidden"></i>
-                <i class="fas fa-sun hidden dark:block text-white"></i>
+              <button id="dark-mode-toggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900" aria-label="Dark Mode umschalten" aria-pressed="false">
+                <i class="fas fa-moon text-primary dark:hidden" aria-hidden="true"></i>
+                <i class="fas fa-sun hidden dark:block text-white" aria-hidden="true"></i>
+                <span class="sr-only">Dark Mode umschalten</span>
               </button>
             </nav>
 
             <!-- Mobile Menu Button -->
-            <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label="Menü öffnen">
-              <i class="fas fa-bars text-primary dark:text-white"></i>
+            <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
+              <i class="fas fa-bars text-primary dark:text-white" aria-hidden="true"></i>
+              <span class="sr-only">Menü öffnen</span>
             </button>
           </div>
 
           <!-- Mobile Navigation -->
-          <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-900/50 backdrop-blur-sm shadow-lg absolute left-0 right-0 top-16">
+          <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-900/50 backdrop-blur-sm shadow-lg absolute left-0 right-0 top-16" role="navigation" aria-label="Mobile Navigation">
             <div class="px-2 pt-2 pb-3 space-y-1">
-              <a href="index.html" class="block px-3 py-2 nav-link text-primary dark:text-white hover:text-accent dark:hover:text-accent">Startseite</a>
-              <a href="Dienstleistungen.html" class="block px-3 py-2 nav-link text-primary dark:text-white hover:text-accent dark:hover:text-accent">Leistungen</a>
-              <a href="Uebermich.html" class="block px-3 py-2 nav-link text-primary dark:text-white hover:text-accent dark:hover:text-accent">Über mich</a>
-              <a href="Kontakt.html" class="block px-3 py-2 nav-link text-primary dark:text-white hover:text-accent dark:hover:text-accent">Kontakt</a>
-              <button id="dark-mode-toggle-mobile" class="w-full text-left px-3 py-2 nav-link text-primary dark:text-white hover:text-accent dark:hover:text-accent">
-                <i class="fas fa-moon dark:hidden"></i>
-                <i class="fas fa-sun hidden dark:block"></i>
-                Dark Mode
+              <a href="index.html" class="block px-3 py-2 nav-link text-primary dark:text-white hover:text-accent dark:hover:text-accent focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900" aria-current="page">Startseite</a>
+              <a href="Dienstleistungen.html" class="block px-3 py-2 nav-link text-primary dark:text-white hover:text-accent dark:hover:text-accent focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900">Leistungen</a>
+              <a href="Uebermich.html" class="block px-3 py-2 nav-link text-primary dark:text-white hover:text-accent dark:hover:text-accent focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900">Über mich</a>
+              <a href="Kontakt.html" class="block px-3 py-2 nav-link text-primary dark:text-white hover:text-accent dark:hover:text-accent focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900">Kontakt</a>
+              <button id="dark-mode-toggle-mobile" class="w-full text-left px-3 py-2 nav-link text-primary dark:text-white hover:text-accent dark:hover:text-accent focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900" aria-label="Dark Mode umschalten" aria-pressed="false">
+                <i class="fas fa-moon dark:hidden" aria-hidden="true"></i>
+                <i class="fas fa-sun hidden dark:block" aria-hidden="true"></i>
+                <span class="sr-only">Dark Mode umschalten</span>
               </button>
             </div>
           </div>
