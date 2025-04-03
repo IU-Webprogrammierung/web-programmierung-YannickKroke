@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tour start="node1" appversion="7.1.9" hassounds="0" apprev="20995">
+  <panorama id="node1">
+    <input levelingroll="0" overlap="1" width="2048" leveltileurl="tiles/node1/cf_%c/l_%l/c_%x/tile_%y.jpg" height="2048" levelingpitch="0" levelbias="0.400" leveltilesize="510" levelbiashidpi="1.000">
+      <level predecode="0" preload="0" width="2048" height="2048"/>
+      <level predecode="0" preload="0" width="1024" height="1024"/>
+      <level predecode="0" preload="0" width="512" height="512"/>
+      <level predecode="1" preload="1" width="256" height="256"/>
+      <preview strip="1" color="0x808080"/>
+    </input>
+    <view pannorth="0" fovmode="2">
+      <start tilt="0" projection="4" pan="0" fov="100"/>
+      <flyin tilt="-90" projection="9" pan="0" fov="170"/>
+      <min tilt="-90" pan="0" fovpixel="2"/>
+      <max tilt="90" pan="360" fov="140" fovstereographic="330" fovfisheye="360" scaletofit="1"/>
+    </view>
+    <userdata description="" info="" altitude="-8.45" author="" copyright="" source="" comment="" tags="100MEDIA" datetime="03.04.2025 13:31" latitude="53.536903" longitude="8.129008" heading="0" nodeid="node1" customnodeid="" title="Pädagogenviertel"/>
+    <hotspots smoothmovement="0" wordwrap="1" width="180" height="20">
+      <label bordercolor="0x000000" textcolor="0x000000" backgroundalpha="1" enabled="1" border="1" textalpha="1" width="180" height="20" borderradius="1" wordwrap="1" background="1" backgroundcolor="0xffffff" borderalpha="1"/>
+      <polystyle bordercolor="0x0000ff" backgroundalpha="0.25098" backgroundcolor="0x0000ff" handcursor="1" mode="0" borderalpha="1"/>
+      <hotspot description="" target="$fwd" tilt="0" distance="635.507" skinid="ht_node" url="{node2}" pan="38.5749" title="Heppens" id="Point01"/>
+      <hotspot description="" target="$fwd" tilt="0" distance="1157.92" skinid="ht_node" url="{node5}" pan="133.38" title="Siebethsburg" id="Point02"/>
+      <hotspot description="" target="$fwd" tilt="0" distance="1329.62" skinid="ht_node" url="{node4}" pan="150.396" title="Kurpark" id="Point03"/>
+      <hotspot description="" target="$fwd" tilt="0" distance="470.547" skinid="ht_node" url="{node3}" pan="155.443" title="Villenviertel" id="Point04"/>
+    </hotspots>
+    <media/>
+    <transition zoomfov="40" blendcolor="0x000000" zoomin="0" enabled="1" zoomoutpause="1" zoomout="0" softedge="0" type="crossdissolve" zoomspeed="2" zoomafteroutfov="40" blendtime="1" delay="none" zoomafterinfov="140"/>
+    <animation clipsrandom="0" useinautorotation="0" animsequence="Animation01" syncanimationwithvideo="0"/>
+    <control invertwheel="0" simulatemass="1" speedwheel="1" contextprojections="0" hideabout="0" contextvr="1" lockedwheel="0" sensitivity="8" dblclickfullscreen="0" contextfullscreen="1" rubberband="0" invertcontrol="1" lockedmouse="0" zoomcentercursor="1" lockedkeyboard="0" lockedkeyboardzoom="0"/>
+  </panorama>
+  <panorama id="node2">
+    <input levelingroll="0" overlap="1" width="2048" leveltileurl="tiles/node2/cf_%c/l_%l/c_%x/tile_%y.jpg" height="2048" levelingpitch="0" levelbias="0.400" leveltilesize="510" levelbiashidpi="1.000">
+      <level predecode="0" preload="0" width="2048" height="2048"/>
+      <level predecode="0" preload="0" width="1024" height="1024"/>
+      <level predecode="0" preload="0" width="512" height="512"/>
+      <level predecode="1" preload="1" width="256" height="256"/>
+      <preview strip="1" color="0x808080"/>
+    </input>
+    <view pannorth="0" fovmode="2">
+      <start tilt="0" projection="4" pan="0" fov="100"/>
+      <flyin tilt="-90" projection="9" pan="0" fov="170"/>
+      <min tilt="-90" pan="0" fovpixel="2"/>
+      <max tilt="90" pan="360" fov="140" fovstereographic="330" fovfisheye="360" scaletofit="1"/>
+    </view>
+    <userdata description="" info="" altitude="11.85" author="" copyright="" source="" comment="" tags="100MEDIA" datetime="03.04.2025 13:33" latitude="53.541371" longitude="8.123011" heading="0" nodeid="node2" customnodeid="" title="Heppens"/>
+    <hotspots smoothmovement="0" wordwrap="1" width="180" height="20">
+      <label bordercolor="0x000000" textcolor="0x000000" backgroundalpha="1" enabled="1" border="1" textalpha="1" width="180" height="20" borderradius="1" wordwrap="1" background="1" backgroundcolor="0xffffff" borderalpha="1"/>
+      <polystyle bordercolor="0x0000ff" backgroundalpha="0.25098" backgroundcolor="0x0000ff" handcursor="1" mode="0" borderalpha="1"/>
+      <hotspot description="" target="$fwd" tilt="0" distance="635.507" skinid="ht_node" url="{node1}" pan="-141.42" title="Pädagogenviertel" id="Point01"/>
+      <hotspot description="" target="$fwd" tilt="0" distance="946.348" skinid="ht_node" url="{node3}" pan="-167.751" title="Villenviertel" id="Point02"/>
+      <hotspot description="" target="$fwd" tilt="0" distance="1673.3" skinid="ht_node" url="{node4}" pan="171.046" title="Kurpark" id="Point03"/>
+      <hotspot description="" target="$fwd" tilt="0" distance="1366.72" skinid="ht_node" url="{node5}" pan="160.989" title="Siebethsburg" id="Point04"/>
+    </hotspots>
+    <media/>
+    <transition zoomfov="40" blendcolor="0x000000" zoomin="0" enabled="1" zoomoutpause="1" zoomout="0" softedge="0" type="crossdissolve" zoomspeed="2" zoomafteroutfov="40" blendtime="1" delay="none" zoomafterinfov="140"/>
+    <animation clipsrandom="0" useinautorotation="0" animsequence="Animation01" syncanimationwithvideo="0"/>
+    <control invertwheel="0" simulatemass="1" speedwheel="1" contextprojections="0" hideabout="0" contextvr="1" lockedwheel="0" sensitivity="8" dblclickfullscreen="0" contextfullscreen="1" rubberband="0" invertcontrol="1" lockedmouse="0" zoomcentercursor="1" lockedkeyboard="0" lockedkeyboardzoom="0"/>
+  </panorama>
+  <panorama id="node3">
+    <input levelingroll="0" overlap="1" width="2048" leveltileurl="tiles/node3/cf_%c/l_%l/c_%x/tile_%y.jpg" height="2048" levelingpitch="0" levelbias="0.400" leveltilesize="510" levelbiashidpi="1.000">
+      <level predecode="0" preload="0" width="2048" height="2048"/>
+      <level predecode="0" preload="0" width="1024" height="1024"/>
+      <level predecode="0" preload="0" width="512" height="512"/>
+      <level predecode="1" preload="1" width="256" height="256"/>
+      <preview strip="1" color="0x808080"/>
+    </input>
+    <view pannorth="0" fovmode="2">
+      <start tilt="0" projection="4" pan="0" fov="100"/>
+      <flyin tilt="-90" projection="9" pan="0" fov="170"/>
+      <min tilt="-90" pan="0" fovpixel="2"/>
+      <max tilt="90" pan="360" fov="140" fovstereographic="330" fovfisheye="360" scaletofit="1"/>
+    </view>
+    <userdata description="" info="" altitude="12.65" author="" copyright="" source="" comment="" tags="100MEDIA" datetime="03.04.2025 13:35" latitude="53.533054" longitude="8.126049" heading="0" nodeid="node3" customnodeid="" title="Villenviertel"/>
+    <hotspots smoothmovement="0" wordwrap="1" width="180" height="20">
+      <label bordercolor="0x000000" textcolor="0x000000" backgroundalpha="1" enabled="1" border="1" textalpha="1" width="180" height="20" borderradius="1" wordwrap="1" background="1" backgroundcolor="0xffffff" borderalpha="1"/>
+      <polystyle bordercolor="0x0000ff" backgroundalpha="0.25098" backgroundcolor="0x0000ff" handcursor="1" mode="0" borderalpha="1"/>
+      <hotspot description="" target="$fwd" tilt="0" distance="946.348" skinid="ht_node" url="{node2}" pan="12.2467" title="Heppens" id="Point01"/>
+      <hotspot description="" target="$fwd" tilt="0" distance="470.547" skinid="ht_node" url="{node1}" pan="-24.5547" title="Pädagogenviertel" id="Point02"/>
+      <hotspot description="" target="$fwd" tilt="0" distance="861.888" skinid="ht_node" url="{node4}" pan="147.645" title="Kurpark" id="Point03"/>
+      <hotspot description="" target="$fwd" tilt="0" distance="743.15" skinid="ht_node" url="{node5}" pan="119.624" title="Siebethsburg" id="Point04"/>
+    </hotspots>
+    <media/>
+    <transition zoomfov="40" blendcolor="0x000000" zoomin="0" enabled="1" zoomoutpause="1" zoomout="0" softedge="0" type="crossdissolve" zoomspeed="2" zoomafteroutfov="40" blendtime="1" delay="none" zoomafterinfov="140"/>
+    <animation clipsrandom="0" useinautorotation="0" animsequence="Animation01" syncanimationwithvideo="0"/>
+    <control invertwheel="0" simulatemass="1" speedwheel="1" contextprojections="0" hideabout="0" contextvr="1" lockedwheel="0" sensitivity="8" dblclickfullscreen="0" contextfullscreen="1" rubberband="0" invertcontrol="1" lockedmouse="0" zoomcentercursor="1" lockedkeyboard="0" lockedkeyboardzoom="0"/>
+  </panorama>
+  <panorama id="node4">
+    <input levelingroll="0" overlap="1" width="2048" leveltileurl="tiles/node4/cf_%c/l_%l/c_%x/tile_%y.jpg" height="2048" levelingpitch="0" levelbias="0.400" leveltilesize="510" levelbiashidpi="1.000">
+      <level predecode="0" preload="0" width="2048" height="2048"/>
+      <level predecode="0" preload="0" width="1024" height="1024"/>
+      <level predecode="0" preload="0" width="512" height="512"/>
+      <level predecode="1" preload="1" width="256" height="256"/>
+      <preview strip="1" color="0x808080"/>
+    </input>
+    <view pannorth="0" fovmode="2">
+      <start tilt="0" projection="4" pan="0" fov="100"/>
+      <flyin tilt="-90" projection="9" pan="0" fov="170"/>
+      <min tilt="-90" pan="0" fovpixel="2"/>
+      <max tilt="90" pan="360" fov="140" fovstereographic="330" fovfisheye="360" scaletofit="1"/>
+    </view>
+    <userdata description="" info="" altitude="-22.38" author="" copyright="" source="" comment="" tags="100MEDIA" datetime="03.04.2025 14:16" latitude="53.526506" longitude="8.119071" heading="0" nodeid="node4" customnodeid="" title="Kurpark"/>
+    <hotspots smoothmovement="0" wordwrap="1" width="180" height="20">
+      <label bordercolor="0x000000" textcolor="0x000000" backgroundalpha="1" enabled="1" border="1" textalpha="1" width="180" height="20" borderradius="1" wordwrap="1" background="1" backgroundcolor="0xffffff" borderalpha="1"/>
+      <polystyle bordercolor="0x0000ff" backgroundalpha="0.25098" backgroundcolor="0x0000ff" handcursor="1" mode="0" borderalpha="1"/>
+      <hotspot description="" target="$fwd" tilt="0" distance="405.303" skinid="ht_node" url="{node5}" pan="27.1266" title="Siebethsburg" id="Point01"/>
+      <hotspot description="" target="$fwd" tilt="0" distance="1673.3" skinid="ht_node" url="{node2}" pan="-8.95081" title="Heppens" id="Point02"/>
+      <hotspot description="" target="$fwd" tilt="0" distance="861.888" skinid="ht_node" url="{node3}" pan="-32.349" title="Villenviertel" id="Point03"/>
+    </hotspots>
+    <media/>
+    <transition zoomfov="40" blendcolor="0x000000" zoomin="0" enabled="1" zoomoutpause="1" zoomout="0" softedge="0" type="crossdissolve" zoomspeed="2" zoomafteroutfov="40" blendtime="1" delay="none" zoomafterinfov="140"/>
+    <animation clipsrandom="0" useinautorotation="0" animsequence="Animation01" syncanimationwithvideo="0"/>
+    <control invertwheel="0" simulatemass="1" speedwheel="1" contextprojections="0" hideabout="0" contextvr="1" lockedwheel="0" sensitivity="8" dblclickfullscreen="0" contextfullscreen="1" rubberband="0" invertcontrol="1" lockedmouse="0" zoomcentercursor="1" lockedkeyboard="0" lockedkeyboardzoom="0"/>
+  </panorama>
+  <panorama id="node5">
+    <input levelingroll="0" overlap="1" width="2048" leveltileurl="tiles/node5/cf_%c/l_%l/c_%x/tile_%y.jpg" height="2048" levelingpitch="0" levelbias="0.400" leveltilesize="510" levelbiashidpi="1.000">
+      <level predecode="0" preload="0" width="2048" height="2048"/>
+      <level predecode="0" preload="0" width="1024" height="1024"/>
+      <level predecode="0" preload="0" width="512" height="512"/>
+      <level predecode="1" preload="1" width="256" height="256"/>
+      <preview strip="1" color="0x808080"/>
+    </input>
+    <view pannorth="0" fovmode="2">
+      <start tilt="0" projection="4" pan="0" fov="100"/>
+      <flyin tilt="-90" projection="9" pan="0" fov="170"/>
+      <min tilt="-90" pan="0" fovpixel="2"/>
+      <max tilt="90" pan="360" fov="140" fovstereographic="330" fovfisheye="360" scaletofit="1"/>
+    </view>
+    <userdata description="" info="" altitude="-19.78" author="" copyright="" source="" comment="" tags="100MEDIA" datetime="03.04.2025 14:18" latitude="53.529750" longitude="8.116275" heading="0" nodeid="node5" customnodeid="" title="Siebethsburg"/>
+    <hotspots smoothmovement="0" wordwrap="1" width="180" height="20">
+      <label bordercolor="0x000000" textcolor="0x000000" backgroundalpha="1" enabled="1" border="1" textalpha="1" width="180" height="20" borderradius="1" wordwrap="1" background="1" backgroundcolor="0xffffff" borderalpha="1"/>
+      <polystyle bordercolor="0x0000ff" backgroundalpha="0.25098" backgroundcolor="0x0000ff" handcursor="1" mode="0" borderalpha="1"/>
+      <hotspot description="" target="$fwd" tilt="0" distance="1366.72" skinid="ht_node" url="{node2}" pan="-19.0058" title="Heppens" id="Point01"/>
+      <hotspot description="" target="$fwd" tilt="0" distance="1157.92" skinid="ht_node" url="{node1}" pan="-46.6094" title="Pädagogenviertel" id="Point02"/>
+      <hotspot description="" target="$fwd" tilt="0" distance="743.15" skinid="ht_node" url="{node3}" pan="-60.3681" title="Villenviertel" id="Point03"/>
+    </hotspots>
+    <media/>
+    <transition zoomfov="40" blendcolor="0x000000" zoomin="0" enabled="1" zoomoutpause="1" zoomout="0" softedge="0" type="crossdissolve" zoomspeed="2" zoomafteroutfov="40" blendtime="1" delay="none" zoomafterinfov="140"/>
+    <animation clipsrandom="0" useinautorotation="0" animsequence="Animation01" syncanimationwithvideo="0"/>
+    <control invertwheel="0" simulatemass="1" speedwheel="1" contextprojections="0" hideabout="0" contextvr="1" lockedwheel="0" sensitivity="8" dblclickfullscreen="0" contextfullscreen="1" rubberband="0" invertcontrol="1" lockedmouse="0" zoomcentercursor="1" lockedkeyboard="0" lockedkeyboardzoom="0"/>
+  </panorama>
+  <masternode>
+    <userdata description="" author="" copyright="" comment="" tags="" title=""/>
+    <animationsequences>
+      <sequence title="Animation01"/>
+    </animationsequences>
+  </masternode>
+</tour>

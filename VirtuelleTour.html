@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Virtuelle Tour - SkyHaven</title>
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Pannellum CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum-react@1.2.4/build/pannellum.css"/>
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <!-- Pano2VR -->
+    <script src="assets/js/pano2vr/pano2vr_player.js"></script>
+    <script src="assets/js/pano2vr/skin.js"></script>
+    <style>
+      .hero-gradient {
+        background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(14, 165, 233, 0.1) 100%);
+      }
+      
+      .dark .hero-gradient {
+        background: linear-gradient(135deg, rgba(30, 64, 175, 0.2) 0%, rgba(3, 105, 161, 0.2) 100%);
+      }
+
+      .panorama-container {
+        position: relative;
+        width: 100%;
+        height: 600px;
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      }
+
+      .panorama-controls {
+        position: absolute;
+        bottom: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+        display: flex;
+        gap: 0.5rem;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        backdrop-blur-sm;
+      }
+
+      .panorama-controls button {
+        @apply px-4 py-2 bg-white/10 hover:bg-white/20 text-white rounded-lg transition-colors;
+      }
+
+      .panorama-controls button.active {
+        @apply bg-white/30;
+      }
+
+      .panorama-info {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        z-index: 10;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 1rem;
+        border-radius: 0.5rem;
+        backdrop-blur-sm;
+        color: white;
+        max-width: 300px;
+      }
+
+      #pano-container {
+        position: relative;
+        width: 100%;
+        height: 600px;
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      }
+
+      #pano {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen bg-gradient-to-br from-sky-50 to-blue-100 dark:from-slate-900 dark:to-blue-950 text-slate-800 dark:text-slate-100 transition-colors duration-200">
+    <!-- Navbar-Container -->
+    <div id="navbar-container" class="relative z-50"></div>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-16 px-4 bg-gradient-to-br from-sky-50/30 to-blue-100/30 dark:from-slate-900/50 dark:to-blue-950/50 backdrop-blur-sm">
+      <div class="container mx-auto">
+        <div class="max-w-4xl mx-auto text-center space-y-6">
+          <h1 class="text-5xl md:text-6xl font-bold text-primary dark:text-white fade-in">
+            Virtuelle Tour
+          </h1>
+          <p class="text-xl text-gray-700 dark:text-gray-300 leading-relaxed fade-in">
+            Erleben Sie unsere Drohnenaufnahmen in 360° - eine immersive Reise durch ausgewählte Standorte.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Panorama Tour Section -->
+    <section class="py-16 px-4">
+      <div class="container mx-auto">
+        <div class="max-w-6xl mx-auto">
+          <!-- Panorama Viewer -->
+          <div id="pano-container" class="mb-8">
+            <div id="pano"></div>
+          </div>
+
+          <!-- Tour Beschreibung -->
+          <div class="bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm rounded-xl shadow-lg p-8">
+            <h2 class="text-2xl font-bold mb-6 text-primary dark:text-white">Über diese Tour</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <h3 class="text-xl font-semibold mb-4">Features</h3>
+                <ul class="space-y-3">
+                  <li class="flex items-center">
+                    <i class="fas fa-vr-cardboard text-blue-600 dark:text-blue-400 mr-3"></i>
+                    <span>VR-Unterstützung</span>
+                  </li>
+                  <li class="flex items-center">
+                    <i class="fas fa-street-view text-blue-600 dark:text-blue-400 mr-3"></i>
+                    <span>360° Navigation</span>
+                  </li>
+                  <li class="flex items-center">
+                    <i class="fas fa-expand-arrows-alt text-blue-600 dark:text-blue-400 mr-3"></i>
+                    <span>Vollbildmodus</span>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold mb-4">Steuerung</h3>
+                <ul class="space-y-3">
+                  <li class="flex items-center">
+                    <i class="fas fa-mouse text-blue-600 dark:text-blue-400 mr-3"></i>
+                    <span>Klicken & Ziehen zum Umsehen</span>
+                  </li>
+                  <li class="flex items-center">
+                    <i class="fas fa-search-plus text-blue-600 dark:text-blue-400 mr-3"></i>
+                    <span>Scrollen zum Zoomen</span>
+                  </li>
+                  <li class="flex items-center">
+                    <i class="fas fa-mobile-alt text-blue-600 dark:text-blue-400 mr-3"></i>
+                    <span>Touch-Gesten auf Mobilgeräten</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer-Container -->
+    <div id="footer-container"></div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-primary hover:bg-primary/90 dark:bg-primary-dark dark:hover:bg-primary-dark/90 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:transform hover:scale-110 z-50">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Skripte -->
+    <script src="https://cdn.jsdelivr.net/npm/pannellum-react@1.2.4/build/pannellum.js"></script>
+    <script src="assets/js/components.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script>
+      // Pano2VR
+      window.addEventListener('load', function() {
+        pano2vrPlayer = new pano2vrPlayer("pano");
+        pano2vrSkin = new pano2vrSkin(pano2vrPlayer);
+        try {
+          pano2vrPlayer.readConfigUrlAsync("assets/pano2vr/pano.xml");
+        } catch(e) {
+          console.error(e);
+        }
+      });
+    </script>
+  </body>
+</html> 
