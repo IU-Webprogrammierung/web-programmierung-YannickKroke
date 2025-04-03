@@ -1,43 +1,45 @@
 <!-- Header-Bereich -->
-<header class="fixed w-full bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm shadow-md z-50 transition-colors duration-200">
+<header class="fixed w-full bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm shadow-md z-50 transition-colors duration-200" role="banner">
   <div class="container mx-auto px-4">
     <div class="flex justify-between items-center h-16">
       <!-- Logo -->
       <div class="flex items-center">
-        <a href="index.html" class="flex items-center space-x-2">
-          <img src="assets/images/logo.png" alt="SkyHaven Logo" class="h-8 w-auto" />
+        <a href="index.html" class="flex items-center space-x-2" aria-label="SkyHaven - Zur Startseite">
+          <img src="assets/images/logo.png" alt="" class="h-8 w-auto" />
           <span class="text-xl font-bold text-primary dark:text-white">SkyHaven</span>
         </a>
       </div>
 
       <!-- Desktop Navigation -->
-      <nav class="hidden md:flex items-center space-x-8">
-        <a href="index.html" class="nav-link">Startseite</a>
+      <nav class="hidden md:flex items-center space-x-8" role="navigation" aria-label="Hauptnavigation">
+        <a href="index.html" class="nav-link" aria-current="page">Startseite</a>
         <a href="Dienstleistungen.html" class="nav-link">Leistungen</a>
         <a href="Uebermich.html" class="nav-link">Über mich</a>
+        <a href="VirtuelleTour.html" class="nav-link">Virtuelle Tour</a>
         <a href="Kontakt.html" class="nav-link">Kontakt</a>
-        <button id="dark-mode-toggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label="Dark Mode umschalten">
-          <i class="fas fa-moon dark:hidden"></i>
-          <i class="fas fa-sun hidden dark:block"></i>
+        <button id="dark-mode-toggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label="Dark Mode umschalten" aria-pressed="false">
+          <i class="fas fa-moon dark:hidden" aria-hidden="true"></i>
+          <i class="fas fa-sun hidden dark:block" aria-hidden="true"></i>
         </button>
       </nav>
 
       <!-- Mobile Menu Button -->
-      <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label="Menü öffnen">
-        <i class="fas fa-bars text-gray-700 dark:text-gray-200"></i>
+      <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
+        <i class="fas fa-bars text-gray-700 dark:text-gray-200" aria-hidden="true"></i>
       </button>
     </div>
 
     <!-- Mobile Navigation -->
-    <div id="mobile-menu" class="hidden md:hidden">
+    <div id="mobile-menu" class="hidden md:hidden" role="navigation" aria-label="Mobile Navigation">
       <div class="px-2 pt-2 pb-3 space-y-1">
-        <a href="index.html" class="block px-3 py-2 nav-link">Startseite</a>
+        <a href="index.html" class="block px-3 py-2 nav-link" aria-current="page">Startseite</a>
         <a href="Dienstleistungen.html" class="block px-3 py-2 nav-link">Leistungen</a>
         <a href="Uebermich.html" class="block px-3 py-2 nav-link">Über mich</a>
+        <a href="VirtuelleTour.html" class="block px-3 py-2 nav-link">Virtuelle Tour</a>
         <a href="Kontakt.html" class="block px-3 py-2 nav-link">Kontakt</a>
-        <button id="dark-mode-toggle-mobile" class="w-full text-left px-3 py-2 nav-link">
-          <i class="fas fa-moon dark:hidden"></i>
-          <i class="fas fa-sun hidden dark:block"></i>
+        <button id="dark-mode-toggle-mobile" class="w-full text-left px-3 py-2 nav-link" aria-label="Dark Mode umschalten" aria-pressed="false">
+          <i class="fas fa-moon dark:hidden" aria-hidden="true"></i>
+          <i class="fas fa-sun hidden dark:block" aria-hidden="true"></i>
           Dark Mode
         </button>
       </div>
@@ -46,4 +48,4 @@
 </header>
 
 <!-- Spacer für fixed header -->
-<div class="h-16"></div>
+<div class="h-16" aria-hidden="true"></div>

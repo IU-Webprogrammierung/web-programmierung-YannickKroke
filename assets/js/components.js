@@ -19,6 +19,7 @@ function initializeComponents() {
               <a href="index.html" class="nav-link text-primary dark:text-white hover:text-accent dark:hover:text-accent" aria-current="page">Startseite</a>
               <a href="Dienstleistungen.html" class="nav-link text-primary dark:text-white hover:text-accent dark:hover:text-accent">Leistungen</a>
               <a href="Uebermich.html" class="nav-link text-primary dark:text-white hover:text-accent dark:hover:text-accent">Über mich</a>
+              <a href="VirtuelleTour.html" class="nav-link text-primary dark:text-white hover:text-accent dark:hover:text-accent">Virtuelle Tour</a>
               <a href="Kontakt.html" class="nav-link text-primary dark:text-white hover:text-accent dark:hover:text-accent">Kontakt</a>
               <button id="dark-mode-toggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label="Dark Mode umschalten" aria-pressed="false">
                 <i class="fas fa-moon text-primary dark:hidden" aria-hidden="true"></i>
@@ -38,6 +39,7 @@ function initializeComponents() {
               <a href="index.html" class="block px-3 py-2 nav-link text-primary dark:text-white hover:text-accent dark:hover:text-accent" aria-current="page">Startseite</a>
               <a href="Dienstleistungen.html" class="block px-3 py-2 nav-link text-primary dark:text-white hover:text-accent dark:hover:text-accent">Leistungen</a>
               <a href="Uebermich.html" class="block px-3 py-2 nav-link text-primary dark:text-white hover:text-accent dark:hover:text-accent">Über mich</a>
+              <a href="VirtuelleTour.html" class="block px-3 py-2 nav-link text-primary dark:text-white hover:text-accent dark:hover:text-accent">Virtuelle Tour</a>
               <a href="Kontakt.html" class="block px-3 py-2 nav-link text-primary dark:text-white hover:text-accent dark:hover:text-accent">Kontakt</a>
               <button id="dark-mode-toggle-mobile" class="w-full text-left px-3 py-2 nav-link text-primary dark:text-white hover:text-accent dark:hover:text-accent" aria-label="Dark Mode umschalten" aria-pressed="false">
                 <i class="fas fa-moon dark:hidden" aria-hidden="true"></i>
@@ -87,6 +89,7 @@ function initializeComponents() {
                 <li><a href="index.html" class="text-gray-300 hover:text-white transition-colors">Startseite</a></li>
                 <li><a href="Dienstleistungen.html" class="text-gray-300 hover:text-white transition-colors">Unsere Leistungen</a></li>
                 <li><a href="Uebermich.html" class="text-gray-300 hover:text-white transition-colors">Über mich</a></li>
+                <li><a href="VirtuelleTour.html" class="text-gray-300 hover:text-white transition-colors">Virtuelle Tour</a></li>
                 <li><a href="Kontakt.html" class="text-gray-300 hover:text-white transition-colors">Kontakt</a></li>
                 <li><a href="Impressum.html" class="text-gray-300 hover:text-white transition-colors">Impressum</a></li>
                 <li><a href="datenschutz.html" class="text-gray-300 hover:text-white transition-colors">Datenschutz</a></li>
@@ -128,7 +131,7 @@ function initializeComponents() {
                   >
                   <button 
                     type="submit"
-                    class="w-full px-4 py-2 bg-[#1a365d] hover:bg-[#0f172a] text-white rounded-lg transition-colors font-medium shadow-md hover:shadow-lg"
+                    class="w-full px-4 py-2 bg-[#1a365d] hover:bg-[#0f172a] text-white rounded-lg transition-colors"
                     aria-label="Newsletter abonnieren"
                   >
                     Anmelden
