@@ -13,10 +13,12 @@
     />
     <!-- Pannellum CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum-react@1.2.4/build/pannellum.css"/>
-    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
-    <!-- Pano2VR -->
-    <script src="assets/js/pano2vr/pano2vr_player.js"></script>
-    <script src="assets/js/pano2vr/skin.js"></script>
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" alt="SkyHaven Logo">
+    <!-- Pano2VR und Dependencies -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+    <script src="assets/pano2vr/pano2vr_player.js"></script>
+    <script src="assets/pano2vr/skin.js"></script>
     <style>
       .hero-gradient {
         background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(14, 165, 233, 0.1) 100%);
@@ -46,7 +48,7 @@
         background: rgba(0, 0, 0, 0.5);
         padding: 0.5rem;
         border-radius: 0.5rem;
-        backdrop-blur-sm;
+        backdrop-blur-sm: 4px;
       }
 
       .panorama-controls button {
@@ -65,7 +67,7 @@
         background: rgba(0, 0, 0, 0.5);
         padding: 1rem;
         border-radius: 0.5rem;
-        backdrop-blur-sm;
+        backdrop-blur-sm: 4px;
         color: white;
         max-width: 300px;
       }
@@ -77,76 +79,234 @@
         border-radius: 1rem;
         overflow: hidden;
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        background-color: rgba(0, 0, 0, 0.1); /* Debug-Hintergrund */
       }
 
       #pano {
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
+        background-color: rgba(0, 0, 0, 0.2); /* Debug-Hintergrund */
+      }
+
+      /* Navigation Button Styles */
+      .nav-buttons {
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0.5rem;
+        z-index: 1000;
+        width: 90%;
+        max-width: 1200px;
+      }
+
+      .nav-button {
+        flex: 1 1 auto;
+        min-width: max-content;
+        padding: 0.75rem 1.5rem;
+        background: rgba(37, 99, 235, 0.9);
+        color: white;
+        border-radius: 0.75rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(8px);
+      }
+
+      .nav-button:hover {
+        background: rgba(37, 99, 235, 1);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(37, 99, 235, 0.3);
+      }
+
+      .nav-button.active {
+        background: rgba(37, 99, 235, 1);
+        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5), 0 4px 8px rgba(37, 99, 235, 0.4);
+      }
+
+      @media (max-width: 640px) {
+        .nav-buttons {
+          bottom: 1rem;
+          gap: 0.35rem;
+          padding: 0.25rem;
+        }
+
+        .nav-button {
+          padding: 0.5rem 1rem;
+          font-size: 0.875rem;
+        }
+      }
+
+      /* Hotspot Styles */
+      .hotspot {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: rgba(37, 99, 235, 0.9);
+        border: 2px solid white;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 16px;
+      }
+
+      .hotspot:hover {
+        transform: scale(1.2);
+        background: rgba(37, 99, 235, 1);
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.5);
+      }
+
+      .hotspot::after {
+        content: '';
+        position: absolute;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        border: 2px solid rgba(37, 99, 235, 0.5);
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(0.8);
+          opacity: 1;
+        }
+        100% {
+          transform: scale(1.5);
+          opacity: 0;
+        }
+      }
+
+      /* Verbesserte Fokus-Stile für Barrierefreiheit */
+      .nav-button:focus {
+        outline: 2px solid #ffffff;
+        outline-offset: 2px;
+      }
+
+      /* Versteckte Elemente für Screen Reader */
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      /* Verbesserte Kontraste für Text */
+      .nav-button {
+        color: #ffffff;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+      }
+
+      /* Skip-Link für Tastaturnavigation */
+      .skip-link {
+        position: absolute;
+        top: -40px;
+        left: 0;
+        background: #000;
+        color: white;
+        padding: 8px;
+        z-index: 100;
+        transition: top 0.3s;
+      }
+
+      .skip-link:focus {
+        top: 0;
       }
     </style>
   </head>
   <body class="min-h-screen bg-gradient-to-br from-sky-50 to-blue-100 dark:from-slate-900 dark:to-blue-950 text-slate-800 dark:text-slate-100 transition-colors duration-200">
+    <!-- Skip Link -->
+    <a href="#main-content" class="skip-link">Direkt zum Hauptinhalt springen</a>
+    
     <!-- Navbar-Container -->
-    <div id="navbar-container" class="relative z-50"></div>
+    <div id="navbar-container" class="relative z-50" role="navigation" aria-label="Hauptnavigation"></div>
 
     <!-- Hero Section -->
-    <section class="relative pt-32 pb-16 px-4 bg-gradient-to-br from-sky-50/30 to-blue-100/30 dark:from-slate-900/50 dark:to-blue-950/50 backdrop-blur-sm">
+    <section class="relative pt-32 pb-16 px-4 bg-gradient-to-br from-sky-50/30 to-blue-100/30 dark:from-slate-900/50 dark:to-blue-950/50 backdrop-blur-sm" role="banner">
       <div class="container mx-auto">
         <div class="max-w-4xl mx-auto text-center space-y-6">
           <h1 class="text-5xl md:text-6xl font-bold text-primary dark:text-white fade-in">
             Virtuelle Tour
           </h1>
           <p class="text-xl text-gray-700 dark:text-gray-300 leading-relaxed fade-in">
-            Erleben Sie unsere Drohnenaufnahmen in 360° - eine immersive Reise durch ausgewählte Standorte.
+            Erleben Sie unsere Drohnenaufnahmen in 360° - eine immersive Reise durch ausgewählte Standorte. Ideal für Immobilienmakler, die ihren Kunden auch Innenaufnahmen von Objekten präsentieren möchten.
+          </p>
+          <p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed fade-in">
+            Von Außenansichten bis hin zu detaillierten Innenraumtouren - präsentieren Sie Immobilien auf moderne und überzeugende Weise.
           </p>
         </div>
       </div>
     </section>
 
     <!-- Panorama Tour Section -->
-    <section class="py-16 px-4">
+    <section id="main-content" class="py-16 px-4" role="main" aria-label="Virtuelle Tour durch Wilhelmshaven">
       <div class="container mx-auto">
         <div class="max-w-6xl mx-auto">
           <!-- Panorama Viewer -->
-          <div id="pano-container" class="mb-8">
-            <div id="pano"></div>
+          <div id="pano-container" class="mb-8" role="region" aria-label="360-Grad Panorama Viewer">
+            <div id="pano" aria-live="polite"></div>
+            <!-- Navigation Buttons -->
+            <div class="nav-buttons" role="navigation" aria-label="Standort Navigation">
+              <button class="nav-button active" onclick="switchLocation('node1')" aria-label="Zum Pädagogenviertel wechseln" aria-pressed="true">Pädagogenviertel</button>
+              <button class="nav-button" onclick="switchLocation('node2')" aria-label="Zu Heppens wechseln" aria-pressed="false">Heppens</button>
+              <button class="nav-button" onclick="switchLocation('node3')" aria-label="Zum Villenviertel wechseln" aria-pressed="false">Villenviertel</button>
+              <button class="nav-button" onclick="switchLocation('node4')" aria-label="Zum Kurpark wechseln" aria-pressed="false">Kurpark</button>
+              <button class="nav-button" onclick="switchLocation('node5')" aria-label="Zur Siebethsburg wechseln" aria-pressed="false">Siebethsburg</button>
+            </div>
           </div>
 
           <!-- Tour Beschreibung -->
-          <div class="bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm rounded-xl shadow-lg p-8">
+          <div class="bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm rounded-xl shadow-lg p-8" role="complementary" aria-label="Tour Informationen">
             <h2 class="text-2xl font-bold mb-6 text-primary dark:text-white">Über diese Tour</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
                 <h3 class="text-xl font-semibold mb-4">Features</h3>
-                <ul class="space-y-3">
+                <ul class="space-y-3" role="list">
                   <li class="flex items-center">
-                    <i class="fas fa-vr-cardboard text-blue-600 dark:text-blue-400 mr-3"></i>
-                    <span>VR-Unterstützung</span>
+                    <i class="fas fa-vr-cardboard text-blue-600 dark:text-blue-400 mr-3" aria-hidden="true" role="img" aria-label="VR-Headset Icon"></i>
+                    <span>VR-Unterstützung für immersives Erlebnis</span>
                   </li>
                   <li class="flex items-center">
-                    <i class="fas fa-street-view text-blue-600 dark:text-blue-400 mr-3"></i>
-                    <span>360° Navigation</span>
+                    <i class="fas fa-street-view text-blue-600 dark:text-blue-400 mr-3" aria-hidden="true" role="img" aria-label="Straßenansicht Icon"></i>
+                    <span>360° Navigation für vollständige Rundumansicht</span>
                   </li>
                   <li class="flex items-center">
-                    <i class="fas fa-expand-arrows-alt text-blue-600 dark:text-blue-400 mr-3"></i>
-                    <span>Vollbildmodus</span>
+                    <i class="fas fa-expand-arrows-alt text-blue-600 dark:text-blue-400 mr-3" aria-hidden="true" role="img" aria-label="Vollbild Icon"></i>
+                    <span>Vollbildmodus für detaillierte Ansicht</span>
                   </li>
                 </ul>
               </div>
               <div>
                 <h3 class="text-xl font-semibold mb-4">Steuerung</h3>
-                <ul class="space-y-3">
+                <ul class="space-y-3" role="list">
                   <li class="flex items-center">
-                    <i class="fas fa-mouse text-blue-600 dark:text-blue-400 mr-3"></i>
-                    <span>Klicken & Ziehen zum Umsehen</span>
+                    <i class="fas fa-mouse text-blue-600 dark:text-blue-400 mr-3" aria-hidden="true" role="img" aria-label="Maus Icon"></i>
+                    <span>Mit der Maus klicken und ziehen zum Umsehen</span>
                   </li>
                   <li class="flex items-center">
-                    <i class="fas fa-search-plus text-blue-600 dark:text-blue-400 mr-3"></i>
-                    <span>Scrollen zum Zoomen</span>
+                    <i class="fas fa-search-plus text-blue-600 dark:text-blue-400 mr-3" aria-hidden="true" role="img" aria-label="Lupe Icon"></i>
+                    <span>Mausrad oder Pinch-Geste zum Zoomen</span>
                   </li>
                   <li class="flex items-center">
-                    <i class="fas fa-mobile-alt text-blue-600 dark:text-blue-400 mr-3"></i>
-                    <span>Touch-Gesten auf Mobilgeräten</span>
+                    <i class="fas fa-mobile-alt text-blue-600 dark:text-blue-400 mr-3" aria-hidden="true" role="img" aria-label="Smartphone Icon"></i>
+                    <span>Touch-Gesten auf Mobilgeräten für Navigation</span>
                   </li>
                 </ul>
               </div>
@@ -157,11 +317,11 @@
     </section>
 
     <!-- Footer-Container -->
-    <div id="footer-container"></div>
+    <div id="footer-container" role="contentinfo"></div>
 
     <!-- Back to Top Button -->
-    <button id="back-to-top" class="fixed bottom-8 right-8 bg-primary hover:bg-primary/90 dark:bg-primary-dark dark:hover:bg-primary-dark/90 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:transform hover:scale-110 z-50">
-      <i class="fas fa-arrow-up"></i>
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-primary hover:bg-primary/90 dark:bg-primary-dark dark:hover:bg-primary-dark/90 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:transform hover:scale-110 z-50" aria-label="Zurück nach oben">
+      <i class="fas fa-arrow-up" aria-hidden="true" role="img" aria-label="Pfeil nach oben Icon"></i>
     </button>
 
     <!-- Skripte -->
@@ -169,16 +329,226 @@
     <script src="assets/js/components.js"></script>
     <script src="assets/js/script.js"></script>
     <script>
-      // Pano2VR
-      window.addEventListener('load', function() {
-        pano2vrPlayer = new pano2vrPlayer("pano");
-        pano2vrSkin = new pano2vrSkin(pano2vrPlayer);
-        try {
-          pano2vrPlayer.readConfigUrlAsync("assets/pano2vr/pano.xml");
-        } catch(e) {
-          console.error(e);
+        let pano = null;
+        let skin = null;
+        let currentLocation = '';
+        
+        // Überprüfe WebGL-Unterstützung
+        function checkWebGL() {
+            try {
+                const canvas = document.createElement('canvas');
+                return !!(window.WebGLRenderingContext && (canvas.getContext('webgl') || canvas.getContext('experimental-webgl')));
+            } catch(e) {
+                return false;
+            }
         }
-      });
+
+        // Hilfsfunktion für Tastaturnavigation
+        function handleKeyNavigation(e) {
+            if (!pano) return;
+            
+            const key = e.key.toLowerCase();
+            switch(key) {
+                case 'arrowleft':
+                    pano.moveTo(pano.getPan() - 10, pano.getTilt());
+                    break;
+                case 'arrowright':
+                    pano.moveTo(pano.getPan() + 10, pano.getTilt());
+                    break;
+                case 'arrowup':
+                    pano.moveTo(pano.getPan(), pano.getTilt() + 10);
+                    break;
+                case 'arrowdown':
+                    pano.moveTo(pano.getPan(), pano.getTilt() - 10);
+                    break;
+                case '+':
+                case '=':
+                    pano.zoomTo(pano.getFov() * 0.9);
+                    break;
+                case '-':
+                    pano.zoomTo(pano.getFov() * 1.1);
+                    break;
+            }
+        }
+
+        // Füge Tastatursteuerung hinzu
+        document.addEventListener('keydown', handleKeyNavigation);
+        
+        window.addEventListener('load', function() {
+            console.log('Initialisiere Pano2VR Player...');
+            
+            if (!checkWebGL()) {
+                console.error('WebGL wird nicht unterstützt!');
+                document.getElementById('pano').innerHTML = '<div style="text-align: center; padding: 20px;">Ihr Browser unterstützt kein WebGL. Bitte verwenden Sie einen modernen Browser.</div>';
+                return;
+            }
+            
+            try {
+                // Initialisiere den Player mit Debug-Optionen
+                pano = new pano2vrPlayer('pano', {
+                    debug: true,
+                    webgl: "true",
+                    webglsettings: {
+                        preserveDrawingBuffer: true,
+                        depth: true,
+                        stencil: true
+                    }
+                });
+                console.log('Player erstellt');
+                
+                // Setze den Basispfad für die Tiles
+                pano.setBasePath('assets/pano2vr/');
+                console.log('Basispfad gesetzt:', pano.getBasePath());
+
+                // Initialisiere den Skin vor dem Laden der Konfiguration
+                skin = new pano2vrSkin(pano);
+                
+                // Konfiguriere die Skin-Optionen
+                const skinSettings = {
+                    control: {
+                        mousemode: true,
+                        touchmode: true,
+                        gyroscope: true,
+                        fullscreen: true,
+                        zoom: true,
+                        zoomcount: true,
+                        autorotate: true,
+                        orientation: "auto"
+                    },
+                    settings: {
+                        backcolor: "#000000",
+                        tooltipcolor: "#ffffff",
+                        toolcolor: "#ffffff",
+                        bgcolor: "#ffffff",
+                        bgalpha: 0.75,
+                        menuoffset: 10,
+                        menuposition: "topleft"
+                    }
+                };
+                
+                // Wende die Skin-Einstellungen an
+                if(skin.settings) {
+                    Object.assign(skin.settings, skinSettings);
+                } else {
+                    skin.settings = skinSettings;
+                }
+                
+                console.log('Skin mit Optionsmenü erstellt');
+
+                // Verbesserte Event Listener für Barrierefreiheit
+                pano.addListener('nodechanged', function(nodeId) {
+                    console.log('Node changed to:', nodeId);
+                    currentLocation = nodeId;
+                    
+                    // Update button states
+                    document.querySelectorAll('.nav-button').forEach(button => {
+                        button.classList.remove('active');
+                        button.setAttribute('aria-pressed', 'false');
+                    });
+                    const activeButton = document.querySelector(`[onclick="switchLocation('${nodeId}')"]`);
+                    if (activeButton) {
+                        activeButton.classList.add('active');
+                        activeButton.setAttribute('aria-pressed', 'true');
+                    }
+
+                    // Announce location change for screen readers
+                    const locationName = activeButton ? activeButton.textContent : nodeId;
+                    const announcement = document.createElement('div');
+                    announcement.setAttribute('aria-live', 'polite');
+                    announcement.setAttribute('class', 'sr-only');
+                    announcement.textContent = `Standort gewechselt zu ${locationName}`;
+                    document.body.appendChild(announcement);
+                    setTimeout(() => announcement.remove(), 1000);
+                });
+
+                // Event Listener für das Laden der Bilder
+                pano.addListener('imagesloaded', function() {
+                    console.log('Bilder wurden geladen');
+                });
+
+                pano.addListener('imageerror', function(error) {
+                    console.error('Fehler beim Laden der Bilder:', error);
+                });
+
+                // Event Listener für Hotspots
+                pano.addListener('hotspotsloaded', function() {
+                    console.log('Hotspots wurden geladen');
+                });
+
+                // Lade die Tour-Konfiguration
+                console.log('Lade XML-Konfiguration...');
+                fetch('assets/pano2vr/pano.xml')
+                    .then(response => {
+                        if (!response.ok) throw new Error('XML-Datei konnte nicht geladen werden');
+                        console.log('XML Response Status:', response.status);
+                        return response.text();
+                    })
+                    .then(xmlString => {
+                        console.log('XML Inhalt geladen, erste 100 Zeichen:', xmlString.substring(0, 100));
+                        try {
+                            // Setze die Konfiguration
+                            pano.readConfigString(xmlString);
+                            console.log('Konfiguration erfolgreich geladen');
+                            
+                            // Überprüfe die geladene Konfiguration
+                            console.log('Aktuelle Konfiguration:', pano.getConfig());
+                            
+                            // Aktiviere die Skin-Funktionen
+                            if (skin) {
+                                skin.registerButtons();
+                                console.log('Skin-Buttons registriert');
+                            }
+                            
+                            if (skin && skin.hotspotTemplates) {
+                                console.log('Hotspot-Templates verfügbar:', Object.keys(skin.hotspotTemplates));
+                            }
+                            
+                            // Setze initiale Node mit Verzögerung
+                            setTimeout(() => {
+                                console.log('Versuche erste Node zu laden...');
+                                pano.openNext('{node1}');
+                                const firstButton = document.querySelector('[onclick="switchLocation(\'node1\')"]');
+                                if (firstButton) firstButton.classList.add('active');
+                            }, 100);
+                        } catch (e) {
+                            console.error('Fehler beim Verarbeiten der Konfiguration:', e);
+                            console.error('Stack:', e.stack);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Fehler beim Laden der Tour:', error);
+                        console.error('Stack:', error.stack);
+                    });
+            } catch (error) {
+                console.error('Fehler bei der Initialisierung:', error);
+                console.error('Stack:', error.stack);
+            }
+        });
+
+        function switchLocation(nodeId) {
+            if (!pano) return console.error('Pano2VR Player nicht initialisiert');
+            
+            try {
+                console.log('Versuche Panorama zu wechseln zu:', nodeId);
+                pano.openNext('{' + nodeId + '}');
+                
+                // Update ARIA-Status
+                const button = document.querySelector(`[onclick="switchLocation('${nodeId}')"]`);
+                if (button) {
+                    const locationName = button.textContent;
+                    const status = document.createElement('div');
+                    status.setAttribute('role', 'status');
+                    status.setAttribute('aria-live', 'polite');
+                    status.setAttribute('class', 'sr-only');
+                    status.textContent = `Lade Panorama von ${locationName}`;
+                    document.body.appendChild(status);
+                    setTimeout(() => status.remove(), 1000);
+                }
+            } catch (error) {
+                console.error('Fehler beim Wechseln des Panoramas:', error);
+                console.error('Stack:', error.stack);
+            }
+        }
     </script>
   </body>
 </html> 
