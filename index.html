@@ -13,13 +13,6 @@
     />
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
     <style>
-      .hero-image {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/images/hero-bg.JPG');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-      }
-
       .parallax-container {
         position: relative;
         overflow: hidden;
@@ -53,10 +46,15 @@
     <!-- Main Content -->
     <main>
       <!-- Hero Section -->
-      <section class="relative min-h-screen hero-image" role="banner">
-        <div class="absolute inset-0 bg-gradient-to-br from-black/70 to-black/50 backdrop-blur-[1px]" aria-hidden="true"></div>
-        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-black/70" aria-hidden="true"></div>
-        
+      <section class="relative h-screen">
+        <div class="absolute inset-0">
+          <img
+            src="assets/images/hero-bg.JPG"
+            alt="Drohnenaufnahme einer Stadt"
+            class="w-full h-full object-cover brightness-125"
+          />
+          <div class="absolute inset-0 bg-black/25 dark:bg-black/50"></div>
+        </div>
         <div class="relative h-screen flex items-center justify-center px-4">
           <div class="text-center space-y-8 max-w-4xl mx-auto">
             <h1 class="text-6xl md:text-8xl font-bold text-white drop-shadow-lg">
