@@ -84,6 +84,33 @@ npm install
 npm run dev
 ```
 
+## Virtuelle Tour starten
+
+Die Virtuelle Tour benötigt einen lokalen Webserver, um korrekt zu funktionieren. Folgen Sie diesen Schritten (alternativ funktioniert es auch über Github-Pages:
+
+1. **Webserver starten**:
+   - Mit Python 3:
+     ```bash
+     python -m http.server 8000
+     ```
+   - Mit Node.js (falls installiert):
+     ```bash
+     npx http-server
+     ```
+   - Mit PHP (falls installiert):
+     ```bash
+     php -S localhost:8000
+     ```
+
+2. **Tour öffnen**:
+   - Öffnen Sie im Browser: `http://localhost:8000/VirtuelleTour.html`
+   - Die Tour sollte nun korrekt mit allen interaktiven Elementen angezeigt werden
+
+3. **Hinweise**:
+   - Die Tour funktioniert am besten in modernen Browsern (Chrome, Firefox, Edge)
+   - Stellen Sie sicher, dass JavaScript aktiviert ist
+   - Bei Problemen öffnen Sie die Browser-Konsole (F12) für Fehlermeldungen
+
 ## Browserunterstützung
 
 - Chrome (neueste Version)
