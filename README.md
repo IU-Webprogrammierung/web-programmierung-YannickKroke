@@ -1,164 +1,118 @@
-# SkyHaven - Professionelle Drohnenaufnahmen
+# SkyHaven - Professionelle Drohnenfotografie
 
-Eine moderne Website für professionelle Drohnenaufnahmen, entwickelt mit HTML, Tailwind CSS und JavaScript.
+Eine moderne, responsive Website für professionelle Drohnenfotografie-Dienstleistungen, entwickelt mit Tailwind CSS und Alpine.js.
 
-## Features
+## Funktionen
 
-- 🎨 Modernes, responsives Design mit Tailwind CSS
-- 🌓 Dark Mode Unterstützung
-- 📱 Mobile-First Ansatz
-- 🎬 Animierte Übergänge und Interaktionen
-- 🖼️ Optimierte Bildergalerien
-- 📝 Kontaktformular mit Validierung
-- 🔍 SEO-optimiert
-- ⚡ Schnelle Ladezeiten
+- **Responsive Design**: Optimiert für alle Geräte (Mobile, Tablet, Desktop)
+- **Dark Mode**: Automatische Erkennung und manueller Wechsel
+- **Interaktive Elemente**:
+  - Parallax-Effekte
+  - Hover-Animationen
+  - Interaktive Karten
+  - 360°-Virtuelle Tour
+- **Dienstleistungen**:
+  - Immobilienfotografie
+  - Baustellendokumentation
+  - Veranstaltungsfotografie
+  - Virtuelle 360°-Touren
+- **Barrierefreiheit**: Semantisches HTML und ARIA-Labels
+- **Optimierte Performance**: Lazy Loading und responsive Bilder
 
 ## Technologien
 
-- HTML5
-- Tailwind CSS
-- JavaScript (Vanilla)
-- Font Awesome Icons
-- Google Fonts (Inter)
+- **Frontend**:
+  - HTML5
+  - Tailwind CSS
+  - Alpine.js
+  - Font Awesome Icons
+- **Bildverarbeitung**:
+  - Responsive Bilder mit srcset
+  - Optimierte Ladezeiten
+  - WebP-Format Unterstützung
+- **Interaktivität**:
+  - Alpine.js für dynamische Funktionen
+  - Custom JavaScript für spezielle Effekte
+  - Intersection Observer API
+
+## Seitenstruktur
+
+1. **Startseite (index.html)**
+   - Hero-Sektion mit Parallax-Effekt
+   - Dienstleistungsübersicht
+   - Über mich Kurzvorstellung
+   - Kundenstimmen
+
+2. **Dienstleistungen (Dienstleistungen.html)**
+   - Detaillierte Servicebeschreibungen
+   - Preisstruktur
+   - Beispielbilder
+   - Call-to-Action Buttons
+
+3. **Über mich (ÜberMich.html)**
+   - Persönliche Vorstellung
+   - Qualifikationen
+   - Ausrüstung
+   - Referenzen
+
+4. **Kontakt (Kontakt.html)**
+   - Kontaktformular mit Floating Labels
+   - Kontaktinformationen
+   - Öffnungszeiten
+   - Interaktive Karte
+
+5. **Virtuelle Tour (VirtuelleTour.html)**
+   - 360°-Panorama-Ansicht
+   - Interaktive Hotspots
+   - Responsive Viewer
+   - Benutzerfreundliche Navigation
 
 ## Installation
 
-1. Klonen Sie das Repository:
+1. Repository klonen:
 ```bash
-git clone https://github.com/IU-Webprogrammierung/web-programmierung-YannickKroke.git
+git clone [repository-url]
 ```
 
-2. Navigieren Sie in das Projektverzeichnis:
-```bash
-cd web-programmierung-YannickKroke
-```
-
-3. Installieren Sie die Abhängigkeiten:
+2. Abhängigkeiten installieren:
 ```bash
 npm install
 ```
 
-4. Starten Sie den Entwicklungsserver:
+3. Entwicklungsserver starten:
 ```bash
 npm run dev
 ```
 
-## Projektstruktur
+## Browserunterstützung
 
-```
-web-programmierung-YannickKroke/
-├── assets/
-│   ├── components/
-│   │   ├── navbar.html
-│   │   └── footer.html
-│   ├── css/
-│   │   └── styles.css
-│   ├── js/
-│   │   ├── main.js
-│   │   └── darkMode.js
-│   └── images/
-├── *.html
-├── package.json
-├── tailwind.config.js
-└── postcss.config.js
-```
-
-## Seiten
-
-- **Home**: Landing Page mit Hero-Sektion und Feature-Highlights
-- **Dienstleistungen**: Detaillierte Übersicht der angebotenen Drohnenaufnahmen
-- **Über Mich**: Persönliche Vorstellung und Erfahrungen
-- **Kontakt**: Kontaktformular und Kontaktinformationen
-- **Impressum**: Rechtliche Informationen
-- **Datenschutz**: Datenschutzerklärung
-
-## Dark Mode
-
-Die Website unterstützt einen automatischen Dark Mode, der sich an die Systemeinstellungen des Benutzers anpasst. Der Dark Mode kann auch manuell über einen Toggle-Button aktiviert/deaktiviert werden.
-
-## Responsive Design
-
-Die Website ist vollständig responsiv und optimiert für:
-- Desktop (1024px und größer)
-- Tablet (768px - 1023px)
-- Mobile (bis 767px)
-
-## Performance
-
-- Optimierte Bildgrößen
-- Lazy Loading für Bilder
-- Minimierte CSS-Dateien
-- Effiziente JavaScript-Bundles
-
-## Browser-Support
-
-Die Website unterstützt alle modernen Browser:
 - Chrome (neueste Version)
 - Firefox (neueste Version)
 - Safari (neueste Version)
 - Edge (neueste Version)
 
+## Performance-Optimierungen
+
+- Lazy Loading von Bildern
+- Optimierte Bildgrößen
+- Minimierte CSS und JavaScript
+- Effiziente Asset-Ladung
+
+## Barrierefreiheit
+
+- Semantisches HTML
+- ARIA-Labels
+- Tastaturnavigation
+- Kontrastreiche Farben
+- Responsive Schriftgrößen
+
 ## Lizenz
 
-Dieses Projekt ist unter der MIT-Lizenz lizenziert. Siehe die [LICENSE](LICENSE) Datei für Details.
+Alle Rechte vorbehalten. Die Inhalte dieser Website dürfen nicht ohne Genehmigung verwendet werden.
 
-## Autor
+## Kontakt
 
-Yannick Kroke
-
-![SkyHaven Logo](assets/images/logo.png)
-
-## Projektübersicht
-
-SkyHaven ist eine Präsentationswebsite für einen Drohnendienstleister, die hochwertige Luftbildaufnahmen für verschiedene Anwendungsbereiche anbietet:
-- Immobilienfotografie aus der Luft
-- Veranstaltungsdokumentation
-- Baustellendokumentation
-
-## Technische Details
-
-### Verwendete Technologien
-- **HTML5**: Moderne Semantische Struktur
-- **CSS3**: Fortschrittliche Styling-Funktionen mit Animationen und Responsive Design
-- **JavaScript/jQuery**: Dynamische Komponenten und interaktive Elemente
-- **Komponentenbasierte Architektur**: Wiederverwendbare Elemente für konsistentes Design
-
-Typografie
-Die Website nutzt ein modernes, hochwertiges Typografie-System:
-
-Primäre Schriftart: Montserrat (Sans-serif) für Überschriften
-Sekundäre Schriftart: Open Sans für Fließtext
-Fallback: System Font Stack für bessere Performance
-Responsive Typografie: Verwendung von clamp() für flüssige Schriftgrößen
-Variable Schriftstärken:
-
-Leicht (300) für sekundären Text
-Normal (400) für Standard-Fließtext
-Medium (500) für wichtigere Elemente
-Semi-Bold (600) für Überschriften
-Bold (700) für Haupt-Headlines
-
-### Responsive Breakpoints
-Die Website passt sich automatisch an verschiedene Bildschirmgrößen an:
--	Große Bildschirme (bis 1200px) 
--	Tablets (bis 1024px) 
--	Smartphones (bis 768px) 
--	Sehr kleine Geräte (bis 359px)
-
-### Besondere Features
-- **Modularer Aufbau**: Navbar und Footer als wiederverwendbare Komponenten
-- **Responsive Design**: Optimierte Darstellung auf allen Geräten (Desktop, Tablet, Smartphone)
-- **Moderne Animationen**: Sanfte Übergänge und animierte Elemente für ein ansprechendes Nutzererlebnis
-- **Dynamisches Laden**: Komponenten werden zur Laufzeit geladen für bessere Wartbarkeit
-- **Smooth Scrolling**: Sanftes Scrollen zu Ankerpunkten für bessere Benutzererfahrung
-- **Optimierte Bilddarstellung**: Gleichmäßige Bildgrößen und Hover-Effekte
-
-### Design-Highlights
-- Elegantes Farbschema mit dunklem Hintergrund und Lila-Akzenten
-- Glasmorphismus-Elemente mit abgerundeten Ecken
-- Animierte Social-Media-Icons
-- Moderne Card-basierte Informationsdarstellung
-- Hero-Bereich mit eindrucksvollem Hintergrund
+Bei Fragen oder Anregungen kontaktieren Sie uns bitte über das Kontaktformular auf der Website.
 
 ## Projektstruktur
 ```
