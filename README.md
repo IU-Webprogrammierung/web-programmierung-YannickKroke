@@ -142,26 +142,58 @@ Alle Rechte vorbehalten. Die Inhalte dieser Website dürfen nicht ohne Genehmigu
 Bei Fragen oder Anregungen kontaktieren Sie uns bitte über das Kontaktformular auf der Website.
 
 ## Projektstruktur
+
 ```
-skyhaven/
-├── index.html                  # Startseite
-├── Dienstleistungen.html       # Detailseite zu Dienstleistungen
-├── Uebermich.html              # Über-mich-Seite mit Profilbild
-├── Kontakt.html                # Kontaktformular und -informationen
-├── Impressum.html              # Impressum
-├── datenschutz.html            # Datenschutzerklärung
+web-programmierung-YannickKroke/
 ├── assets/
-│   ├── components/             # Wiederverwendbare HTML-Komponenten
-│   │   ├── navbar.html         # Navigation 
-│   │   └── footer.html         # Footer mit Links, Copyright und Social Media Icons
+│   ├── components/
+│   │   ├── navbar.html
+│   │   └── footer.html
 │   ├── css/
-│   │   └── styles.css          # Haupt-Stylesheet
+│   │   └── styles.css
 │   ├── js/
-│   │   ├── components.js       # jQuery-Code für Komponentenmanagement
-│   │   └── script.js           # Allgemeine JavaScript-Funktionalität
-│   ├── images/                 # Bildmaterial der Website
-│   └── icons/                  # Social Media Icons und andere SVGs
+│   │   ├── main.js
+│   │   └── darkMode.js
+│   ├── images/
+│   │   ├── hero/
+│   │   ├── services/
+│   │   └── about/
+│   └── pano2vr/
+│       ├── tiles/
+│       │   └── node1/
+│       │       └── cf_0/
+│       │           └── l_0/
+│       │               └── c_0/
+│       │                   └── tile_0.jpg
+│       ├── skin/
+│       │   ├── buttons/
+│       │   └── hotspots/
+│       └── config.xml
+├── index.html
+├── Dienstleistungen.html
+├── ÜberMich.html
+├── Kontakt.html
+├── VirtuelleTour.html
+├── Impressum.html
+├── Datenschutz.html
+├── package.json
+├── tailwind.config.js
+├── postcss.config.js
+└── README.md
 ```
+
+### Wichtige Verzeichnisse und Dateien
+
+- **assets/components/**: Wiederverwendbare HTML-Komponenten
+- **assets/css/**: Styling-Dateien
+- **assets/js/**: JavaScript-Funktionalitäten
+- **assets/images/**: Bildmaterial nach Kategorien sortiert
+- **assets/pano2vr/**: Virtuelle Tour Assets
+  - **tiles/**: 360°-Bildkacheln
+  - **skin/**: UI-Elemente und Hotspots
+  - **config.xml**: Tour-Konfiguration
+- **HTML-Dateien**: Hauptseiten der Website
+- **Konfigurationsdateien**: Projekt-Einstellungen
 
 
 
